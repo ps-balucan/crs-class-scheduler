@@ -1,0 +1,4462 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109224015-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-109224015-1');
+        </script>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<title>UP CRS - Schedule of Classes</title>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.widgets.js"></script>
+
+
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/layout.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/status.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/schedule.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/tablesorter/tablesorter.css" type="text/css" />
+	<link rel="shortcut icon" href="https://crs.upd.edu.ph/images/favicon.ico" type="image/x-icon" />
+
+	<style type="text/css">
+		#tbl_schedule tbody:hover {
+			background-color: #F0F0AF;
+		}
+	</style>
+	
+	<script type="text/javascript" language="JavaScript">
+	$(document).ready(function() {
+		$('#btn_search').click(searchClasses);
+		$('#frm_schedule').submit(function(e) {
+			e.preventDefault();
+			searchClasses();
+		});
+
+//		// table sorter
+//		$.tablesorter.addParser({
+//			// set uniqueid
+//			id: 'availableslots',
+//			is: function(s) {
+//				// return false so that parser is not automatically detected
+//				return false;
+//			},
+//			format: function(s) {
+//				var temp = s.replace('<strong>','').replace('</strong>','').split('/');
+//				return temp[0];
+//			},
+//			// set type to numeric
+//			type: 'numeric'
+//		});
+
+//		$('#tbl_schedule').tablesorter({widgets:['zebra'], headers: {0:{sorter:false},2:{sorter:false},4:{sorter:'availableslots'},5:{sorter:false}}});
+
+	});
+
+	function searchClasses() {
+		var coursenumber = $.trim($('#txt_coursenumber').val());
+		var term = $.trim($('#txt_term').val());
+		var alphanumeric_pattern = /^[a-zA-Z0-9\.\s]+$/;
+
+		if(coursenumber != '') {
+			if( ! alphanumeric_pattern.test(coursenumber)) {
+				alert('Course number must be alphanumeric.');
+			} else {
+				window.location = 'https://crs.upd.edu.ph/schedule' + '/'+ term + '/'+ coursenumber ;
+			}
+		}
+
+	}
+
+	</script>
+
+<style>
+	#frm_schedule {
+		margin: auto;
+		width: 25%;
+		background: #FCFCF0;
+		border: 3px solid #444444;
+		padding: 1em;
+	}
+	#frm_schedule strong, #search input {
+		padding-right: 1em;
+	}
+</style>
+</head>
+
+<body class="schedule">
+
+<div id="header">
+	<a href="https://crs.upd.edu.ph/user" class="header_link"></a>
+</div>
+<div id="subheader">
+</div>
+
+<div id="content" class="align-center">
+
+<h1>
+	Schedule of Classes<br />
+		<select id="txt_term" name="txt_term" style="padding: 2px; border: 1px solid #CECECE; border-radius: 5px; font-size: 100%; text-align: right;" onchange="searchClasses();">
+					<option value="120192" >Second Semester AY 2019-2020</option>
+					<option value="120194" >Midyear Term 2020</option>
+					<option value="120201" >First Semester AY 2020-2021</option>
+					<option value="120202" selected="selected">Second Semester AY 2020-2021</option>
+					<option value="120204" >Midyear Term 2021</option>
+		</select>
+	</h1>
+
+<br />
+<form id="frm_schedule" action="" method="post">
+Course Number: 
+<input type="text" id="txt_coursenumber" name="txt_coursenumber" placeholder="(e.g., Math 11, Eng 1)"/>
+<br/> 
+<input type="button" id="btn_search" name="btn_search" value="Search" />
+</form>
+
+<br/>
+<p>
+	<a href="https://crs.upd.edu.ph/schedule/120202/A">A</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/B">B</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/C">C</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/D">D</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/E">E</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/F">F</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/G">G</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/H">H</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/I">I</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/J">J</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/K">K</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/L">L</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/M">M</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/N">N</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/O">O</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/P">P</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Q">Q</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/R">R</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/S">S</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/T">T</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/U">U</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/V">V</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/W">W</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/X">X</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Y">Y</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Z">Z</a>&nbsp;
+<a href="https://crs.upd.edu.ph/">Back to main page</a>
+</p>
+<br />
+<div style="text-align: left; padding: 0; margin: 0;"><strong>Results for: <em>B</em></strong></div>
+<table id="tbl_schedule" style="table-layout: fixed	">
+<thead>
+<tr>
+	<th width="5%">Class Code</th>
+	<th width="15%">Class</th>
+	<th width="5%">Credits</th>
+	<th width="30%">
+		Schedule<br />
+		Instructor(s)<br/>
+		Remarks
+	</th>
+	<th width="15%">Enlisting Unit : Block<br/><b>Block Remarks</b></th>
+	<th width="10%">
+		Available Slots /<br />
+		Total Slots
+	</th>
+	<th width="5%">Demand</th>
+	<th width="15%">Restrictions</th>
+</tr>
+</thead>
+
+	<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">27616</td>
+		<td rowspan = "1">B 264 MYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 4-7PM lec TBA<br />
+			VINCULADO, JANE<br/>
+			<em style="font-weight: bold">Internet connection, Video conferencing app (Preferably Google Meet or Zoom), laptop or gadget that can connect to the internet.</em>		</td>
+		 
+		<td>GRADUATE<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">27625</td>
+		<td rowspan = "1">B 297 WYZ<br/>Superheroes and Media Cultures</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 4-7PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">Internet connection, laptop or other gadget that can connect to the internet with a working camera and/or audio receiver and mic. We will be using Google Classroom and Zoom. Your official UP.edu email address is required. Access to streaming sites is an added requirement for viewing. </em>		</td>
+		 
+		<td>GRADUATE<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">66661</td>
+		<td rowspan = "1">BA 99.2 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			ARANDIA, HAYDE<br/>
+					</td>
+		 
+		<td>SE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">196</td>
+														
+		<td>For: SE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">66718</td>
+		<td rowspan = "1">BA 99.2 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			COSETENG, PATRICIA<br/>
+					</td>
+		 
+		<td>SE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">118</td>
+														
+		<td>For: SE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">66662</td>
+		<td rowspan = "1">BA 99.2 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			PARIL, ALLOYSIUS JOSHUA<br/>
+					</td>
+		 
+		<td>SE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">107</td>
+														
+		<td>For: SE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29828</td>
+		<td rowspan = "1">BC 122 WRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 8:30-11:30AM lec TBA<br />
+			ALJIBE, MA. AMOR<br/>
+			<em style="font-weight: bold">Prerequisite: BC 104. Stable internet connection. Computer or gadget (desktop, laptop, tablet, cellphone) with working video and audio input/output. UVLE account.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29820</td>
+		<td rowspan = "1">BC 124 TWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 1-4PM lec TBA<br />
+			VINCULADO, JANE<br/>
+			<em style="font-weight: bold">Prerequisite: BC 104. Internet connection, Video conferencing app (Preferably Google Meet or Zoom), laptop or gadget that can connect to the internet.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>11</strong> /
+				11			</td>
+												<td rowspan="1">17</td>
+														
+		<td>For: DBC(11 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29827</td>
+		<td rowspan = "1">BC 148 TRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lec TBA<br />
+			TAÑAQUIN, ANNICALOU<br/>
+			<em style="font-weight: bold">Prerequisite: BC 104. Internet connection, Video conferencing app (Preferably Google Meet or Zoom), laptop or gadget that can connect to the internet.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29829</td>
+		<td rowspan = "1">BC 174 THYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4-7PM lec TBA<br />
+			MANALO, EUGENE<br/>
+			<em style="font-weight: bold">Prerequisite: Junior Standing (JS). Internet Connection, Video conferencing app (zoom, google meet) laptop or any gadget that can be connected to the net / apps.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29822</td>
+		<td rowspan = "1">BC 181 WRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 8:30-11:30AM lec TBA<br />
+			AGUIRRE, ALWIN<br/>
+			<em style="font-weight: bold">Prerequisite: COMM 130. Internet connection; laptop, desktop, cell phone, or any gadget than can connIect to the internet with a working camera and audio receiver/mic. Apps like Messenger, Viber, Google Meet or Zoom. An UVLe account and your up.edu email address.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29823</td>
+		<td rowspan = "1">BC 182 FRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 8:30-11:30AM lec TBA<br />
+			AUSTRIA, FERNANDO<br/>
+			<em style="font-weight: bold">Prerequisite: COMM 130. Please email Prof. Austria at ubodngganda@gmail.com as soon as you enlist in this course. Include in this email your name, nickname, student number, your up.edu email address, the email you use for your Facebook account, and your cell phone number. Also attach your face picture in this email. He will email instructions for this course before the first meeting. Write BMAS 108 and section of this course as the subject of the email. Recommended: Internet connection, laptop or other gadget that can connect to the internet with a working camera and/or audio receiver and mic.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29826</td>
+		<td rowspan = "1">BC 196 THRU<br/>Korean Drama</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lec TBA<br />
+			ALJIBE, MA. AMOR<br/>
+			<em style="font-weight: bold">Prerequisite: Junior Standing (JS). Must be at least junior standing. Stable internet connection. Computer or gadget (desktop, laptop, or tablet) with working video and audio input/output. UVLE account. Must have access to Netflix or any access to the following kdrama series for the whole semester: Start-Up, Stranger 1, and W: Two Worlds Apart. I highly recommend to watch the three listed k-drama series before the start of the classes. This course is open to all colleges.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+												<td rowspan="1">29</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29824</td>
+		<td rowspan = "1">BC 198 WWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 1-4PM prac TBA<br />
+			ESTONILO, MELBA<br/>
+			<em style="font-weight: bold">Prerequisite: None. Internet connection, laptop or desktop and cell phone or other gadget than can connect to the internet with a working camera and audio receiver/mic. Apps like Messenger, Viber, Google Meet or Zoom.Your up.edu email address is also required.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29825</td>
+		<td rowspan = "1">BC 199 THRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lec TBA<br />
+			GUIEB, EULALIO<br/>
+			<em style="font-weight: bold">Prerequisite: None. Desktop, laptop, tablet, or phone with a working camera and audio input/output</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43045</td>
+		<td rowspan = "1">B Ind/Mal 12 TWHFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 10-11:30AM lec TBA<br />
+			ROSARIO, FRANCISCO<br/>
+			<em style="font-weight: bold">Prerequisite: B Ind/Mal 11; Integrated with B Ind/Mal 13</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43046</td>
+		<td rowspan = "1">B Ind/Mal 13 TWHFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 10-11:30AM lec TBA<br />
+			ROSARIO, FRANCISCO<br/>
+			<em style="font-weight: bold">Integrated with B Ind/Mal 12</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37501</td>
+		<td rowspan = "1">BIO 1 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			QUILANG, JONAS<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">50</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37502</td>
+		<td rowspan = "1">BIO 1 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			YASON, JOHN ANTHONY<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: BS CN(15 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37503</td>
+		<td rowspan = "1">BIO 1 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			QUILANG, JONAS<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">46</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37504</td>
+		<td rowspan = "1">BIO 1 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37505</td>
+		<td rowspan = "1">BIO 1 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37506</td>
+		<td rowspan = "1">BIO 1 THZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 5:30-7PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37507</td>
+		<td rowspan = "1">BIO 1 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37508</td>
+		<td rowspan = "1">BIO 1 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">20</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37509</td>
+		<td rowspan = "1">BIO 1 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">24</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37510</td>
+		<td rowspan = "1">BIO 1 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37511</td>
+		<td rowspan = "1">BIO 1 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37512</td>
+		<td rowspan = "1">BIO 1 WFZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 5:30-7PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37513</td>
+		<td rowspan = "2">BIO 11 THQ</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			TTh 7-8:30AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">40</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>MBBP<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37514</td>
+		<td rowspan = "2">BIO 11 THR</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			TTh 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">84</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>MBBP<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "5">37515</td>
+		<td rowspan = "5">BIO 11 THW</td>
+		<td rowspan = "5">3.0</td>
+		<td rowspan = "5">
+			TTh 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IC: 1B<br/><em></em></td>
+					<td>
+				<strong>17</strong> /
+				17			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IC: 1A<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+							<td>20</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="3">62</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IC<br/><em></em></td>
+					<td>
+				<strong>1</strong> /
+				1			</td>
+												
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>MBBP<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37516</td>
+		<td rowspan = "3">BIO 11 WFQ</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			WF 7-8:30AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB: 1st yr D<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+							<td>21</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 1st yr E<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">42</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37517</td>
+		<td rowspan = "1">BIO 11 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>40</strong> /
+				40			</td>
+												<td rowspan="1">86</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">37518</td>
+		<td rowspan = "4">BIO 11 WFW</td>
+		<td rowspan = "4">3.0</td>
+		<td rowspan = "4">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IC: 1D<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IC: 1C<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+							<td>20</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">20</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IC<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "6">37548</td>
+		<td rowspan = "6">BIO 11 WFW-3</td>
+		<td rowspan = "6">3.0</td>
+		<td rowspan = "6">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB: 1st yr A-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>10</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 1st yr A-2<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+							<td>7</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 1st yr B-1<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 1st yr B-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 1st yr C<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">112</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37533</td>
+		<td rowspan = "1">BIO 11 WFW-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td><br/><em></em></td>
+					<td colspan="2"><strong>DISSOLVED</strong></td>
+		
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37519</td>
+		<td rowspan = "2">BIO 11.1 THRU</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			TTh 8:30-11:30AM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">14</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>MBBP<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												
+		<td>For: MBBP</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37520</td>
+		<td rowspan = "2">BIO 11.1 THRU-1</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			TTh 8:30-11:30AM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">26</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>MBBP<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												
+		<td>For: MBBP</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37521</td>
+		<td rowspan = "1">BIO 11.1 THVW</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-2:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td><br/><em></em></td>
+					<td colspan="2"><strong>DISSOLVED</strong></td>
+		
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37522</td>
+		<td rowspan = "2">BIO 11.1 THVW-1</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			TTh 11:30AM-2:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">27</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>MBBP<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												
+		<td>For: MBBP</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37523</td>
+		<td rowspan = "1">BIO 11.1 THVW-2</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-2:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">57</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37524</td>
+		<td rowspan = "2">BIO 11.1 THXY</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			TTh 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">28</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>MBBP<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												
+		<td>For: MBBP</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37525</td>
+		<td rowspan = "3">BIO 11.1 THXY-1</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			TTh 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IC: 1A<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+							<td>20</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">27</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IC<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												
+		<td>For: IC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37526</td>
+		<td rowspan = "3">BIO 11.1 THXY-2</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			TTh 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IC: 1B<br/><em></em></td>
+					<td>
+				<strong>17</strong> /
+				17			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">7</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IC<br/><em></em></td>
+					<td>
+				<strong>1</strong> /
+				1			</td>
+												
+		<td>For: IC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37527</td>
+		<td rowspan = "2">BIO 11.1 WFRU</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			WF 8:30-11:30AM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB: 1st yr D<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+							<td>21</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37528</td>
+		<td rowspan = "2">BIO 11.1 WFRU-1</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			WF 8:30-11:30AM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB: 1st yr E<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37529</td>
+		<td rowspan = "1">BIO 11.1 WFVW</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-2:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">41</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37530</td>
+		<td rowspan = "1">BIO 11.1 WFVW-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-2:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">45</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37531</td>
+		<td rowspan = "3">BIO 11.1 WFXY</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			WF 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IC: 1C<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+							<td>20</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">9</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IC<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												
+		<td>For: IC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37532</td>
+		<td rowspan = "3">BIO 11.1 WFXY-1</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			WF 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IC: 1D<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">11</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IC<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												
+		<td>For: IC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">37534</td>
+		<td rowspan = "4">BIO 11.1 WFXY-2</td>
+		<td rowspan = "4">2.0</td>
+		<td rowspan = "4">
+			WF 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB: 1st yr A-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>10</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 1st yr A-2<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+							<td>7</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 1st yr B-1<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">57</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37535</td>
+		<td rowspan = "3">BIO 11.1 WFXY-3</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			WF 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB: 1st yr B-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 1st yr C<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">55</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37546</td>
+		<td rowspan = "1">BIO 12 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">50</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37547</td>
+		<td rowspan = "1">BIO 12 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">33</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37549</td>
+		<td rowspan = "1">BIO 12.1 THVW</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37550</td>
+		<td rowspan = "1">BIO 12.1 THVW1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37551</td>
+		<td rowspan = "1">BIO 12.1 THXY</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37552</td>
+		<td rowspan = "1">BIO 12.1 WFVW</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37553</td>
+		<td rowspan = "1">BIO 12.1 WFXY</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37543</td>
+		<td rowspan = "2">BIO 100 TBC</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 9-11AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr D<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37554</td>
+		<td rowspan = "1">BIO 100 TKL</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 2-3PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td><br/><em></em></td>
+					<td colspan="2"><strong>DISSOLVED</strong></td>
+		
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37632</td>
+		<td rowspan = "3">BIO 100 TKL-1</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			T 3-5PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr A-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr A-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37544</td>
+		<td rowspan = "2">BIO 100 HRU</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr D<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37555</td>
+		<td rowspan = "3">BIO 100 HXY</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			Th 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr A-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr A-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37545</td>
+		<td rowspan = "3">BIO 101 THA</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			TTh 7-8AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr C-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr C-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>10</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37556</td>
+		<td rowspan = "3">BIO 101 WFA</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			WF 7-8AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr A-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr A-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37560</td>
+		<td rowspan = "2">BIO 101 FRU</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			F 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr A-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37558</td>
+		<td rowspan = "2">BIO 101 HRU</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr C-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37557</td>
+		<td rowspan = "2">BIO 101 TRU</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			T 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr C-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>10</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37559</td>
+		<td rowspan = "2">BIO 101 WRU</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			W 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr A-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37561</td>
+		<td rowspan = "3">BIO 102 THW</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			TTh 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr C-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>10</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr C-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">52</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "5">37562</td>
+		<td rowspan = "5">BIO 102 WFW</td>
+		<td rowspan = "5">3.0</td>
+		<td rowspan = "5">
+			WF 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr B-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr A-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr A-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr B-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">40</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37563</td>
+		<td rowspan = "1">BIO 102.1 THRU</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">29</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37564</td>
+		<td rowspan = "3">BIO 102.1 THXY</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			TTh 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr C-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>10</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr C-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37565</td>
+		<td rowspan = "3">BIO 102.1 WFRU</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr B-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr B-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37566</td>
+		<td rowspan = "3">BIO 102.1 WFXY</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			WF 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr A-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr A-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37591</td>
+		<td rowspan = "1">BIO 112 WFG</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			WF 12-1PM class TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37592</td>
+		<td rowspan = "1">BIO 112 WFRU</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37593</td>
+		<td rowspan = "1">BIO 113 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37611</td>
+		<td rowspan = "1">BIO 117 WFW</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37612</td>
+		<td rowspan = "1">BIO 117 WFRU</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			WF 8:30-11:30AM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37567</td>
+		<td rowspan = "3">BIO 120 THG</td>
+		<td rowspan = "3">4.0</td>
+		<td rowspan = "3">
+			TTh 12-1PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr C<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr D<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">37568</td>
+		<td rowspan = "4">BIO 120 WFG</td>
+		<td rowspan = "4">4.0</td>
+		<td rowspan = "4">
+			WF 12-1PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr A<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr B-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr B-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37569</td>
+		<td rowspan = "2">BIO 120 THRU</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			TTh 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr C<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37570</td>
+		<td rowspan = "2">BIO 120 THXY</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			TTh 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr D<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37571</td>
+		<td rowspan = "2">BIO 120 WFRU</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr A<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37572</td>
+		<td rowspan = "3">BIO 120 WFXY</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			WF 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 2nd yr B-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 2nd yr B-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">37573</td>
+		<td rowspan = "4">BIO 121 WFG</td>
+		<td rowspan = "4">4.0</td>
+		<td rowspan = "4">
+			WF 12-1PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr D-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 3rd yr D-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 3rd yr B<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>4</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37574</td>
+		<td rowspan = "2">BIO 121 WFRU</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr B<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>4</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37575</td>
+		<td rowspan = "3">BIO 121 WFXY</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			WF 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr D-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 3rd yr D-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37576</td>
+		<td rowspan = "2">BIO 122 WFW</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			WF 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr A<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37613</td>
+		<td rowspan = "1">BIO 122.1 THXY</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37577</td>
+		<td rowspan = "1">BIO 122.1 WFRU</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37578</td>
+		<td rowspan = "1">BIO 122.1 WFVW</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37579</td>
+		<td rowspan = "2">BIO 122.1 WFXY</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			WF 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr A<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37594</td>
+		<td rowspan = "1">BIO 123 FCD</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 9-11AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37595</td>
+		<td rowspan = "1">BIO 123 WRU</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			W 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37596</td>
+		<td rowspan = "1">BIO 133 THW</td>
+		<td rowspan = "1">5.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37597</td>
+		<td rowspan = "1">BIO 133 THRU</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			TTh 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37598</td>
+		<td rowspan = "1">BIO 133 THXY</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			TTh 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37601</td>
+		<td rowspan = "1">BIO 134 TKL</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 3-5PM class TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37602</td>
+		<td rowspan = "1">BIO 134 HXY</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			Th 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37580</td>
+		<td rowspan = "3">BIO 140 THQ</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			TTh 7-8:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr D-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 3rd yr D-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37581</td>
+		<td rowspan = "3">BIO 140.1 THRU</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			TTh 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr D-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 3rd yr D-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37582</td>
+		<td rowspan = "1">BIO 140.1 THVW</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37583</td>
+		<td rowspan = "1">BIO 140.1 THXY</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37603</td>
+		<td rowspan = "1">BIO 141 TCD</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 9-11AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37609</td>
+		<td rowspan = "1">BIO 141 HRU</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37584</td>
+		<td rowspan = "3">BIO 150 WFQ</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			WF 7-8:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr C<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 3rd yr B<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>4</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37585</td>
+		<td rowspan = "1">BIO 150.1 WFRU</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37586</td>
+		<td rowspan = "2">BIO 150.1 WFVW</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			WF 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr C<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37587</td>
+		<td rowspan = "2">BIO 150.1 WFXY</td>
+		<td rowspan = "2">2.0</td>
+		<td rowspan = "2">
+			WF 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr B<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>4</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37608</td>
+		<td rowspan = "1">BIO 151 HCD</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			Th 9-11AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37610</td>
+		<td rowspan = "1">BIO 151 TRU</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37588</td>
+		<td rowspan = "3">BIO 160 THV</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			TTh 11:30AM-1PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr D-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 3rd yr D-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37589</td>
+		<td rowspan = "1">BIO 160.1 THRU</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">37590</td>
+		<td rowspan = "3">BIO 160.1 THXY</td>
+		<td rowspan = "3">2.0</td>
+		<td rowspan = "3">
+			TTh 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr D-2<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB: 3rd yr D-1<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37606</td>
+		<td rowspan = "1">BIO 163 TGI</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 12-2PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37607</td>
+		<td rowspan = "1">BIO 163 HVW</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			Th 11:30AM-2:30PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37605</td>
+		<td rowspan = "1">BIO 164 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37604</td>
+		<td rowspan = "1">BIO 165 THZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 5:30-7PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37599</td>
+		<td rowspan = "2">BIO 191 FKL</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			F 3-5PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr C<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">37600</td>
+		<td rowspan = "2">BIO 191 WXY</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			W 2:30-5:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>IB: 3rd yr C<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37614</td>
+		<td rowspan = "1">BIO 196 WO</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			W 6-7PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37615</td>
+		<td rowspan = "1">BIO 210 TKL/HXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 2:30-5:30PM lec TBA; T 3-5PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37616</td>
+		<td rowspan = "1">BIO 220 HGI/TVW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 11:30AM-2:30PM lec TBA; Th 12-2PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37617</td>
+		<td rowspan = "1">BIO 233 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37618</td>
+		<td rowspan = "1">BIO 240 WOA/FZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 5:30-8:30PM lec TBA; W 6-8PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37619</td>
+		<td rowspan = "1">BIO 241 SDE/SWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 10AM-12PM lec TBA; S 1-4PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37620</td>
+		<td rowspan = "1">BIO 243 WCD/FRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 8:30-11:30AM lab TBA; W 9-11AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37621</td>
+		<td rowspan = "1">BIO 250 TXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 2:30-5:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37622</td>
+		<td rowspan = "1">BIO 251 FCD/WRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 8:30-11:30AM lec TBA; F 9-11AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37623</td>
+		<td rowspan = "1">BIO 260 WCD/FRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 8:30-11:30AM lab TBA; W 9-11AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37624</td>
+		<td rowspan = "1">BIO 262 SDE/SWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 10AM-12PM lec TBA; S 1-4PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37625</td>
+		<td rowspan = "1">BIO 265 WFZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 5:30-7PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37626</td>
+		<td rowspan = "1">BIO 281 WXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 2:30-5:30PM disc TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">37627</td>
+		<td rowspan = "1">BIO 296 HO</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			Th 6-7PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>IB<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">24630</td>
+		<td rowspan = "1">Bioethics 212 FYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 4-7PM disc TBA<br />
+			MANALOTO, RENATO<br/>
+					</td>
+		 
+		<td>Philo<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">24632</td>
+		<td rowspan = "1">Bioethics 231 HNOP</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5-8PM disc TBA<br />
+			DE CASTRO, LEONARDO<br/>
+					</td>
+		 
+		<td>Philo<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">28151</td>
+		<td rowspan = "1">BJ 101 FRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 8:30-11:30AM lec TBA<br />
+			LOS BANOS, MARIE ANN<br/>
+			<em style="font-weight: bold"> Prereq: SYS</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">28152</td>
+		<td rowspan = "1">BJ 101 HWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lec TBA<br />
+			DAVID, KARA PATRIA<br/>
+			<em style="font-weight: bold"> Prereq: SYS</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">29</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29810</td>
+		<td rowspan = "1">BJ 130 THRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lec TBA<br />
+			ENRIQUEZ, ELIZABETH<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100 or BJ 101. Internet connection. Video conferencing app (Google Meet, Messenger, Viber, or Zoom). Computer or gadget (desktop, laptop, tablet, cellphone) with working video and audio input/output. UVLE account.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">44</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29821</td>
+		<td rowspan = "1">BJ 130 TRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lec TBA<br />
+			CLAUDIO, MA. IVY<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100 or BJ 101</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">26</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29830</td>
+		<td rowspan = "1">BMAS 100 MYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 4-7PM lec TBA<br />
+			ILAGAN, CECILE ANGELA<br/>
+			<em style="font-weight: bold">Prerequisite: None. </em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29831</td>
+		<td rowspan = "1">BMAS 100 THYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4-7PM lec TBA<br />
+			ILAGAN, CECILE ANGELA<br/>
+			<em style="font-weight: bold">Prerequisite: None. </em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29808</td>
+		<td rowspan = "1">BMAS 105 THWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lec TBA<br />
+			ESTONILO, MELBA<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Internet connection, laptop or desktop and cell phone or other gadget than can connIect to the internet with a working camera and audio receiver/mic. Apps like Messenger, Viber, Google Meet or Zoom.Your up.edu email address is also required. UVLe account.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29802</td>
+		<td rowspan = "1">BMAS 105 TWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 1-4PM lec TBA<br />
+			ESTONILO, MELBA<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Internet connection, laptop or desktop and cell phone or other gadget than can connIect to the internet with a working camera and audio receiver/mic. Apps like Messenger, Viber, Google Meet or Zoom.Your up.edu email address is also required. UVLe account.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29801</td>
+		<td rowspan = "1">BMAS 107 TRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lec/work TBA<br />
+			ALJIBE, MA. AMOR<br/>
+			<em style="font-weight: bold">Prerequisite: None. Stable internet connection. Computer or gadget (desktop, laptop, tablet, cellphone) with working video and audio input/output. UVLE account.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29805</td>
+		<td rowspan = "1">BMAS 107 TWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 1-4PM lec/work TBA<br />
+			ALJIBE, MA. AMOR<br/>
+			<em style="font-weight: bold">Prerequiite: None. Stable internet connection. Computer or gadget (desktop, laptop, tablet, cellphone) with working video and audio input/output. UVLE account.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">24</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29807</td>
+		<td rowspan = "1">BMAS 108 THRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lec/work TBA<br />
+			VINCULADO, JANE<br/>
+			<em style="font-weight: bold">Prerequisite: None. Internet connection, Video conferencing app (Preferably Google Meet or Zoom), laptop or gadget that can connect to the internet.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29803</td>
+		<td rowspan = "1">BMAS 108 THWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lec/work TBA<br />
+			VINCULADO, JANE<br/>
+			<em style="font-weight: bold">Prerequisite: None. Internet connection, Video conferencing app (Preferably Google Meet or Zoom), laptop or gadget that can connect to the internet.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29804</td>
+		<td rowspan = "1">BMAS 109 FRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 8:30-11:30AM lec TBA<br />
+			BRILLON, CHERISH AILEEN<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Internet connection, laptop or other gadget that can connect to the internet with a working camera and/or audio receiver and mic. We will be using Google Classroom and Zoom. Your official UP.edu email address is required.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29806</td>
+		<td rowspan = "1">BMAS 109 WWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 1-4PM lec TBA<br />
+			ENRIQUEZ, ELIZABETH<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Internet connection. Video conferencing app (Google Meet, Messenger, Viber, or Zoom). Computer or gadget (desktop, laptop, tablet, cellphone) with working video and audio input/output. UVLE account.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">32</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29814</td>
+		<td rowspan = "1">BMAS 111 TRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lec TBA<br />
+			GUIEB, EULALIO<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 102, BMAS 103</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29817</td>
+		<td rowspan = "1">BMAS 111 TRU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lec TBA<br />
+			AUSTRIA, FERNANDO<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 102, BMAS 103. Please email Prof. Austria at ubodngganda@gmail.com as soon as you enlist in this course. Include in this email your name, nickname, student number, your up.edu email address, the email you use for your Facebook account, and your cell phone number. Also attach your face picture in this email. He will email instructions for this course before the first meeting. Write BMAS 108 and section of this course as the subject of the email. Recommended: Internet connection, laptop or other gadget that can connect to the internet with a working camera and/or audio receiver and mic.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">25</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29811</td>
+		<td rowspan = "1">BMAS 123 THWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lec TBA<br />
+			TOLENTINO-CANLAS, DAPHNE-TATIANA<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Internet connection, laptop or other gadget that can connect to the internet with a working camera and/or audio receiver and mic. Apps like Viber, Messenger, Google Meet, or Zoom. Your official UP.edu email address is required. Email helpdesk@up.edu.ph if you do not have one yet. After enlisting, email me (Subject: BMAS123) at dtcanlas@up.edu.ph with your current mobile number.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29812</td>
+		<td rowspan = "1">BMAS 123 WWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 1-4PM lec TBA<br />
+			AGUIRRE, ALWIN<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Internet connection; laptop, desktop, cell phone, or any gadget than can connIect to the internet with a working camera and audio receiver/mic. Apps like Messenger, Viber, Google Meet or Zoom. An UVLe account and your up.edu email address.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29819</td>
+		<td rowspan = "1">BMAS 125 FXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 2:30-5:30PM lec TBA<br />
+			AUSTRIA, FERNANDO<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Please email Prof. Austria at ubodngganda@gmail.com as soon as you enlist in this course. Include in this email your name, nickname, student number, your up.edu email address, the email you use for your Facebook account, and your cell phone number. Also attach your face picture in this email. He will email instructions for this course before the first meeting. Write BMAS 108 and section of this course as the subject of the email. Recommended: Internet connection, laptop or other gadget that can connect to the internet with a working camera and/or audio receiver and mic.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">34</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29813</td>
+		<td rowspan = "1">BMAS 125 THRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lec TBA<br />
+			AUSTRIA, FERNANDO<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Please email Prof. Austria at ubodngganda@gmail.com as soon as you enlist in this course. Include in this email your name, nickname, student number, your up.edu email address, the email you use for your Facebook account, and your cell phone number. Also attach your face picture in this email. He will email instructions for this course before the first meeting. Write BMAS 108 and section of this course as the subject of the email. Recommended: Internet connection, laptop or other gadget that can connect to the internet with a working camera and/or audio receiver and mic.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29816</td>
+		<td rowspan = "1">BMAS 125 THWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lec TBA<br />
+			AUSTRIA, FERNANDO<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Please email Prof. Austria at ubodngganda@gmail.com as soon as you enlist in this course. Include in this email your name, nickname, student number, your up.edu email address, the email you use for your Facebook account, and your cell phone number. Also attach your face picture in this email. He will email instructions for this course before the first meeting. Write BMAS 108 and section of this course as the subject of the email. Recommended: Internet connection, laptop or other gadget that can connect to the internet with a working camera and/or audio receiver and mic.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">28</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29809</td>
+		<td rowspan = "1">BMAS 125 TWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 1-4PM lec TBA<br />
+			CLAUDIO, MA. IVY<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29815</td>
+		<td rowspan = "1">BMAS 126 WRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 8:30-11:30AM lec TBA<br />
+			TAÑAQUIN, ANNICALOU<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Internet connection, Video conferencing app (Preferably Google Meet or Zoom), laptop or gadget that can connect to the internet.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">29</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">29818</td>
+		<td rowspan = "1">BMAS 126 WWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 1-4PM lec TBA<br />
+			TAÑAQUIN, ANNICALOU<br/>
+			<em style="font-weight: bold">Prerequisite: BMAS 100. Internet connection, Video conferencing app (Preferably Google Meet or Zoom), laptop or gadget that can connect to the internet.</em>		</td>
+		 
+		<td>DBC<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">42</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+	</table>
+
+</div><!-- #content -->
+
+﻿
+<script type="text/javascript">
+			
+		$(document).ready(function() {
+			
+			//set the width per footer_expander element
+			var expander_count = $('.footerlink').length;
+			var expander_width = (83/expander_count);
+			
+			var i = 0;
+			$.each($(".footerlink"), function(index, value){
+				$(this).css('width', expander_width+'%');
+				$(this).css('left', (((expander_width)*i)+10)+'%');
+				i++;
+			});
+			
+			$(".footerlink,.footer_expander").hover(
+				function(){
+					$(this).animate({ height: "30"}, 50);
+				},
+				function(){
+					$(this).animate({ height: "16"}, 50);
+				
+				}
+			);
+			
+			//set the width per footer_expander element
+			var division_count = $('.footer_division').length;
+			var division_width = (88/division_count);
+			division_width = division_width+'%';
+			
+			$.each($(".footer_division"), function(index, value){
+				$(this).css('width', division_width);
+			});
+			
+		function change_acadtermtype() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_acadtermtype/' + $(this).val();
+		}
+
+		function change_role() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_role/' + $(this).val();
+		}
+
+		function show_roles() {
+			$("#span_role").addClass("hidden");
+			$("#span_role-choices").removeClass("hidden");
+		}
+
+		function show_acadtermtypes() {
+			$("#span_acadtermtype").addClass("hidden");
+			$("#span_acadtermtype-choices").removeClass("hidden");
+		}
+
+	 });
+	 
+	
+	function showFooter(){
+		$('#footer').slideDown(150);
+		$('.footermin').hide();
+	}
+	function hideFooter(){
+		$('#footer').slideUp(150);
+		$('.footermin').show();
+	}
+	</script>
+
+<span style="clear:both;"></span>
+
+	<div class="footer_expander footermin" onclick="showFooter();">
+		More ▲
+	</div>
+
+		<div id="footer" align="center">
+		<div id="footer_linktotop" align="right" onclick="hideFooter();">
+			<a href="Javascript:void(0);" onclick="hideFooter();" style="color:white">Less ▼</a>
+		</div>
+		<div style="padding-top: 30px;">
+						<div class="footer_division">
+				<div class="footer_division_header">Flowcharts</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/OnlineDroppingFlowchart.pdf" >
+								Dropping							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ChangeMatFlowchart_modified.pdf" >
+								Change Mat							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ClearanceMechanics.pdf" >
+								Clearance							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/downloads/LOA_mechanics.pdf" >
+								Leave of Absence							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Class Schedules</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/" >
+								Regular Classes							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/mba" >
+								MBA/MS Finance PT							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/schedule/spring" >
+								Spring Asia							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Information</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/course_catalog" >
+								Course Catalog							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/curriculum.html" >
+								Curriculum Checklist							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="http://our.upd.edu.ph/files/ListofGECourses.pdf" >
+								List of RGEP Courses							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Calendar</div>
+																		<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/acadcal.php" >
+								BOR Approved<br>Academic Calendar<br>							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular" >
+								Regular Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/mba" >
+								MBA/MS Fin PT Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/msfin" >
+								MS Fin FT Calendar							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/spring" >
+								Spring Asia Calendar							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">CRS</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/faq" >
+								CRS FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/faq.html" >
+								OUR FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>History of the CRS<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+													<span>User Guide<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/about/" >
+								The CRS Team<br/>							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/privacy_notice" >
+								Privacy Notice							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Contact Us</div>
+																		<div class="footer_division_item ">
+																				<a href="http://www.facebook.com/groups/134746139953068/" >
+								Facebook Group							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="mailto:support@crs.upd.edu.ph" >
+								E-Mail							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>Phone<br/>(981-8500 local 4560)</span>
+											</div>
+																								<div class="footer_division_item fdt_last">
+													<span>You may visit us at the CRSRS Office at the 3rd floor of the OUR.</span>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">External Links</div>
+																		<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/" >
+								UP Diliman							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://up.edu.ph/" >
+								UP System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/" >
+								OUR Site							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://sts.up.edu.ph/" >
+								Socialized Tuition System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://dormapplication.upd.edu.ph/" >
+								Dorm Application Website							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://uvle.up.edu.ph/" >
+								UvLE							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://ucc.upd.edu.ph/about-us/" >
+								UPCC							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://mail.up.edu.ph/" >
+								UP Webmail							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://www.dzup.org/" >
+								DZUP							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/aup/" >
+								Acceptable Use Policy							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://upd.edu.ph/privacy" >
+								UP Diliman<br/>Data Privacy Portal							</a>
+											</div>
+																	</div>
+					</div>
+	</div>
+
+	<div class="footer_quicklinks footermin">
+		Quick Links:
+	</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/schedule/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/schedule/">
+				Regular Classes			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/course_catalog'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/course_catalog">
+				Course Catalog			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='http://our.upd.edu.ph/curriculum.html'">
+			<a class="a_footerlink" href="http://our.upd.edu.ph/curriculum.html">
+				Curriculum Checklist			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/acadcal_public/index/advanced/regular'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular">
+				Regular Calendar			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/faq'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/faq">
+				CRS FAQ			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/about/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/about/">
+				The CRS Team<br/>			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/privacy_notice'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/privacy_notice">
+				Privacy Notice			</a>
+		</div>
+	</body>
+</html>
