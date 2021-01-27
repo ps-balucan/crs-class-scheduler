@@ -1,0 +1,2642 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109224015-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-109224015-1');
+        </script>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<title>UP CRS - Schedule of Classes</title>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.widgets.js"></script>
+
+
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/layout.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/status.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/schedule.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/tablesorter/tablesorter.css" type="text/css" />
+	<link rel="shortcut icon" href="https://crs.upd.edu.ph/images/favicon.ico" type="image/x-icon" />
+
+	<style type="text/css">
+		#tbl_schedule tbody:hover {
+			background-color: #F0F0AF;
+		}
+	</style>
+	
+	<script type="text/javascript" language="JavaScript">
+	$(document).ready(function() {
+		$('#btn_search').click(searchClasses);
+		$('#frm_schedule').submit(function(e) {
+			e.preventDefault();
+			searchClasses();
+		});
+
+//		// table sorter
+//		$.tablesorter.addParser({
+//			// set uniqueid
+//			id: 'availableslots',
+//			is: function(s) {
+//				// return false so that parser is not automatically detected
+//				return false;
+//			},
+//			format: function(s) {
+//				var temp = s.replace('<strong>','').replace('</strong>','').split('/');
+//				return temp[0];
+//			},
+//			// set type to numeric
+//			type: 'numeric'
+//		});
+
+//		$('#tbl_schedule').tablesorter({widgets:['zebra'], headers: {0:{sorter:false},2:{sorter:false},4:{sorter:'availableslots'},5:{sorter:false}}});
+
+	});
+
+	function searchClasses() {
+		var coursenumber = $.trim($('#txt_coursenumber').val());
+		var term = $.trim($('#txt_term').val());
+		var alphanumeric_pattern = /^[a-zA-Z0-9\.\s]+$/;
+
+		if(coursenumber != '') {
+			if( ! alphanumeric_pattern.test(coursenumber)) {
+				alert('Course number must be alphanumeric.');
+			} else {
+				window.location = 'https://crs.upd.edu.ph/schedule' + '/'+ term + '/'+ coursenumber ;
+			}
+		}
+
+	}
+
+	</script>
+
+<style>
+	#frm_schedule {
+		margin: auto;
+		width: 25%;
+		background: #FCFCF0;
+		border: 3px solid #444444;
+		padding: 1em;
+	}
+	#frm_schedule strong, #search input {
+		padding-right: 1em;
+	}
+</style>
+</head>
+
+<body class="schedule">
+
+<div id="header">
+	<a href="https://crs.upd.edu.ph/user" class="header_link"></a>
+</div>
+<div id="subheader">
+</div>
+
+<div id="content" class="align-center">
+
+<h1>
+	Schedule of Classes<br />
+		<select id="txt_term" name="txt_term" style="padding: 2px; border: 1px solid #CECECE; border-radius: 5px; font-size: 100%; text-align: right;" onchange="searchClasses();">
+					<option value="120192" >Second Semester AY 2019-2020</option>
+					<option value="120194" >Midyear Term 2020</option>
+					<option value="120201" >First Semester AY 2020-2021</option>
+					<option value="120202" selected="selected">Second Semester AY 2020-2021</option>
+					<option value="120204" >Midyear Term 2021</option>
+		</select>
+	</h1>
+
+<br />
+<form id="frm_schedule" action="" method="post">
+Course Number: 
+<input type="text" id="txt_coursenumber" name="txt_coursenumber" placeholder="(e.g., Math 11, Eng 1)"/>
+<br/> 
+<input type="button" id="btn_search" name="btn_search" value="Search" />
+</form>
+
+<br/>
+<p>
+	<a href="https://crs.upd.edu.ph/schedule/120202/A">A</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/B">B</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/C">C</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/D">D</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/E">E</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/F">F</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/G">G</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/H">H</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/I">I</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/J">J</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/K">K</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/L">L</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/M">M</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/N">N</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/O">O</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/P">P</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Q">Q</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/R">R</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/S">S</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/T">T</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/U">U</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/V">V</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/W">W</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/X">X</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Y">Y</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Z">Z</a>&nbsp;
+<a href="https://crs.upd.edu.ph/">Back to main page</a>
+</p>
+<br />
+<div style="text-align: left; padding: 0; margin: 0;"><strong>Results for: <em>H</em></strong></div>
+<table id="tbl_schedule" style="table-layout: fixed	">
+<thead>
+<tr>
+	<th width="5%">Class Code</th>
+	<th width="15%">Class</th>
+	<th width="5%">Credits</th>
+	<th width="30%">
+		Schedule<br />
+		Instructor(s)<br/>
+		Remarks
+	</th>
+	<th width="15%">Enlisting Unit : Block<br/><b>Block Remarks</b></th>
+	<th width="10%">
+		Available Slots /<br />
+		Total Slots
+	</th>
+	<th width="5%">Demand</th>
+	<th width="15%">Restrictions</th>
+</tr>
+</thead>
+
+	<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43006</td>
+		<td rowspan = "1">Hapon 10 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			CABAZOR, ATHENA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">61</td>
+														
+		<td>For: SE(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43007</td>
+		<td rowspan = "1">Hapon 10 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			CABAZOR, ATHENA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">60</td>
+														
+		<td>For: SE(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43056</td>
+		<td rowspan = "1">Hapon 10 THX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			VICTORIO, JONALENE<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">66</td>
+														
+		<td>For: BA BC(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43010</td>
+		<td rowspan = "1">Hapon 10 TWHFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 8:30-10AM lec TBA<br />
+			SUNGA, LEAN AKIKO<br/>
+			<em style="font-weight: bold">Integrated with Hapon 11</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">58</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43004</td>
+		<td rowspan = "1">Hapon 10 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			ALVAREZ, ROELIA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">46</td>
+														
+		<td>For: SE(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43009</td>
+		<td rowspan = "1">Hapon 10 WFR-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			ESPIRITU, JUNILO<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">62</td>
+														
+		<td>For: BA CommRes(1 slots), BA J(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43005</td>
+		<td rowspan = "1">Hapon 10 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			ALVAREZ, ROELIA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">45</td>
+														
+		<td>For: BS HRIM(3 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43008</td>
+		<td rowspan = "1">Hapon 10 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			DOFITAS, CRISTOPHER VINCENT<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">49</td>
+														
+		<td>For: SE(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43057</td>
+		<td rowspan = "1">Hapon 11 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			VICTORIO, JONALENE<br/>
+			<em style="font-weight: bold">Prerequisite: Hapon 10</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">43</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43011</td>
+		<td rowspan = "1">Hapon 11 TWHFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 8:30-10AM lec TBA<br />
+			SUNGA, LEAN AKIKO<br/>
+			<em style="font-weight: bold">Integrated with Hapon 10</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">58</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43024</td>
+		<td rowspan = "1">Hapon 11 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			SUNGA, LEAN AKIKO<br/>
+			<em style="font-weight: bold">Prerequisite: Hapon 10</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">31</td>
+														
+		<td>For: SE(3 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43022</td>
+		<td rowspan = "1">Hapon 11 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			ALVAREZ, ROELIA<br/>
+			<em style="font-weight: bold">Prerequisite: Hapon 10</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">41</td>
+														
+		<td>For: BA BC(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43023</td>
+		<td rowspan = "1">Hapon 11 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			DOFITAS, CRISTOPHER VINCENT<br/>
+			<em style="font-weight: bold">Prerequisite: Hapon 10</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">29</td>
+														
+		<td>For: BS HRIM(2 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43080</td>
+		<td rowspan = "1">Hapon 11 WFX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			VICTORIO, JONALENE<br/>
+			<em style="font-weight: bold">Prerequisite: Hapon 10</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43025</td>
+		<td rowspan = "1">Hapon 12 THQR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 7-10AM lec TBA<br />
+			ESPIRITU, JUNILO<br/>
+			<em style="font-weight: bold">Prerequisite: Hapon 11; Integrated with Hapon 13</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: BS HRIM(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43054</td>
+		<td rowspan = "1">Hapon 12 TWHFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 2:30-4PM lec TBA<br />
+			RAFAEL, RIA<br/>
+			<em style="font-weight: bold">Prerequisite: Hapon 11; Integrated with Hapon 13</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">35</td>
+														
+		<td>For: BA (Ling)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43026</td>
+		<td rowspan = "1">Hapon 13 THQR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 7-10AM lec TBA<br />
+			ESPIRITU, JUNILO<br/>
+			<em style="font-weight: bold">Integrated with Hapon 12</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: BS HRIM(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43055</td>
+		<td rowspan = "1">Hapon 13 TWHFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 2:30-4PM lec TBA<br />
+			RAFAEL, RIA<br/>
+			<em style="font-weight: bold">Integrated with Hapon 12</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">35</td>
+														
+		<td>For: BA (Ling)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43047</td>
+		<td rowspan = "1">Hapon 110 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			DOFITAS, CRISTOPHER VINCENT<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: BA (Ling)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43048</td>
+		<td rowspan = "1">Hapon 120 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			RAFAEL, RIA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td>For: BA (Ling)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43049</td>
+		<td rowspan = "1">Hapon 121 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			FUKAYAMA, ARE<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43050</td>
+		<td rowspan = "1">Hapon 122 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			DOFITAS, CRISTOPHER VINCENT<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23755</td>
+		<td rowspan = "1">HE 100 MJKL</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 2-5PM lec TBA<br />
+			YATCO, KATTLEYA MARIE REINE<br/>
+			<em style="font-weight: bold">Reserve to section to BSCN</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">84</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23752</td>
+		<td rowspan = "1">HE 100 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			GABRIEL, FLORENDA<br/>
+			<em style="font-weight: bold">AFA 4A, 2-3 / Program</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+												<td rowspan="1">40</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23754</td>
+		<td rowspan = "1">HE 100 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			LIM, LESTER JOHN<br/>
+			<em style="font-weight: bold">Students are expected to have access to a smartphone/tablet/laptop/ desktop computer, with an image capturing device, to have a valid working email address, and to have a reliable internet for remote (asynchronous and possibly synchronous) learning</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">54</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23759</td>
+		<td rowspan = "1">HE 101 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			LUMAWIG, MARIA JOSEPHINE<br/>
+			<em style="font-weight: bold">FOR CHE ONLY</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23756</td>
+		<td rowspan = "1">HE 101 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			YATCO, KATTLEYA MARIE REINE<br/>
+					</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">53</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23751</td>
+		<td rowspan = "1">HE 101 WDEG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 10AM-1PM lec TBA<br />
+			UGADDAN, MIRIAM<br/>
+			<em style="font-weight: bold">Students are expected to have access to a smartphone/tablet/laptop/ desktop computer, with an image capturing device, to have a valid working email address, and to have a reliable internet for remote (asynchronous and possibly synchronous) learning</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">30</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23760</td>
+		<td rowspan = "1">HE 290 290B-1</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			M 5-6PM lec TBA<br />
+			FLORENDO, RAQUEL<br/>
+			<em style="font-weight: bold">FOR CHE, For those who took 290A during 1st sem 20-21 only</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>9</strong> /
+				9			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23761</td>
+		<td rowspan = "1">HE 290 HE290B-2</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			M 5-6PM lec TBA<br />
+			GUEVARRA, SHIRLEY<br/>
+			<em style="font-weight: bold">FOR CHE, For those who took 290A during 1st sem 20-21 only</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">23762</td>
+		<td rowspan = "1">HE 390 HE390B-1</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			M 5-6PM lec TBA<br />
+			FLORENDO, RAQUEL<br/>
+			<em style="font-weight: bold">FOR CHE, For those who took 390A during 1st sem 20-21 only</em>		</td>
+		 
+		<td>OCS<br/><em></em></td>
+					<td>
+				<strong>1</strong> /
+				1			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21551</td>
+		<td rowspan = "1">HEEd 122 MABC</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 7-10AM lec TBA<br />
+			MARIANO, ANNALISA MARGARITA<br/>
+					</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21552</td>
+		<td rowspan = "1">HEEd 131 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			BANTANG, JOANNE<br/>
+			<em style="font-weight: bold">AFA 4A</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21553</td>
+		<td rowspan = "1">HEEd 134 THRUV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8AM-1PM prac TBA<br />
+			CHUA, CONSUELO<br/>
+			<em style="font-weight: bold">AFA 4A, Pre-req HEED 133</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21554</td>
+		<td rowspan = "1">HEEd 137 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			BANTANG, JOANNE<br/>
+			<em style="font-weight: bold">Pre-req HEED 135</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21556</td>
+		<td rowspan = "1">HEEd 138 THVWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-3PM lab TBA<br />
+			AMONOY, MARY JUSTINE CLARISE<br/>
+			<em style="font-weight: bold">Pre-req Stat 101/ COI</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21555</td>
+		<td rowspan = "1">HEEd 139 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			LLIGE, AURORA<br/>
+			<em style="font-weight: bold">Junior Standing</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21567</td>
+		<td rowspan = "1">HEEd 149 THAG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 7AM-1PM prac TBA<br />
+			AMONOY, MARY JUSTINE CLARISE<br/>
+					</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21557</td>
+		<td rowspan = "1">HEEd 197 THKL<br/></td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 3:30-5PM lec TBA<br />
+			GABRIEL, FLORENDA<br/>
+			<em style="font-weight: bold">Junior Standing/ COI</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21559</td>
+		<td rowspan = "1">HEEd 200 CTC</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TBA<br />
+			CHUA, CONSUELO<br/>
+			<em style="font-weight: bold">AFA 4A, Pre-req HEED 197. 199</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21560</td>
+		<td rowspan = "1">HEEd 200 FSG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TBA<br />
+			GABRIEL, FLORENDA<br/>
+			<em style="font-weight: bold">AFA 4A, Pre-req HEED 197. 199</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21558</td>
+		<td rowspan = "1">HEEd 200 JRB</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TBA<br />
+			BANTANG, JOANNE<br/>
+			<em style="font-weight: bold">AFA 4A, Pre-req HEED 197. 199</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21561</td>
+		<td rowspan = "1">HEEd 200 MJCA</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TBA<br />
+			AMONOY, MARY JUSTINE CLARISE<br/>
+			<em style="font-weight: bold">AFA 4A, Pre-req HEED 197. 199</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21562</td>
+		<td rowspan = "1">HEEd 214 WLNO</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 4-7PM lec TBA<br />
+			LLIGE, AURORA<br/>
+					</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21564</td>
+		<td rowspan = "1">HEEd 220 HLNO</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4-7PM lec TBA<br />
+			CHUA, CONSUELO<br/>
+					</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21563</td>
+		<td rowspan = "1">HEEd 288 TLNO</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 4-7PM lec TBA<br />
+			NIEVA, MA AFRECITA<br/>
+					</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21565</td>
+		<td rowspan = "1">HEEd 300 HE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">AFA 4A</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">21566</td>
+		<td rowspan = "1">HEEd 400 HE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">AFA 4A</em>		</td>
+		 
+		<td>HEED<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22103</td>
+		<td rowspan = "1">HRIM 101 MIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM lec TBA<br />
+			HUI, CHRISTINE<br/>
+					</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">22</td>
+														
+		<td>For: BS FT(20 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22105</td>
+		<td rowspan = "1">HRIM 101 SCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			HUI, CHRISTINE<br/>
+					</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">22</td>
+														
+		<td>For: BS CT(2 slots), BS HRIM(2 slots), BS HE(16 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22106</td>
+		<td rowspan = "1">HRIM 101 SIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			HUI, CHRISTINE<br/>
+					</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">36</td>
+														
+		<td>For: BS HE(9 slots), BS FT(11 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22104</td>
+		<td rowspan = "1">HRIM 101 TIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 1-4PM lec TBA<br />
+			HUI, CHRISTINE<br/>
+					</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">22</td>
+														
+		<td>For: BS CT(2 slots), BS FT(18 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22112</td>
+		<td rowspan = "2">HRIM 102 FDE</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			F 10AM-12PM lec TBA<br />
+			GUERRERO, RAYMUND GERARD<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 100 HRIM 101, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2C<br/><em>HRIM Sophomore C</em></td>
+					<td>
+				<strong>8</strong> /
+				8			</td>
+							<td>15</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>2</strong> /
+				2			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">22110</td>
+		<td rowspan = "3">HRIM 102 TAB</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			T 7-9AM lec TBA<br />
+			GUERRERO, RAYMUND GERARD<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 100 HRIM 101, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2B<br/><em>HRIM Sophomore B</em></td>
+					<td>
+				<strong>4</strong> /
+				4			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM: HRIM 2A<br/><em>HRIM Sophomore A</em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22114</td>
+		<td rowspan = "2">HRIM 102 WAB</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 7-9AM lec TBA<br />
+			GUERRERO, RAYMUND GERARD<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 100 HRIM 101, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2D<br/><em>HRIM Sophomore D</em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22115</td>
+		<td rowspan = "2">HRIM 102 FABC</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			F 7-10AM lab TBA<br />
+			GUERRERO, RAYMUND GERARD<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 100 HRIM 101, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2D<br/><em>HRIM Sophomore D</em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">22111</td>
+		<td rowspan = "3">HRIM 102 HABD</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			Th 7-9AM lab TBA; Th 10-11AM lab TBA<br />
+			GUERRERO, RAYMUND GERARD<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 100 HRIM 101, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2B<br/><em>HRIM Sophomore B</em></td>
+					<td>
+				<strong>4</strong> /
+				4			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM: HRIM 2A<br/><em>HRIM Sophomore A</em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22113</td>
+		<td rowspan = "2">HRIM 102 WCDE</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			W 9AM-12PM lab TBA<br />
+			GUERRERO, RAYMUND GERARD<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 100 HRIM 101, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2C<br/><em>HRIM Sophomore C</em></td>
+					<td>
+				<strong>8</strong> /
+				8			</td>
+							<td>15</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>2</strong> /
+				2			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">22116</td>
+		<td rowspan = "3">HRIM 103 SCDE</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			S 9AM-12PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ FN 11 / FN 102, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2D<br/><em>HRIM Sophomore D</em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+							<td>9</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM: HRIM 2A<br/><em>HRIM Sophomore A</em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>2</strong> /
+				2			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">22117</td>
+		<td rowspan = "3">HRIM 103 SIJK</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			S 1-4PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ FN 11 / FN 102, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2B<br/><em>HRIM Sophomore B</em></td>
+					<td>
+				<strong>4</strong> /
+				4			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM: HRIM 2C<br/><em>HRIM Sophomore C</em></td>
+					<td>
+				<strong>8</strong> /
+				8			</td>
+							<td>15</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">22118</td>
+		<td rowspan = "3">HRIM 106 HIJ</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			Th 1-3PM lec TBA<br />
+			LUCAS, DANIEL KARLO<br/>
+			<em style="font-weight: bold">AFA IV-A, SOPHOMORE STANDING, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2B<br/><em>HRIM Sophomore B</em></td>
+					<td>
+				<strong>4</strong> /
+				4			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM: HRIM 2A<br/><em>HRIM Sophomore A</em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>8</strong> /
+				8			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">22119</td>
+		<td rowspan = "3">HRIM 106 HKLN</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			Th 3-6PM lab TBA<br />
+			LUCAS, DANIEL KARLO<br/>
+			<em style="font-weight: bold">AFA IV-A, SOPHOMORE STANDING, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 2B<br/><em>HRIM Sophomore B</em></td>
+					<td>
+				<strong>4</strong> /
+				4			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM: HRIM 2A<br/><em>HRIM Sophomore A</em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+							<td>1</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>8</strong> /
+				8			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22144</td>
+		<td rowspan = "1">HRIM 108 HIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lec TBA<br />
+			GUEVARRA, SHIRLEY<br/>
+			<em style="font-weight: bold">Pre-req Senior Standing</em>		</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22124</td>
+		<td rowspan = "2">HRIM 111 FBC</td>
+		<td rowspan = "2">5.0</td>
+		<td rowspan = "2">
+			F 8-10AM lec TBA<br />
+			ELEAZAR, ROSANNE NICOLETTE<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 104 HRIM 105 HRIM 109, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3B<br/><em>HRIM Junior B-Ranada</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22122</td>
+		<td rowspan = "2">HRIM 111 HAB</td>
+		<td rowspan = "2">5.0</td>
+		<td rowspan = "2">
+			Th 7-9AM lec TBA<br />
+			ELEAZAR, ROSANNE NICOLETTE<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 104 HRIM 105 HRIM 109, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3A<br/><em>HRIM Junior A-Mariano</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22123</td>
+		<td rowspan = "2">HRIM 111 MDEFGIJKLN</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			M 10AM-7PM lab TBA<br />
+			MARIANO, ANNALISA MARGARITA<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 104 HRIM 105 HRIM 109, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3A<br/><em>HRIM Junior A-Mariano</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22125</td>
+		<td rowspan = "2">HRIM 111 MDEFGIJKLN-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			M 10AM-7PM lab TBA<br />
+			RANADA, GOLDA MAY<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 104 HRIM 105 HRIM 109, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3B<br/><em>HRIM Junior B-Ranada</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22121</td>
+		<td rowspan = "1">HRIM 112 HIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lec TBA<br />
+			MENESES, MA. PRINCESS JILL<br/>
+			<em style="font-weight: bold">JUNIOR STANDING, For NON-HRIM only</em>		</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: SE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22120</td>
+		<td rowspan = "1">HRIM 112 HRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lec TBA<br />
+			MENESES, MA. PRINCESS JILL<br/>
+			<em style="font-weight: bold">JUNIOR STANDING, For NON-HRIM only</em>		</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td>For: SE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22108</td>
+		<td rowspan = "1">HRIM 120 FIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 1-4PM lec TBA<br />
+			GUGGENHEIM, LIZA<br/>
+			<em style="font-weight: bold">AFA 2B, PRE-REQ HRIM 110, FOR HRIM</em>		</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">32</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22109</td>
+		<td rowspan = "1">HRIM 120 FIJK-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 1-4PM lec TBA<br />
+			TUMANAN-RAMOS, MARY ANNE<br/>
+			<em style="font-weight: bold">AFA 2B, PRE-REQ HRIM 110, FOR HRIM</em>		</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22107</td>
+		<td rowspan = "1">HRIM 120 TRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lec TBA<br />
+			GUGGENHEIM, LIZA<br/>
+			<em style="font-weight: bold">AFA 2B, PRE-REQ HRIM 110, FOR HRIM</em>		</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22126</td>
+		<td rowspan = "2">HRIM 127 WIJK</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 1-4PM lec TBA<br />
+			BAYLOSIS, LILIBETH<br/>
+			<em style="font-weight: bold">AFA IV-A, SENIOR STANDING, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3A<br/><em>HRIM Junior A-Mariano</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22127</td>
+		<td rowspan = "2">HRIM 127 WRU</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 8:30-11:30AM lec TBA<br />
+			BAYLOSIS, LILIBETH<br/>
+			<em style="font-weight: bold">AFA IV-A, SENIOR STANDING, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3B<br/><em>HRIM Junior B-Ranada</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22128</td>
+		<td rowspan = "2">HRIM 130 FABC</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			F 7-10AM lec TBA<br />
+			LUCAS, DANIEL KARLO<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 101 HRIM 104 HRIM 105 HRIM 109, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3A<br/><em>HRIM Junior A-Mariano</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22129</td>
+		<td rowspan = "2">HRIM 130 FIJK</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			F 1-4PM lec TBA<br />
+			LUCAS, DANIEL KARLO<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 101 HRIM 104 HRIM 105 HRIM 109, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3B<br/><em>HRIM Junior B-Ranada</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22135</td>
+		<td rowspan = "2">HRIM 141 TIJK</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 1-4PM lec TBA<br />
+			TOMACRUZ, MARY DELIA<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 115, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3A<br/><em>HRIM Junior A-Mariano</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22134</td>
+		<td rowspan = "2">HRIM 141 TRU</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 8:30-11:30AM lec TBA<br />
+			TOMACRUZ, MARY DELIA<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 115, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3B<br/><em>HRIM Junior B-Ranada</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22130</td>
+		<td rowspan = "2">HRIM 160 SCDE</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			S 9AM-12PM lec TBA<br />
+			CORTEZ, PERCIVAL<br/>
+			<em style="font-weight: bold">AFA IV-A, JUNIOR STANDING, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3B<br/><em>HRIM Junior B-Ranada</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22131</td>
+		<td rowspan = "2">HRIM 160 SIJK</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			S 1-4PM lec TBA<br />
+			CORTEZ, PERCIVAL<br/>
+			<em style="font-weight: bold">AFA IV-A, JUNIOR STANDING, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3A<br/><em>HRIM Junior A-Mariano</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22132</td>
+		<td rowspan = "2">HRIM 170 WIJK</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 1-4PM lec TBA<br />
+			MARANAN, LARISSA MAE<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 112, Junior  Standing, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3B<br/><em>HRIM Junior B-Ranada</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22133</td>
+		<td rowspan = "2">HRIM 170 WRU</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 8:30-11:30AM lec TBA<br />
+			MENESES, MA. PRINCESS JILL<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 112, Junior  Standing, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 3A<br/><em>HRIM Junior A-Mariano</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>16</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22136</td>
+		<td rowspan = "2">HRIM 174 MIJKL</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			M 1-5PM prac TBA<br />
+			BAYLOSIS, LILIBETH<br/>
+			<em style="font-weight: bold">AFA I-B, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 4A<br/><em>HRIM Senior A</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>19</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22137</td>
+		<td rowspan = "2">HRIM 174 MIJKL-B</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			M 1-5PM prac TBA<br />
+			GUGGENHEIM, LIZA<br/>
+			<em style="font-weight: bold">AFA I-B, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 4C<br/><em>HRIM Senior C</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22138</td>
+		<td rowspan = "2">HRIM 174 SIJKL</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			S 1-5PM prac TBA<br />
+			MARANAN, LARISSA MAE<br/>
+			<em style="font-weight: bold">AFA I-B, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 4B<br/><em>HRIM Senior B</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>31</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22139</td>
+		<td rowspan = "2">HRIM 174 SIJKL-B</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			S 1-5PM prac TBA<br />
+			TUMANAN-RAMOS, MARY ANNE<br/>
+			<em style="font-weight: bold">AFA I-B</em>		</td>
+		 
+		<td>HRIM: HRIM 4D<br/><em>HRIM Senior D</em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+							<td>17</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22140</td>
+		<td rowspan = "2">HRIM 175 MABCDE</td>
+		<td rowspan = "2">5.0</td>
+		<td rowspan = "2">
+			M 7AM-12PM prac TBA<br />
+			BAYLOSIS, LILIBETH<br/>
+			<em style="font-weight: bold">AFA I-B, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 4A<br/><em>HRIM Senior A</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>19</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22141</td>
+		<td rowspan = "2">HRIM 175 MABCDE-B</td>
+		<td rowspan = "2">5.0</td>
+		<td rowspan = "2">
+			M 7AM-12PM prac TBA<br />
+			GUGGENHEIM, LIZA<br/>
+			<em style="font-weight: bold">AFA I-B, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 4B<br/><em>HRIM Senior B</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>31</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22142</td>
+		<td rowspan = "2">HRIM 175 MABCDE-C</td>
+		<td rowspan = "2">5.0</td>
+		<td rowspan = "2">
+			M 7AM-12PM prac TBA<br />
+			MENESES, MA. PRINCESS JILL; MARANAN, LARISSA MAE<br/>
+			<em style="font-weight: bold">AFA I-B</em>		</td>
+		 
+		<td>HRIM: HRIM 4C<br/><em>HRIM Senior C</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">22143</td>
+		<td rowspan = "2">HRIM 175 SABCDE</td>
+		<td rowspan = "2">5.0</td>
+		<td rowspan = "2">
+			S 7AM-12PM prac TBA<br />
+			GUERRERO, RAYMUND GERARD; TUMANAN-RAMOS, MARY ANNE; LUCAS, DANIEL KARLO<br/>
+			<em style="font-weight: bold">AFA I-B, FOR HRIM</em>		</td>
+		 
+		<td>HRIM: HRIM 4D<br/><em>HRIM Senior D</em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+							<td>17</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22101</td>
+		<td rowspan = "1">HRIM 233 SCD</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			S 9-11AM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">PRE-REQ HRIM 201 HRIM 230, FOR MHRIM STUDENTS</em>		</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22102</td>
+		<td rowspan = "1">HRIM 270 TZQ</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			T 5:30-7:30PM lec TBA<br />
+			GUERRERO, RAYMUND GERARD<br/>
+			<em style="font-weight: bold">AFA IV-A, PRE-REQ HRIM 201, FOR MHRIM </em>		</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22145</td>
+		<td rowspan = "1">HRIM 300 SABC</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			S 7-10AM thesis TBA<br />
+			TOMACRUZ, MARY DELIA<br/>
+					</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>1</strong> /
+				1			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22146</td>
+		<td rowspan = "1">HRIM 300 SABC-1</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			S 7-10AM thesis TBA<br />
+			GUEVARRA, SHIRLEY<br/>
+					</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>1</strong> /
+				1			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">22147</td>
+		<td rowspan = "1">HRIM 300 SABC-2</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			S 7-10AM thesis TBA<br />
+			TUMANAN-RAMOS, MARY ANNE<br/>
+					</td>
+		 
+		<td>HRIM<br/><em></em></td>
+					<td>
+				<strong>1</strong> /
+				1			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+	</table>
+
+</div><!-- #content -->
+
+﻿
+<script type="text/javascript">
+			
+		$(document).ready(function() {
+			
+			//set the width per footer_expander element
+			var expander_count = $('.footerlink').length;
+			var expander_width = (83/expander_count);
+			
+			var i = 0;
+			$.each($(".footerlink"), function(index, value){
+				$(this).css('width', expander_width+'%');
+				$(this).css('left', (((expander_width)*i)+10)+'%');
+				i++;
+			});
+			
+			$(".footerlink,.footer_expander").hover(
+				function(){
+					$(this).animate({ height: "30"}, 50);
+				},
+				function(){
+					$(this).animate({ height: "16"}, 50);
+				
+				}
+			);
+			
+			//set the width per footer_expander element
+			var division_count = $('.footer_division').length;
+			var division_width = (88/division_count);
+			division_width = division_width+'%';
+			
+			$.each($(".footer_division"), function(index, value){
+				$(this).css('width', division_width);
+			});
+			
+		function change_acadtermtype() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_acadtermtype/' + $(this).val();
+		}
+
+		function change_role() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_role/' + $(this).val();
+		}
+
+		function show_roles() {
+			$("#span_role").addClass("hidden");
+			$("#span_role-choices").removeClass("hidden");
+		}
+
+		function show_acadtermtypes() {
+			$("#span_acadtermtype").addClass("hidden");
+			$("#span_acadtermtype-choices").removeClass("hidden");
+		}
+
+	 });
+	 
+	
+	function showFooter(){
+		$('#footer').slideDown(150);
+		$('.footermin').hide();
+	}
+	function hideFooter(){
+		$('#footer').slideUp(150);
+		$('.footermin').show();
+	}
+	</script>
+
+<span style="clear:both;"></span>
+
+	<div class="footer_expander footermin" onclick="showFooter();">
+		More ▲
+	</div>
+
+		<div id="footer" align="center">
+		<div id="footer_linktotop" align="right" onclick="hideFooter();">
+			<a href="Javascript:void(0);" onclick="hideFooter();" style="color:white">Less ▼</a>
+		</div>
+		<div style="padding-top: 30px;">
+						<div class="footer_division">
+				<div class="footer_division_header">Flowcharts</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/OnlineDroppingFlowchart.pdf" >
+								Dropping							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ChangeMatFlowchart_modified.pdf" >
+								Change Mat							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ClearanceMechanics.pdf" >
+								Clearance							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/downloads/LOA_mechanics.pdf" >
+								Leave of Absence							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Class Schedules</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/" >
+								Regular Classes							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/mba" >
+								MBA/MS Finance PT							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/schedule/spring" >
+								Spring Asia							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Information</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/course_catalog" >
+								Course Catalog							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/curriculum.html" >
+								Curriculum Checklist							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="http://our.upd.edu.ph/files/ListofGECourses.pdf" >
+								List of RGEP Courses							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Calendar</div>
+																		<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/acadcal.php" >
+								BOR Approved<br>Academic Calendar<br>							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular" >
+								Regular Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/mba" >
+								MBA/MS Fin PT Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/msfin" >
+								MS Fin FT Calendar							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/spring" >
+								Spring Asia Calendar							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">CRS</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/faq" >
+								CRS FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/faq.html" >
+								OUR FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>History of the CRS<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+													<span>User Guide<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/about/" >
+								The CRS Team<br/>							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/privacy_notice" >
+								Privacy Notice							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Contact Us</div>
+																		<div class="footer_division_item ">
+																				<a href="http://www.facebook.com/groups/134746139953068/" >
+								Facebook Group							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="mailto:support@crs.upd.edu.ph" >
+								E-Mail							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>Phone<br/>(981-8500 local 4560)</span>
+											</div>
+																								<div class="footer_division_item fdt_last">
+													<span>You may visit us at the CRSRS Office at the 3rd floor of the OUR.</span>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">External Links</div>
+																		<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/" >
+								UP Diliman							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://up.edu.ph/" >
+								UP System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/" >
+								OUR Site							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://sts.up.edu.ph/" >
+								Socialized Tuition System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://dormapplication.upd.edu.ph/" >
+								Dorm Application Website							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://uvle.up.edu.ph/" >
+								UvLE							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://ucc.upd.edu.ph/about-us/" >
+								UPCC							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://mail.up.edu.ph/" >
+								UP Webmail							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://www.dzup.org/" >
+								DZUP							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/aup/" >
+								Acceptable Use Policy							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://upd.edu.ph/privacy" >
+								UP Diliman<br/>Data Privacy Portal							</a>
+											</div>
+																	</div>
+					</div>
+	</div>
+
+	<div class="footer_quicklinks footermin">
+		Quick Links:
+	</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/schedule/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/schedule/">
+				Regular Classes			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/course_catalog'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/course_catalog">
+				Course Catalog			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='http://our.upd.edu.ph/curriculum.html'">
+			<a class="a_footerlink" href="http://our.upd.edu.ph/curriculum.html">
+				Curriculum Checklist			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/acadcal_public/index/advanced/regular'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular">
+				Regular Calendar			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/faq'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/faq">
+				CRS FAQ			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/about/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/about/">
+				The CRS Team<br/>			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/privacy_notice'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/privacy_notice">
+				Privacy Notice			</a>
+		</div>
+	</body>
+</html>

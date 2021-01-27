@@ -1,0 +1,3209 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109224015-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-109224015-1');
+        </script>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<title>UP CRS - Schedule of Classes</title>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.widgets.js"></script>
+
+
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/layout.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/status.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/schedule.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/tablesorter/tablesorter.css" type="text/css" />
+	<link rel="shortcut icon" href="https://crs.upd.edu.ph/images/favicon.ico" type="image/x-icon" />
+
+	<style type="text/css">
+		#tbl_schedule tbody:hover {
+			background-color: #F0F0AF;
+		}
+	</style>
+	
+	<script type="text/javascript" language="JavaScript">
+	$(document).ready(function() {
+		$('#btn_search').click(searchClasses);
+		$('#frm_schedule').submit(function(e) {
+			e.preventDefault();
+			searchClasses();
+		});
+
+//		// table sorter
+//		$.tablesorter.addParser({
+//			// set uniqueid
+//			id: 'availableslots',
+//			is: function(s) {
+//				// return false so that parser is not automatically detected
+//				return false;
+//			},
+//			format: function(s) {
+//				var temp = s.replace('<strong>','').replace('</strong>','').split('/');
+//				return temp[0];
+//			},
+//			// set type to numeric
+//			type: 'numeric'
+//		});
+
+//		$('#tbl_schedule').tablesorter({widgets:['zebra'], headers: {0:{sorter:false},2:{sorter:false},4:{sorter:'availableslots'},5:{sorter:false}}});
+
+	});
+
+	function searchClasses() {
+		var coursenumber = $.trim($('#txt_coursenumber').val());
+		var term = $.trim($('#txt_term').val());
+		var alphanumeric_pattern = /^[a-zA-Z0-9\.\s]+$/;
+
+		if(coursenumber != '') {
+			if( ! alphanumeric_pattern.test(coursenumber)) {
+				alert('Course number must be alphanumeric.');
+			} else {
+				window.location = 'https://crs.upd.edu.ph/schedule' + '/'+ term + '/'+ coursenumber ;
+			}
+		}
+
+	}
+
+	</script>
+
+<style>
+	#frm_schedule {
+		margin: auto;
+		width: 25%;
+		background: #FCFCF0;
+		border: 3px solid #444444;
+		padding: 1em;
+	}
+	#frm_schedule strong, #search input {
+		padding-right: 1em;
+	}
+</style>
+</head>
+
+<body class="schedule">
+
+<div id="header">
+	<a href="https://crs.upd.edu.ph/user" class="header_link"></a>
+</div>
+<div id="subheader">
+</div>
+
+<div id="content" class="align-center">
+
+<h1>
+	Schedule of Classes<br />
+		<select id="txt_term" name="txt_term" style="padding: 2px; border: 1px solid #CECECE; border-radius: 5px; font-size: 100%; text-align: right;" onchange="searchClasses();">
+					<option value="120192" >Second Semester AY 2019-2020</option>
+					<option value="120194" >Midyear Term 2020</option>
+					<option value="120201" >First Semester AY 2020-2021</option>
+					<option value="120202" selected="selected">Second Semester AY 2020-2021</option>
+					<option value="120204" >Midyear Term 2021</option>
+		</select>
+	</h1>
+
+<br />
+<form id="frm_schedule" action="" method="post">
+Course Number: 
+<input type="text" id="txt_coursenumber" name="txt_coursenumber" placeholder="(e.g., Math 11, Eng 1)"/>
+<br/> 
+<input type="button" id="btn_search" name="btn_search" value="Search" />
+</form>
+
+<br/>
+<p>
+	<a href="https://crs.upd.edu.ph/schedule/120202/A">A</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/B">B</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/C">C</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/D">D</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/E">E</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/F">F</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/G">G</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/H">H</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/I">I</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/J">J</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/K">K</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/L">L</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/M">M</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/N">N</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/O">O</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/P">P</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Q">Q</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/R">R</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/S">S</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/T">T</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/U">U</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/V">V</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/W">W</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/X">X</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Y">Y</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Z">Z</a>&nbsp;
+<a href="https://crs.upd.edu.ph/">Back to main page</a>
+</p>
+<br />
+<div style="text-align: left; padding: 0; margin: 0;"><strong>Results for: <em>T</em></strong></div>
+<table id="tbl_schedule" style="table-layout: fixed	">
+<thead>
+<tr>
+	<th width="5%">Class Code</th>
+	<th width="15%">Class</th>
+	<th width="5%">Credits</th>
+	<th width="30%">
+		Schedule<br />
+		Instructor(s)<br/>
+		Remarks
+	</th>
+	<th width="15%">Enlisting Unit : Block<br/><b>Block Remarks</b></th>
+	<th width="10%">
+		Available Slots /<br />
+		Total Slots
+	</th>
+	<th width="5%">Demand</th>
+	<th width="15%">Restrictions</th>
+</tr>
+</thead>
+
+	<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19904</td>
+		<td rowspan = "1">TFA 155 NONE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			YRAOLA, DAYANG MAGDALENA NIRVANA<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">3</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19913</td>
+		<td rowspan = "1">TFA 157 NONE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			YRAOLA, DAYANG MAGDALENA NIRVANA<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19907</td>
+		<td rowspan = "1">TFA 161 A</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			HILA, MA. CORAZON<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">4</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19926</td>
+		<td rowspan = "1">TFA 161 B</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM lec TBA<br />
+			LEDESMA, MARIA PATRICIA<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19910</td>
+		<td rowspan = "1">TFA 163 NONE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			CRUZ, MAY LYN<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">0</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19918</td>
+		<td rowspan = "1">TFA 166 NONE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CRUZ, MAY LYN<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19906</td>
+		<td rowspan = "1">TFA 180 A</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			LUMBAO, WILSON<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">15</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19924</td>
+		<td rowspan = "1">TFA 180 B</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 10AM-1PM lec TBA<br />
+			COLAYCO, FLORENTINA<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">16</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19914</td>
+		<td rowspan = "1">TFA 187 NONE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			TAPANG, LISA<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">26</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">19919</td>
+		<td rowspan = "1">TFA 190 NONE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Theory<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td>For: CFA</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43020</td>
+		<td rowspan = "1">Thai 10 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			CANILAO, KRITSANA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: BA BC(1 slots), SE(2 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43021</td>
+		<td rowspan = "1">Thai 11 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CANILAO, KRITSANA<br/>
+			<em style="font-weight: bold">Prerequisite: Thai 10</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">16</td>
+														
+		<td>For: SE(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16108</td>
+		<td rowspan = "1">Theatre 11 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			VIRAY, BRYAN<br/>
+			<em style="font-weight: bold">Dula at Palabas</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16107</td>
+		<td rowspan = "1">Theatre 11 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			VIRAY, BRYAN<br/>
+			<em style="font-weight: bold">Dula at Palabas</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16109</td>
+		<td rowspan = "1">Theatre 11 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			RIVERA, MARIA LOREN<br/>
+			<em style="font-weight: bold">Dula at Palabas</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16110</td>
+		<td rowspan = "1">Theatre 11 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			RIVERA, MARIA LOREN<br/>
+			<em style="font-weight: bold">Dula at Palabas</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16113</td>
+		<td rowspan = "1">Theatre 12 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			LOPEZ, MARIA STELLA ROSSA<br/>
+			<em style="font-weight: bold">Acting Workshop</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16112</td>
+		<td rowspan = "1">Theatre 12 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			LOPEZ, MARIA STELLA ROSSA<br/>
+			<em style="font-weight: bold">Acting Workshop</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16111</td>
+		<td rowspan = "1">Theatre 12 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			NIETO, OLIVIA KRISTINE<br/>
+			<em style="font-weight: bold">Acting Workshop</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">20</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16156</td>
+		<td rowspan = "1">Theatre 100 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">Introduction to Theatre and Performance. Key concepts in the study of drama, theatre and performance in the context of theatre and performance studies.</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16116</td>
+		<td rowspan = "1">Theatre 102 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			OLIVEROS, DAVIDSON<br/>
+			<em style="font-weight: bold">History of the Western Theatre II. Prerequisite: Theatre 101 / COI for non-Theatre Majors. </em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16114</td>
+		<td rowspan = "1">Theatre 102 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			LOPEZ, MARIA STELLA ROSSA<br/>
+			<em style="font-weight: bold">History of the Western Theatre II. Prerequisite: Theatre 101 / COI for non-Theatre Majors. </em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">20</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16115</td>
+		<td rowspan = "1">Theatre 102 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			LOPEZ, MARIA STELLA ROSSA<br/>
+			<em style="font-weight: bold">History of the Western Theatre II. Prerequisite: Theatre 101 / COI for non-Theatre Majors. </em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">22</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16118</td>
+		<td rowspan = "1">Theatre 104  MDEGI</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 10AM-2PM lec/work TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">Theatre and the Creative Industries. . Theories, principles, and practices of theatre in the context of the creative industries in the Philippines. Prereq: Theatre 100 / COI for non-Theatre Majors</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16117</td>
+		<td rowspan = "1">Theatre 104 WFJ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2-4PM lec/work TBA<br />
+			VIRAY, BRYAN<br/>
+			<em style="font-weight: bold">Theatre and the Creative Industries. . Theories, principles, and practices of theatre in the context of the creative industries in the Philippines. Prereq: Theatre 100 / COI for non-Theatre Majors</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16119</td>
+		<td rowspan = "1">Theatre 110 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			OLIVEROS, DAVIDSON<br/>
+					</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: BA (TA)(10 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16120</td>
+		<td rowspan = "1">Theatre 113 TWHFD</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 10-11:30AM prac TBA<br />
+			OLIVEROS, DAVIDSON<br/>
+			<em style="font-weight: bold">Advance Practicum</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">15</td>
+														
+		<td>For: AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16121</td>
+		<td rowspan = "1">Theatre 113 TWHFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 11:30AM-1PM prac TBA<br />
+			OLIVEROS, DAVIDSON<br/>
+			<em style="font-weight: bold">Advance Practicum</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">19</td>
+														
+		<td>For: AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16122</td>
+		<td rowspan = "1">Theatre 120 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			MENDOZA, JUAN YSMAEL<br/>
+			<em style="font-weight: bold">Production Methods; For BA (TA) 2020</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16124</td>
+		<td rowspan = "1">Theatre 121 TH-WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 2:30-5:30PM lec/work TBA; WF 4-5:30PM lec/work TBA<br />
+			MENDOZA, JUAN YSMAEL<br/>
+			<em style="font-weight: bold">Stage Management; For AA (T) 2019</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">24</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16123</td>
+		<td rowspan = "1">Theatre 121 T-WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec/work TBA; T 2:30-5:30PM lec/work TBA<br />
+			MENDOZA, JUAN YSMAEL<br/>
+			<em style="font-weight: bold">Stage Management; For AA (T) 2019</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16126</td>
+		<td rowspan = "1">Theatre 131 THXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 2:30-5:30PM lec TBA<br />
+			NIETO, OLIVIA KRISTINE<br/>
+			<em style="font-weight: bold">Beginning Acting; For AA (T) 2020</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">18</td>
+														
+		<td>For: AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16125</td>
+		<td rowspan = "1">Theatre 131 TXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 2:30-5:30PM lec TBA<br />
+			NIETO, OLIVIA KRISTINE<br/>
+			<em style="font-weight: bold">Beginning Acting; For AA (T) 2020</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16127</td>
+		<td rowspan = "1">Theatre 131 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			NIETO, OLIVIA KRISTINE<br/>
+			<em style="font-weight: bold">Beginning Acting</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">19</td>
+														
+		<td>For: CMu(6 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16128</td>
+		<td rowspan = "1">Theatre 134 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			MICLAT, BANAUE<br/>
+			<em style="font-weight: bold">Voice for the Theatre</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: AA (Theatre)(14 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16129</td>
+		<td rowspan = "1">Theatre 134 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			MICLAT, BANAUE<br/>
+			<em style="font-weight: bold">Voice for the Theatre</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: AA (Theatre)(14 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16131</td>
+		<td rowspan = "1">Theatre 141 THXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 2:30-4PM lec TBA<br />
+			ESTRELLA, JOSEFINA<br/>
+			<em style="font-weight: bold">Stage Direction I</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td>For: BA (TA), AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16133</td>
+		<td rowspan = "1">Theatre 141 THXY-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 2:30-5:30PM lec TBA<br />
+			SANTOS, DEXTER<br/>
+			<em style="font-weight: bold">Stage Direction I</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: BA (TA), AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16130</td>
+		<td rowspan = "1">Theatre 141 TXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 2:30-5:30PM lec TBA<br />
+			ESTRELLA, JOSEFINA<br/>
+			<em style="font-weight: bold">Stage Direction I</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td>For: AA (Theatre), BA (TA)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16132</td>
+		<td rowspan = "1">Theatre 141 TXY-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 2:30-4PM lec TBA<br />
+			SANTOS, DEXTER<br/>
+			<em style="font-weight: bold">Stage Direction I</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: BA (TA), AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16134</td>
+		<td rowspan = "1">Theatre 142 MYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 4-7PM lec TBA<br />
+			ESTRELLA, JOSEFINA<br/>
+			<em style="font-weight: bold">Stage Direction II; Pre-requisite: Theatre 141</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16137</td>
+		<td rowspan = "1">Theatre 151 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			PAGUNALING, JOHN CARLO<br/>
+			<em style="font-weight: bold">Elementary Stagecraft</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16138</td>
+		<td rowspan = "1">Theatre 151 THU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			RIVERA, MARIA LOREN<br/>
+			<em style="font-weight: bold">Elementary Stagecraft</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16136</td>
+		<td rowspan = "1">Theatre 151 THXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 2:30-5:30PM lec TBA<br />
+			RIVERA, MARIA LOREN<br/>
+			<em style="font-weight: bold">Elementary Stagecraft; For AA(T) 2020</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">15</td>
+														
+		<td>For: AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16135</td>
+		<td rowspan = "1">Theatre 151 TXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 2:30-5:30PM lec TBA<br />
+			PAGUNALING, JOHN CARLO<br/>
+			<em style="font-weight: bold">Elementary Stagecraft; For AA (T) 2020</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td>For: AA (Theatre)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16154</td>
+		<td rowspan = "1">Theatre 152 THRU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">Scene Design. For BA (Theatre Arts): Technical Theatre and Design Majors</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16139</td>
+		<td rowspan = "1">Theatre 154 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			PAGUNALING, JOHN CARLO<br/>
+			<em style="font-weight: bold">Costume Design and Make-up; Pre-requisite: Theatre 151/COI</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16142</td>
+		<td rowspan = "1">Theatre 162 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			RAMOLETE, MA. AMIHAN<br/>
+			<em style="font-weight: bold">Cultural Performances in Asia; Pre-requisite: Theatre 100/ COI</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">17</td>
+														
+		<td>For: BA (TA)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16140</td>
+		<td rowspan = "1">Theatre 170 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			TIATCO, SIR ANRIL<br/>
+			<em style="font-weight: bold">Dramaturgy; Pre-requisite: Theatre 103/ COI</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16141</td>
+		<td rowspan = "1">Theatre 170 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			TIATCO, SIR ANRIL<br/>
+			<em style="font-weight: bold">Dramaturgy; Pre-requisite: Theatre 103/ COI</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16143</td>
+		<td rowspan = "1">Theatre 182 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			SANTOS, DEXTER<br/>
+			<em style="font-weight: bold">Physical Theatre. Workshop in dance theatre and stage movement. Pre-requisite: Theatre 181/ COI for non-Theatre majors</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16144</td>
+		<td rowspan = "1">Theatre 182 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			SANTOS, DEXTER<br/>
+			<em style="font-weight: bold">Physical Theatre. Workshop in dance theatre and stage movement. Pre-requisite: Theatre 181/ COI for non-Theatre majors</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16145</td>
+		<td rowspan = "1">Theatre 202 HZZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5:30-8:30PM lec TBA<br />
+			ESTRELLA, JOSEFINA<br/>
+			<em style="font-weight: bold">Theatre History II. A comparative study of Western drama and theatre from the Romantic Period to the present. </em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">16146</td>
+		<td rowspan = "1">Theatre 208 TZZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 5:30-8:30PM lec TBA<br />
+			TIATCO, SIR ANRIL<br/>
+			<em style="font-weight: bold">Analyses and Praxes of Theatre and Performance</em>		</td>
+		 
+		<td>DSCTA<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60603</td>
+		<td rowspan = "1">TM 201 Saturdays AM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">3</td>
+														
+		<td>For: TMC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60604</td>
+		<td rowspan = "1">TM 201 Saturdays PM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">1</td>
+														
+		<td>For: TMC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60602</td>
+		<td rowspan = "1">TM 201 Thursdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">5</td>
+														
+		<td>For: TMC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60601</td>
+		<td rowspan = "1">TM 201 Tuesdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">5</td>
+														
+		<td>For: TMC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60606</td>
+		<td rowspan = "1">TM 204 Fridays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60605</td>
+		<td rowspan = "1">TM 204 Thursdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">3</td>
+														
+		<td>For: TMC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60607</td>
+		<td rowspan = "1">TM 205 Saturdays AM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60610</td>
+		<td rowspan = "1">TM 206 Fridays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60609</td>
+		<td rowspan = "1">TM 206 Mondays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60611</td>
+		<td rowspan = "1">TM 206 Saturdays PM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60625</td>
+		<td rowspan = "1">TM 225 TQM Sat PM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">33</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60612</td>
+		<td rowspan = "1">TM 241 Fridays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60613</td>
+		<td rowspan = "1">TM 241 Saturdays AM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60616</td>
+		<td rowspan = "1">TM 251 Thursdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60614</td>
+		<td rowspan = "1">TM 251 Tuesdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60615</td>
+		<td rowspan = "1">TM 251 Wednesdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60630</td>
+		<td rowspan = "1">TM 255 Thursdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60617</td>
+		<td rowspan = "1">TM 281 Thursdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60618</td>
+		<td rowspan = "1">TM 281 Wednesdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60619</td>
+		<td rowspan = "1">TM 291 Mondays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60621</td>
+		<td rowspan = "1">TM 291 Saturdays PM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60620</td>
+		<td rowspan = "1">TM 291 Wednesdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60627</td>
+		<td rowspan = "1">TM 298 BDA Wed<br/>Big Data Analytics</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">37</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60628</td>
+		<td rowspan = "1">TM 298 DPIS Sat PM<br/>Data Privacy and Information Security</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60626</td>
+		<td rowspan = "1">TM 298 IT PROJ MGT<br/>IT Project Management</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60624</td>
+		<td rowspan = "1">TM 298 KM - Wed<br/>Knowledge Management</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">37</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60629</td>
+		<td rowspan = "1">TM 298 Saturdays AM<br/>Digital Transformation for Organizations</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">46</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60632</td>
+		<td rowspan = "1">TM 298 Saturdays PM<br/>IT Product Development Management</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60622</td>
+		<td rowspan = "1">TM 299 Mondays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">60</td>
+														
+		<td>For: TMC</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60623</td>
+		<td rowspan = "1">TM 299 Tuesdays</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-9PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>TMC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">50</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63367</td>
+		<td rowspan = "1">Tour 111 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 122, Econ 100.1 and Econ 100.2</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">26</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63368</td>
+		<td rowspan = "1">Tour 111 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 122, Econ 100.1 and Econ 100.2</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">30</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63352</td>
+		<td rowspan = "1">Tour 112 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 110</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">65</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63351</td>
+		<td rowspan = "1">Tour 112 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 110</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">51</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63355</td>
+		<td rowspan = "1">Tour 113 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 110</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">50</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63353</td>
+		<td rowspan = "1">Tour 113 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 110</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">43</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63354</td>
+		<td rowspan = "1">Tour 113 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 110</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">64</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63373</td>
+		<td rowspan = "1">Tour 115 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Senior Standing, Tour 136</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">7</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63387</td>
+		<td rowspan = "1">Tour 116 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 111</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">7</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63410</td>
+		<td rowspan = "1">Tour 117 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Junior Standing</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">11</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63359</td>
+		<td rowspan = "1">Tour 119 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 122</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63360</td>
+		<td rowspan = "1">Tour 119 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 122</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">35</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63358</td>
+		<td rowspan = "1">Tour 119 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 122</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">37</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63369</td>
+		<td rowspan = "1">Tour 126 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 131 and Tour 151, Credit Units: 5 units</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">14</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63370</td>
+		<td rowspan = "1">Tour 126 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour  131 and Tour 151 Credit Units: 5 units</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63372</td>
+		<td rowspan = "1">Tour 136 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 131</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">16</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63371</td>
+		<td rowspan = "1">Tour 136 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 131</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63363</td>
+		<td rowspan = "1">Tour 153 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 151</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">41</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63361</td>
+		<td rowspan = "1">Tour 153 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 151</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63362</td>
+		<td rowspan = "1">Tour 153 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 151</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">38</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63357</td>
+		<td rowspan = "1">Tour 161 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 110 and Tour 120</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">66</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63356</td>
+		<td rowspan = "1">Tour 161 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 110 and Tour 120</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">52</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63388</td>
+		<td rowspan = "1">Tour 167 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 161</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">18</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63366</td>
+		<td rowspan = "1">Tour 182 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 181</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">36</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63364</td>
+		<td rowspan = "1">Tour 182 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 181</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">31</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63365</td>
+		<td rowspan = "1">Tour 182 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 181</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">31</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63389</td>
+		<td rowspan = "1">Tour 197 WFU<br/>Food and Tourism</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Junior Standing</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">12</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63411</td>
+		<td rowspan = "1">Tour 198 THQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 7-8:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Graduating</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63374</td>
+		<td rowspan = "1">Tour 198 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Graduating</em>		</td>
+		 
+		<td><br/><em></em></td>
+					<td colspan="2"><strong>DISSOLVED</strong></td>
+		
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63375</td>
+		<td rowspan = "1">Tour 199 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">7</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63376</td>
+		<td rowspan = "1">Tour 200 ELL</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			LOPEZ, EMMA LINA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63377</td>
+		<td rowspan = "1">Tour 200 GWN</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			NOCON, GLADYS WINA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63378</td>
+		<td rowspan = "1">Tour 200 MCI</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			IBANEZ, MARIA CARMELA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63379</td>
+		<td rowspan = "1">Tour 200 MGB</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			BADILLA, MARIA CRISELDA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63380</td>
+		<td rowspan = "1">Tour 200 MMB</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			BUCCAT, MONINA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63381</td>
+		<td rowspan = "1">Tour 200 MMM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			MENA, MIGUELA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63383</td>
+		<td rowspan = "1">Tour 200 RBA</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			ALAMPAY, RAMON BENEDICTO<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63384</td>
+		<td rowspan = "1">Tour 200 RGC</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			CRUZ, REIL<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63385</td>
+		<td rowspan = "1">Tour 200 RPG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			GONZALO, RICHARD PHILIP<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63386</td>
+		<td rowspan = "1">Tour 200 SLS</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			SOLIS, LETICIA SUSAN<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63382</td>
+		<td rowspan = "1">Tour 200 VHV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM thesis TBA<br />
+			VILLEGAS, VICTORIA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 199</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63402</td>
+		<td rowspan = "1">Tour 201 SRV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: None</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63403</td>
+		<td rowspan = "1">Tour 202 SWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: None</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63404</td>
+		<td rowspan = "1">Tour 203 SYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 4-7PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: None</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63406</td>
+		<td rowspan = "1">Tour 204 FZA</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 5:30-8:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: None</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63405</td>
+		<td rowspan = "1">Tour 204 SRV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: None</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63390</td>
+		<td rowspan = "1">Tour 205 SRV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 201, Tour 202, Tour 203</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63391</td>
+		<td rowspan = "1">Tour 212 SWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 202</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63407</td>
+		<td rowspan = "1">Tour 281 SWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 201, Tour 202, Tour 203</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63408</td>
+		<td rowspan = "1">Tour 281 WZA</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5:30-8:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 201, Tour 202, Tour 203</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63409</td>
+		<td rowspan = "1">Tour 282 SYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 4-7PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 202</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63392</td>
+		<td rowspan = "1">Tour 298 SRV</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			S 8-9AM seminar TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63393</td>
+		<td rowspan = "1">Tour 299 SRV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 298</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td>For: AIT</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63400</td>
+		<td rowspan = "1">Tour 300 ELL</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			M 1-5PM res TBA<br />
+			LOPEZ, EMMA LINA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63401</td>
+		<td rowspan = "1">Tour 300 MBB</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			M 1-5PM res TBA<br />
+			BUCCAT, MONINA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63399</td>
+		<td rowspan = "1">Tour 300 MGB</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			M 1-5PM res TBA<br />
+			BADILLA, MARIA CRISELDA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63398</td>
+		<td rowspan = "1">Tour 300 MMM</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			M 1-5PM res TBA<br />
+			MENA, MIGUELA<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63394</td>
+		<td rowspan = "1">Tour 300 RBA</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM res TBA<br />
+			ALAMPAY, RAMON BENEDICTO<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63395</td>
+		<td rowspan = "1">Tour 300 RGC</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM res TBA<br />
+			CRUZ, REIL<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63396</td>
+		<td rowspan = "1">Tour 300 RPG</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM res TBA<br />
+			GONZALO, RICHARD PHILIP<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">63397</td>
+		<td rowspan = "1">Tour 300 SLS</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			M 8AM-12PM res TBA<br />
+			SOLIS, LETICIA SUSAN<br/>
+			<em style="font-weight: bold">Prerequisite: Tour 299</em>		</td>
+		 
+		<td>AIT<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+	</table>
+
+</div><!-- #content -->
+
+﻿
+<script type="text/javascript">
+			
+		$(document).ready(function() {
+			
+			//set the width per footer_expander element
+			var expander_count = $('.footerlink').length;
+			var expander_width = (83/expander_count);
+			
+			var i = 0;
+			$.each($(".footerlink"), function(index, value){
+				$(this).css('width', expander_width+'%');
+				$(this).css('left', (((expander_width)*i)+10)+'%');
+				i++;
+			});
+			
+			$(".footerlink,.footer_expander").hover(
+				function(){
+					$(this).animate({ height: "30"}, 50);
+				},
+				function(){
+					$(this).animate({ height: "16"}, 50);
+				
+				}
+			);
+			
+			//set the width per footer_expander element
+			var division_count = $('.footer_division').length;
+			var division_width = (88/division_count);
+			division_width = division_width+'%';
+			
+			$.each($(".footer_division"), function(index, value){
+				$(this).css('width', division_width);
+			});
+			
+		function change_acadtermtype() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_acadtermtype/' + $(this).val();
+		}
+
+		function change_role() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_role/' + $(this).val();
+		}
+
+		function show_roles() {
+			$("#span_role").addClass("hidden");
+			$("#span_role-choices").removeClass("hidden");
+		}
+
+		function show_acadtermtypes() {
+			$("#span_acadtermtype").addClass("hidden");
+			$("#span_acadtermtype-choices").removeClass("hidden");
+		}
+
+	 });
+	 
+	
+	function showFooter(){
+		$('#footer').slideDown(150);
+		$('.footermin').hide();
+	}
+	function hideFooter(){
+		$('#footer').slideUp(150);
+		$('.footermin').show();
+	}
+	</script>
+
+<span style="clear:both;"></span>
+
+	<div class="footer_expander footermin" onclick="showFooter();">
+		More ▲
+	</div>
+
+		<div id="footer" align="center">
+		<div id="footer_linktotop" align="right" onclick="hideFooter();">
+			<a href="Javascript:void(0);" onclick="hideFooter();" style="color:white">Less ▼</a>
+		</div>
+		<div style="padding-top: 30px;">
+						<div class="footer_division">
+				<div class="footer_division_header">Flowcharts</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/OnlineDroppingFlowchart.pdf" >
+								Dropping							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ChangeMatFlowchart_modified.pdf" >
+								Change Mat							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ClearanceMechanics.pdf" >
+								Clearance							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/downloads/LOA_mechanics.pdf" >
+								Leave of Absence							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Class Schedules</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/" >
+								Regular Classes							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/mba" >
+								MBA/MS Finance PT							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/schedule/spring" >
+								Spring Asia							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Information</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/course_catalog" >
+								Course Catalog							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/curriculum.html" >
+								Curriculum Checklist							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="http://our.upd.edu.ph/files/ListofGECourses.pdf" >
+								List of RGEP Courses							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Calendar</div>
+																		<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/acadcal.php" >
+								BOR Approved<br>Academic Calendar<br>							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular" >
+								Regular Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/mba" >
+								MBA/MS Fin PT Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/msfin" >
+								MS Fin FT Calendar							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/spring" >
+								Spring Asia Calendar							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">CRS</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/faq" >
+								CRS FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/faq.html" >
+								OUR FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>History of the CRS<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+													<span>User Guide<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/about/" >
+								The CRS Team<br/>							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/privacy_notice" >
+								Privacy Notice							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Contact Us</div>
+																		<div class="footer_division_item ">
+																				<a href="http://www.facebook.com/groups/134746139953068/" >
+								Facebook Group							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="mailto:support@crs.upd.edu.ph" >
+								E-Mail							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>Phone<br/>(981-8500 local 4560)</span>
+											</div>
+																								<div class="footer_division_item fdt_last">
+													<span>You may visit us at the CRSRS Office at the 3rd floor of the OUR.</span>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">External Links</div>
+																		<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/" >
+								UP Diliman							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://up.edu.ph/" >
+								UP System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/" >
+								OUR Site							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://sts.up.edu.ph/" >
+								Socialized Tuition System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://dormapplication.upd.edu.ph/" >
+								Dorm Application Website							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://uvle.up.edu.ph/" >
+								UvLE							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://ucc.upd.edu.ph/about-us/" >
+								UPCC							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://mail.up.edu.ph/" >
+								UP Webmail							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://www.dzup.org/" >
+								DZUP							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/aup/" >
+								Acceptable Use Policy							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://upd.edu.ph/privacy" >
+								UP Diliman<br/>Data Privacy Portal							</a>
+											</div>
+																	</div>
+					</div>
+	</div>
+
+	<div class="footer_quicklinks footermin">
+		Quick Links:
+	</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/schedule/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/schedule/">
+				Regular Classes			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/course_catalog'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/course_catalog">
+				Course Catalog			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='http://our.upd.edu.ph/curriculum.html'">
+			<a class="a_footerlink" href="http://our.upd.edu.ph/curriculum.html">
+				Curriculum Checklist			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/acadcal_public/index/advanced/regular'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular">
+				Regular Calendar			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/faq'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/faq">
+				CRS FAQ			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/about/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/about/">
+				The CRS Team<br/>			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/privacy_notice'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/privacy_notice">
+				Privacy Notice			</a>
+		</div>
+	</body>
+</html>

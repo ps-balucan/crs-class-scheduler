@@ -1,0 +1,6328 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109224015-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-109224015-1');
+        </script>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<title>UP CRS - Schedule of Classes</title>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.widgets.js"></script>
+
+
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/layout.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/status.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/schedule.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/tablesorter/tablesorter.css" type="text/css" />
+	<link rel="shortcut icon" href="https://crs.upd.edu.ph/images/favicon.ico" type="image/x-icon" />
+
+	<style type="text/css">
+		#tbl_schedule tbody:hover {
+			background-color: #F0F0AF;
+		}
+	</style>
+	
+	<script type="text/javascript" language="JavaScript">
+	$(document).ready(function() {
+		$('#btn_search').click(searchClasses);
+		$('#frm_schedule').submit(function(e) {
+			e.preventDefault();
+			searchClasses();
+		});
+
+//		// table sorter
+//		$.tablesorter.addParser({
+//			// set uniqueid
+//			id: 'availableslots',
+//			is: function(s) {
+//				// return false so that parser is not automatically detected
+//				return false;
+//			},
+//			format: function(s) {
+//				var temp = s.replace('<strong>','').replace('</strong>','').split('/');
+//				return temp[0];
+//			},
+//			// set type to numeric
+//			type: 'numeric'
+//		});
+
+//		$('#tbl_schedule').tablesorter({widgets:['zebra'], headers: {0:{sorter:false},2:{sorter:false},4:{sorter:'availableslots'},5:{sorter:false}}});
+
+	});
+
+	function searchClasses() {
+		var coursenumber = $.trim($('#txt_coursenumber').val());
+		var term = $.trim($('#txt_term').val());
+		var alphanumeric_pattern = /^[a-zA-Z0-9\.\s]+$/;
+
+		if(coursenumber != '') {
+			if( ! alphanumeric_pattern.test(coursenumber)) {
+				alert('Course number must be alphanumeric.');
+			} else {
+				window.location = 'https://crs.upd.edu.ph/schedule' + '/'+ term + '/'+ coursenumber ;
+			}
+		}
+
+	}
+
+	</script>
+
+<style>
+	#frm_schedule {
+		margin: auto;
+		width: 25%;
+		background: #FCFCF0;
+		border: 3px solid #444444;
+		padding: 1em;
+	}
+	#frm_schedule strong, #search input {
+		padding-right: 1em;
+	}
+</style>
+</head>
+
+<body class="schedule">
+
+<div id="header">
+	<a href="https://crs.upd.edu.ph/user" class="header_link"></a>
+</div>
+<div id="subheader">
+</div>
+
+<div id="content" class="align-center">
+
+<h1>
+	Schedule of Classes<br />
+		<select id="txt_term" name="txt_term" style="padding: 2px; border: 1px solid #CECECE; border-radius: 5px; font-size: 100%; text-align: right;" onchange="searchClasses();">
+					<option value="120192" >Second Semester AY 2019-2020</option>
+					<option value="120194" >Midyear Term 2020</option>
+					<option value="120201" >First Semester AY 2020-2021</option>
+					<option value="120202" selected="selected">Second Semester AY 2020-2021</option>
+					<option value="120204" >Midyear Term 2021</option>
+		</select>
+	</h1>
+
+<br />
+<form id="frm_schedule" action="" method="post">
+Course Number: 
+<input type="text" id="txt_coursenumber" name="txt_coursenumber" placeholder="(e.g., Math 11, Eng 1)"/>
+<br/> 
+<input type="button" id="btn_search" name="btn_search" value="Search" />
+</form>
+
+<br/>
+<p>
+	<a href="https://crs.upd.edu.ph/schedule/120202/A">A</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/B">B</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/C">C</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/D">D</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/E">E</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/F">F</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/G">G</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/H">H</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/I">I</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/J">J</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/K">K</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/L">L</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/M">M</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/N">N</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/O">O</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/P">P</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Q">Q</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/R">R</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/S">S</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/T">T</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/U">U</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/V">V</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/W">W</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/X">X</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Y">Y</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Z">Z</a>&nbsp;
+<a href="https://crs.upd.edu.ph/">Back to main page</a>
+</p>
+<br />
+<div style="text-align: left; padding: 0; margin: 0;"><strong>Results for: <em>A</em></strong></div>
+<table id="tbl_schedule" style="table-layout: fixed	">
+<thead>
+<tr>
+	<th width="5%">Class Code</th>
+	<th width="15%">Class</th>
+	<th width="5%">Credits</th>
+	<th width="30%">
+		Schedule<br />
+		Instructor(s)<br/>
+		Remarks
+	</th>
+	<th width="15%">Enlisting Unit : Block<br/><b>Block Remarks</b></th>
+	<th width="10%">
+		Available Slots /<br />
+		Total Slots
+	</th>
+	<th width="5%">Demand</th>
+	<th width="15%">Restrictions</th>
+</tr>
+</thead>
+
+	<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60089</td>
+		<td rowspan = "1">Acctg 1 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			GONZAGA, NOREEN ROSE<br/>
+					</td>
+		 
+		<td>CPAGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">78</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">60090</td>
+		<td rowspan = "1">Acctg 1 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			GONZAGA, NOREEN ROSE<br/>
+					</td>
+		 
+		<td>CPAGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">76</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47974</td>
+		<td rowspan = "1">Anthro 10 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CRUZ, REGINALDO<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">70</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47977</td>
+		<td rowspan = "1">Anthro 10 THU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			ESTEBAN, ROLANDO<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">41</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47978</td>
+		<td rowspan = "1">Anthro 10 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			ESTEBAN, ROLANDO<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">46</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47979</td>
+		<td rowspan = "1">Anthro 10 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			ESTEBAN, ROLANDO<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">36</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47981</td>
+		<td rowspan = "1">Anthro 10 THW-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			LUNA, JARED JONATHAN<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47975</td>
+		<td rowspan = "1">Anthro 10 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			CASTRO, NESTOR<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">37</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47980</td>
+		<td rowspan = "1">Anthro 10 THX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			ESTEBAN, ROLANDO<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">43</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47976</td>
+		<td rowspan = "1">Anthro 10 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			CASTRO, NESTOR<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">57</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47973</td>
+		<td rowspan = "1">Anthro 100 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			VALIENTES, EDWIN WINSTON<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">36</td>
+														
+		<td>For: BS FLCD(2 slots), BA (Ling)(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">48006</td>
+		<td rowspan = "1">Anthro 100 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			TATEL, CARLOS<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47962</td>
+		<td rowspan = "1">Anthro 101 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			TADURAN, RICHARD JONATHAN<br/>
+			<em style="font-weight: bold">Prereq Anthro 100 Coreq Anthro 101.1</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">12</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47963</td>
+		<td rowspan = "1">Anthro 101.1 THL</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			T 4-5PM lab TBA<br />
+			TADURAN, RICHARD JONATHAN<br/>
+			<em style="font-weight: bold">Prereq Anthro 100 Coreq Anthro 101</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">10</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47989</td>
+		<td rowspan = "1">Anthro 111.1 WFL</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			F 4-5PM lab TBA<br />
+			OCHOA, JANINE THERESE<br/>
+			<em style="font-weight: bold">Prereq Anthro 100 Coreq Anthro 111</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">25</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47990</td>
+		<td rowspan = "1">Anthro 111.1 WFL-1</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			F 5-6PM lab TBA<br />
+			OCHOA, JANINE THERESE<br/>
+			<em style="font-weight: bold">Prereq Anthro 100 Coreq Anthro 111</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">13</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47964</td>
+		<td rowspan = "1">Anthro 112 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			VALIENTES, EDWIN WINSTON<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">14</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47965</td>
+		<td rowspan = "1">Anthro 112 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			VALIENTES, EDWIN WINSTON<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47987</td>
+		<td rowspan = "1">Anthro 118 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			OCHOA, JANINE THERESE<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47988</td>
+		<td rowspan = "1">Anthro 118 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			OCHOA, JANINE THERESE<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">24</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47958</td>
+		<td rowspan = "1">Anthro 133 WFQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 7-8:30AM lec TBA<br />
+			MANGAHAS, MARIA<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47959</td>
+		<td rowspan = "1">Anthro 133 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			MANGAHAS, MARIA<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">30</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47966</td>
+		<td rowspan = "1">Anthro 151 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			GUAZON, HECTOR<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">24</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47967</td>
+		<td rowspan = "1">Anthro 151 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			GUAZON, HECTOR<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">6</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47968</td>
+		<td rowspan = "1">Anthro 161 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			CRUZ, REGINALDO<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">17</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47969</td>
+		<td rowspan = "1">Anthro 161 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CRUZ, REGINALDO<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47971</td>
+		<td rowspan = "1">Anthro 167 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			LASCO, PAUL GIDEON<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">22</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47972</td>
+		<td rowspan = "1">Anthro 167 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			LASCO, PAUL GIDEON<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47952</td>
+		<td rowspan = "1">Anthro 172 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			CABALZA, CHESTER<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: BA (Anthro)(10 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47954</td>
+		<td rowspan = "1">Anthro 173 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			LUNA, JARED JONATHAN<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">17</td>
+														
+		<td>For: BA (Anthro)(10 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47955</td>
+		<td rowspan = "1">Anthro 179 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			CASTRO, NESTOR<br/>
+			<em style="font-weight: bold">Prereq Anthro 100/ COI</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">6</td>
+														
+		<td>For: BA (Anthro)(10 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47956</td>
+		<td rowspan = "1">Anthro 181 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			JOCANO, FELIPE<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">24</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47957</td>
+		<td rowspan = "1">Anthro 181 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			JOCANO, FELIPE<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">29</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47970</td>
+		<td rowspan = "1">Anthro 190 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			TAQUEBAN, EFENITA MAY<br/>
+			<em style="font-weight: bold">Only for those who are qualified to join AFS 2021 based on the pre-field evaluation</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47960</td>
+		<td rowspan = "1">Anthro 194 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			SANTOS, MONICA FIDES AMADA<br/>
+			<em style="font-weight: bold">Prereq Anthro 170 / COI</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">28</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47961</td>
+		<td rowspan = "1">Anthro 194 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			SANTOS, MONICA FIDES AMADA<br/>
+			<em style="font-weight: bold">Prereq Anthro 170 / COI</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">22</td>
+														
+		<td>For: BA (Anthro)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">48000</td>
+		<td rowspan = "1">Anthro 202 WNOP</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM lec TBA<br />
+			TADURAN, RICHARD JONATHAN<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47993</td>
+		<td rowspan = "1">Anthro 205 HNOP<br/>FOCUS: Criminal Anthropology</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5-8PM lec TBA<br />
+			TADURAN, RICHARD JONATHAN<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">48001</td>
+		<td rowspan = "1">Anthro 212 HLNO1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4-7PM lec TBA<br />
+			OCHOA, JANINE THERESE<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47994</td>
+		<td rowspan = "1">Anthro 223 WLNO</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 4-7PM lec TBA<br />
+			CASTRO, NESTOR<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">48002</td>
+		<td rowspan = "1">Anthro 224 FLNO2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 4-7PM lec TBA<br />
+			MANGAHAS, MARIA<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">48005</td>
+		<td rowspan = "1">Anthro 225 SJKL</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 2-5PM lec TBA<br />
+			PAMA, HERMEL<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47995</td>
+		<td rowspan = "1">Anthro 261 SCDE<br/>Seminar in Asian Traditions</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM seminar TBA<br />
+			CABALZA, CHESTER<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47996</td>
+		<td rowspan = "1">Anthro 275 MNOP<br/>FOCUS: Civil Society, the State and the Private Sector in a Contentious New Normal)</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 5-8PM seminar TBA<br />
+			RACELIS, MARY<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47997</td>
+		<td rowspan = "1">Anthro 277 SIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CABALZA, CHESTER<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47998</td>
+		<td rowspan = "1">Anthro 278 HLNO<br/>FOCUS: Social Science Research Methods Using the Internet</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 4-7PM seminar TBA<br />
+			TAN, MICHAEL<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47999</td>
+		<td rowspan = "1">Anthro 282 HLNO<br/>FOCUS: Life Histories</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4-7PM lec TBA<br />
+			PAMA, HERMEL<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">48003</td>
+		<td rowspan = "1">Anthro 297 TLNO1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 4-7PM lec TBA<br />
+			TAN, MICHAEL<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">48007</td>
+		<td rowspan = "1">Anthro 300 MCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 9AM-12PM thesis TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">48008</td>
+		<td rowspan = "1">Anthro 400 MIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM diss TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">47953</td>
+		<td rowspan = "1">Anthropology 114 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CANO, JENNY RUTH<br/>
+			<em style="font-weight: bold">Asynchronous learning via UVLe; synchronous meetings weekly or every two weeks via Zoom; requires up.edu.ph email or UP Gmail account; non-internet (offline) option can be accommodated upon request.</em>		</td>
+		 
+		<td>DAnthro<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">4</td>
+														
+		<td>For: BA (Anthro)(10 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41385</td>
+		<td rowspan = "1">App Physics 157 WFU-FX</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec NIP F207; F 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: App Physics 155</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41384</td>
+		<td rowspan = "1">App Physics 157 WFU-WX</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec NIP F206; W 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: App Physics 155</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41386</td>
+		<td rowspan = "1">App Physics 171 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lab NIP R210<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Physics 105 / equiv.</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41387</td>
+		<td rowspan = "1">App Physics 175 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec NIP F205<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: App Physics 173</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41391</td>
+		<td rowspan = "1">App Physics 181 THY-FX</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			F 1-4PM lab TBA; TTh 4-5:30PM lec NIP R109<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Physics 107.1</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">58</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41392</td>
+		<td rowspan = "1">App Physics 181 THY-FX-1</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			F 1-4PM lab TBA; TTh 4-5:30PM lec NIP R109<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Physics 107.1</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">57</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41393</td>
+		<td rowspan = "1">App Physics 181 THY-FX-2</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			F 1-4PM lab TBA; TTh 4-5:30PM lec NIP R109<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Physics 107.1</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">54</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41388</td>
+		<td rowspan = "1">App Physics 181 THY-WX</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			W 1-4PM lab TBA; TTh 4-5:30PM lec NIP R109<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Physics 107.1</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">53</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41389</td>
+		<td rowspan = "1">App Physics 181 THY-WX-1</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			W 1-4PM lab TBA; TTh 4-5:30PM lec NIP R109<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Physics 107.1</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">52</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41390</td>
+		<td rowspan = "1">App Physics 181 THY-WX-2</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			W 1-4PM lab TBA; TTh 4-5:30PM lec NIP R109<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Physics 107.1</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+												<td rowspan="1">52</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41394</td>
+		<td rowspan = "1">App Physics 183 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec NIP F207<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: Physics 121</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">41395</td>
+		<td rowspan = "1">App Physics 185 THR</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			M 8-11AM lab NIP R208; TTh 8:30-10AM lec NIP R208<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: App Physics 182 and App Physics 191</em>		</td>
+		 
+		<td>NIP<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">15681</td>
+		<td rowspan = "1">Aral Pil 300 HABC</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			Th 7-10AM thesis TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>DFPP<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11693</td>
+		<td rowspan = "1">Arch 3 THBCDEG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8AM-12:30PM lab TBA<br />
+			RIVERA, DAVID<br/>
+			<em style="font-weight: bold">BS Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11699</td>
+		<td rowspan = "1">Arch 3 THBCDEG-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8AM-12:30PM lab TBA<br />
+			YAZON, RIZALINO<br/>
+			<em style="font-weight: bold">BS Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">51</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11744</td>
+		<td rowspan = "1">Arch 3 WFBCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8AM-12:30PM lab TBA<br />
+			GOZON, PATRICK ANDREW<br/>
+			<em style="font-weight: bold">BL Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>17</strong> /
+				17			</td>
+												<td rowspan="1">10</td>
+														
+		<td>For: B LArch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11694</td>
+		<td rowspan = "1">Arch 3 WFBCDEG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8AM-12:30PM lab TBA<br />
+			RIVERA, DAVID<br/>
+			<em style="font-weight: bold">BS Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">24</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11700</td>
+		<td rowspan = "1">Arch 3 WFBCDEG-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8AM-12:30PM lab TBA<br />
+			YAZON, RIZALINO<br/>
+			<em style="font-weight: bold">BS Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">50</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11726</td>
+		<td rowspan = "1">Arch 3 WFBCDEG-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8AM-12:30PM lab TBA<br />
+			DE LEON, RUBY TERESA<br/>
+			<em style="font-weight: bold">BL Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>17</strong> /
+				17			</td>
+												<td rowspan="1">29</td>
+														
+		<td>For: B LArch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11708</td>
+		<td rowspan = "1">Arch 4 WFCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 9:30AM-12PM lab TBA<br />
+			BALANE, RONALD<br/>
+			<em style="font-weight: bold">BS ID</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">0</td>
+														
+		<td>For: BS ID</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11682</td>
+		<td rowspan = "1">Arch 5 THZQ</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 6-8:30PM lec TBA<br />
+			MANALANG, RINGER<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">76</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11680</td>
+		<td rowspan = "1">Arch 5 WFCDE</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 9:30AM-12PM lec TBA<br />
+			LOPEZ, KAREN THERESE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">34</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11746</td>
+		<td rowspan = "1">Arch 5 WFCDE-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 9:30AM-12PM lec TBA<br />
+			LECCIONES, AARON JULIUS<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11681</td>
+		<td rowspan = "1">Arch 5 WFKLN</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 1:30-4PM lec TBA<br />
+			LOPEZ, KAREN THERESE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">47</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11747</td>
+		<td rowspan = "1">Arch 5 WFWX</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 1:30-4PM lec TBA<br />
+			LECCIONES, AARON JULIUS<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11675</td>
+		<td rowspan = "1">Arch 16 THE</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 2-3PM lec TBA<br />
+			GINES, LEONIDO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">22</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11751</td>
+		<td rowspan = "1">Arch 16 THI</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 1-2PM lec TBA<br />
+			LICO, GERARD REY<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">47</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11755</td>
+		<td rowspan = "1">Arch 16 THI-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 1-2PM lec TBA<br />
+			LUNA, MARKEL CESAR<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">49</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11756</td>
+		<td rowspan = "1">Arch 16 THJ</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 2-3PM lec TBA<br />
+			LUNA, MARKEL CESAR<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">45</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11672</td>
+		<td rowspan = "1">Arch 18 THD</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 10-11AM lec TBA<br />
+			GINES, LEONIDO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">30</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11782</td>
+		<td rowspan = "1">Arch 18 THD-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 10-11AM lec TBA<br />
+			SANTOS, MICHAELA ROSETTE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">58</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11673</td>
+		<td rowspan = "1">Arch 18 THE</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 11AM-12PM lec TBA<br />
+			GINES, LEONIDO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">28</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11766</td>
+		<td rowspan = "1">Arch 18 THE-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 11AM-12PM lec TBA<br />
+			OZAETA, EMILIO JACINTO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11705</td>
+		<td rowspan = "1">Arch 20 THLN</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			Th 4:30-6:30PM lab TBA; T 4:30-6:30PM lec TBA<br />
+			ARANETA, MAUREEN ANNE<br/>
+			<em style="font-weight: bold">BS ID</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">17</td>
+														
+		<td>For: BS ID</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11674</td>
+		<td rowspan = "1">Arch 20 WFLNO</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			F 4:30-6:30PM lab TBA; W 4:30-6:30PM lec TBA<br />
+			GINES, LEONIDO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">36</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11678</td>
+		<td rowspan = "1">Arch 20 WFLNO-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			F 4:30-6:30PM lab TBA; W 4:30-6:30PM lec TBA<br />
+			LAYUSA, MARY CHRISTINE JOSEPHINE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">44</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11686</td>
+		<td rowspan = "1">Arch 20 WFLNO-2</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			F 4:30-6:30PM lab TBA; W 4:30-6:30PM lec TBA<br />
+			ONG, SIMOUN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">17</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11706</td>
+		<td rowspan = "1">Arch 20 WFYZ</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			F 4:30-6:30PM lab TBA; W 4:30-6:30PM lec TBA<br />
+			ARANETA, MAUREEN ANNE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">48</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11745</td>
+		<td rowspan = "1">Arch 22 THYZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4:30-9PM lab TBA<br />
+			GOZON, PATRICK ANDREW<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11727</td>
+		<td rowspan = "1">Arch 22 WFYZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4:30-9PM lab TBA<br />
+			DE LEON, RUBY TERESA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">38</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11784</td>
+		<td rowspan = "1">Arch 22 WFYZQ-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4:30-9PM lab TBA<br />
+			SANTOS, MICHAELA ROSETTE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">53</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11788</td>
+		<td rowspan = "1">Arch 22 WFYZQ-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4:30-9PM lab TBA<br />
+			SICAM, OLIVIA ALMA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">42</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11697</td>
+		<td rowspan = "1">Arch 23 THWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1:30-4PM lab TBA; T 1:30-4PM lec TBA<br />
+			SANTOS, JOHN RYAN<br/>
+			<em style="font-weight: bold">BS Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11759</td>
+		<td rowspan = "1">Arch 23 THWX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1:30-4PM lab TBA; T 1:30-4PM lec TBA<br />
+			MADRID, DOLORES CECILIA<br/>
+			<em style="font-weight: bold">BS Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">60</td>
+														
+		<td>For: BS Arch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11783</td>
+		<td rowspan = "1">Arch 23 THWX-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1:30-4PM lab TBA; T 1:30-4PM lec TBA<br />
+			SANTOS, MICHAELA ROSETTE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">50</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11728</td>
+		<td rowspan = "1">Arch 23 WFWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 1:30-4PM lab TBA; W 1:30-4PM lec TBA<br />
+			DE LEON, RUBY TERESA<br/>
+			<em style="font-weight: bold">BS ID</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>29</strong> /
+				29			</td>
+												<td rowspan="1">31</td>
+														
+		<td>For: BS ID</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11719</td>
+		<td rowspan = "1">Arch 32 THYZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4:30-9PM lab TBA; T 4:30-9PM lec TBA<br />
+			CHUA, JOHANNES VINCENT<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">57</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11722</td>
+		<td rowspan = "1">Arch 32 THYZQ-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4:30-9PM lab TBA; T 4:30-9PM lec TBA<br />
+			DE CHAVEZ, KELVIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11729</td>
+		<td rowspan = "1">Arch 32 THYZQ-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4:30-9PM lab TBA; T 4:30-9PM lec TBA<br />
+			DEL CASTILLO, NICOLO PRECIOSO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11795</td>
+		<td rowspan = "1">Arch 32 THYZQ-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4:30-9PM lab TBA; T 4:30-9PM lec TBA<br />
+			VARONA, MARIA FAITH<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">51</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11655</td>
+		<td rowspan = "1">Arch 33 WFGIJKL</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 12-4:30PM lec TBA<br />
+			BULAONG, APOLINARIO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">44</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11789</td>
+		<td rowspan = "1">Arch 33 WFGIJKL-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 12-4:30PM lec TBA<br />
+			SICAM, OLIVIA ALMA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">47</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11654</td>
+		<td rowspan = "1">Arch 33 WFYZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 5-9:30PM lec TBA<br />
+			BELGA, MARIE EDRALINE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11684</td>
+		<td rowspan = "1">Arch 35 SGIJ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 12-3PM lec TBA<br />
+			MEONADA, JOSE MARI<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">61</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11685</td>
+		<td rowspan = "1">Arch 35 SKLN</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 3-6PM lec TBA<br />
+			MEONADA, JOSE MARI<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">41</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11687</td>
+		<td rowspan = "1">Arch 35 THZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 12-3PM lec TBA<br />
+			ONG, SIMOUN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11718</td>
+		<td rowspan = "1">Arch 55 THD</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 10-11AM lec TBA<br />
+			CHUA, JOHANNES VINCENT<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>27</strong> /
+				27			</td>
+												<td rowspan="1">56</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11748</td>
+		<td rowspan = "1">Arch 55 THD-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 10-11AM lec TBA<br />
+			LECCIONES, AARON JULIUS<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">25</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11749</td>
+		<td rowspan = "1">Arch 55 THE</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 11AM-12PM lec TBA<br />
+			LECCIONES, AARON JULIUS<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11774</td>
+		<td rowspan = "1">Arch 75 WFD</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 10-11AM lec TBA<br />
+			SANTOS, MARIA LISA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11778</td>
+		<td rowspan = "1">Arch 75 WFD-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 10-11AM lec TBA<br />
+			SANTOS, ROMEO<br/>
+			<em style="font-weight: bold">BL Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>33</strong> /
+				33			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: B LArch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11775</td>
+		<td rowspan = "1">Arch 75 WFE</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 11AM-12PM lec TBA<br />
+			SANTOS, MARIA LISA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">20</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11667</td>
+		<td rowspan = "1">Arch 75 WFO</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 6-7PM lec TBA<br />
+			DUQUE, DUCHESS ALEKSEI<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">52</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11668</td>
+		<td rowspan = "1">Arch 75 WFP</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 7-8PM lec TBA<br />
+			DUQUE, DUCHESS ALEKSEI<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												<td rowspan="1">40</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11683</td>
+		<td rowspan = "1">Arch 134 SIJKLN</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-6PM lab TBA<br />
+			MANALANG, RINGER<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>21</strong> /
+				21			</td>
+												<td rowspan="1">34</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11656</td>
+		<td rowspan = "1">Arch 134 THWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-3:30PM lab TBA; T 1-3:30PM lec TBA<br />
+			BULAONG, APOLINARIO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>21</strong> /
+				21			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11724</td>
+		<td rowspan = "1">Arch 134 THWX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-3:30PM lab TBA; T 1-3:30PM lec TBA<br />
+			DE CHAVEZ, KELVIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>21</strong> /
+				21			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11711</td>
+		<td rowspan = "1">Arch 142 THYZQ</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			Th 4:30-9:30PM lab TBA; T 4:30-9:30PM lec TBA<br />
+			BARIA, RICHELLE RHEA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">22</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11790</td>
+		<td rowspan = "1">Arch 142 THYZQ-1</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			Th 4:30-9:30PM lab TBA; T 4:30-9:30PM lec TBA<br />
+			SILVESTRE, JOSE DANILO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">29</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11776</td>
+		<td rowspan = "1">Arch 142 WFYZQ</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			F 4:30-9:30PM lab TBA; W 4:30-9:30PM lec TBA<br />
+			SANTOS, MARIA LISA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11793</td>
+		<td rowspan = "1">Arch 142 WFYZQ-1</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			F 4:30-9:30PM lab TBA; W 4:30-9:30PM lec TBA<br />
+			TOMELDAN, MICHAEL<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11670</td>
+		<td rowspan = "1">Arch 147 WFCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 9:30AM-12PM lab TBA; W 9:30AM-12PM lec TBA<br />
+			EVANGELISTA, ALEX RAY<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">43</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11773</td>
+		<td rowspan = "1">Arch 147 WFCDE-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 9:30AM-12PM lab TBA; W 9:30AM-12PM lec TBA<br />
+			SANTOS, FREDERICK<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11701</td>
+		<td rowspan = "1">Arch 149 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			ABAYA, ERNESTO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11723</td>
+		<td rowspan = "1">Arch 162 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			DE CHAVEZ, KELVIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+												<td rowspan="1">25</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11698</td>
+		<td rowspan = "1">Arch 162 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			SURIA, MICHELE<br/>
+			<em style="font-weight: bold">BL Arch</em>		</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+												<td rowspan="1">11</td>
+														
+		<td>For: B LArch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11692</td>
+		<td rowspan = "1">Arch 162 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			REGALA, MARIA BENITA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11777</td>
+		<td rowspan = "1">Arch 162 WFW-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			SANTOS, MARIA LISA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>18</strong> /
+				18			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11720</td>
+		<td rowspan = "1">Arch 171 THWX</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lab TBA; T 1-4PM lec TBA<br />
+			CHUA, JOHANNES VINCENT<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">71</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11730</td>
+		<td rowspan = "1">Arch 171 THWX-1</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lab TBA; T 1-4PM lec TBA<br />
+			DEL CASTILLO, NICOLO PRECIOSO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+												<td rowspan="1">22</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11709</td>
+		<td rowspan = "1">Arch 199.2 THYZQ</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TTh 4:30-9:30PM lec TBA<br />
+			BALANE, RONALD<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11757</td>
+		<td rowspan = "1">Arch 199.2 THYZQ-1</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TTh 4:30-9:30PM lec TBA<br />
+			LUNA, MARKEL CESAR<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11760</td>
+		<td rowspan = "1">Arch 199.2 THYZQ-2</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TTh 4:30-9:30PM lec TBA<br />
+			MADRID, DOLORES CECILIA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11767</td>
+		<td rowspan = "1">Arch 199.2 THYZQ-3</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TTh 4:30-9:30PM lec TBA<br />
+			OZAETA, EMILIO JACINTO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11772</td>
+		<td rowspan = "1">Arch 199.2 THYZQ-4</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TTh 4:30-9:30PM lec TBA<br />
+			SANTOS, FREDERICK<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11786</td>
+		<td rowspan = "1">Arch 199.2 THYZQ-5</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TTh 4:30-9:30PM lec TBA<br />
+			SARTHOU, ARMIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11716</td>
+		<td rowspan = "1">Arch 202 MOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			BULAONG, CARMEN BETTINA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11750</td>
+		<td rowspan = "1">Arch 205 HOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			LECCIONES, AARON JULIUS<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11787</td>
+		<td rowspan = "1">Arch 206 WOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			SARTHOU, ARMIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11669</td>
+		<td rowspan = "1">Arch 211 TOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-9PM lec TBA<br />
+			ESPINA, CRISTOPHER STONEWALL<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11712</td>
+		<td rowspan = "1">Arch 233 FOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			BARIA, RICHELLE RHEA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11791</td>
+		<td rowspan = "1">Arch 234 FOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			SILVESTRE, JOSE DANILO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11725</td>
+		<td rowspan = "1">Arch 236 FOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			DE CHAVEZ, KELVIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62251</td>
+		<td rowspan = "1">Archaeo 2 THQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 7-8:30AM lec Classroom A<br />
+			PEÑA, JESSICA CECILIA<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62252</td>
+		<td rowspan = "1">Archaeo 2 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec Classroom A<br />
+			PEÑA, JESSICA CECILIA<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62253</td>
+		<td rowspan = "1">Archaeo 2 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec Classroom B<br />
+			MABANAG, MARK ANTHONY<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62254</td>
+		<td rowspan = "1">Archaeo 2 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec Classroom B<br />
+			MABANAG, MARK ANTHONY<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11702</td>
+		<td rowspan = "1">Archi 203 FOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			ABAYA, ERNESTO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11779</td>
+		<td rowspan = "1">Archi 203 HOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			SANTOS, ROMEO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11691</td>
+		<td rowspan = "1">Archi 203 SOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 6-9PM lec TBA<br />
+			PALARCA, HONORIO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: M TLArch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11768</td>
+		<td rowspan = "1">Archi 203 WOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			OZAETA, EMILIO JACINTO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11731</td>
+		<td rowspan = "1">Archi 210 MOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			DEL CASTILLO, NICOLO PRECIOSO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11752</td>
+		<td rowspan = "1">Archi 210 MOPQ-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			LICO, GERARD REY<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11761</td>
+		<td rowspan = "1">Archi 210 MOPQ-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			NADAL, CATHE DESIREE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td>For: M TLArch</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11792</td>
+		<td rowspan = "1">Archi 210 SCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			SILVESTRE, JOSE DANILO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11800</td>
+		<td rowspan = "1">Archi 211 MSOPQCDE<br/>Building Science: Components of Building Science</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lab TBA; M 6-9PM lec TBA<br />
+			BO-OT, LUIS MARIA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11671</td>
+		<td rowspan = "1">Archi 211 TSOPQ<br/>Environmental Architecture: Tropical Design</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			S 6-9PM lab TBA; T 6-9PM lec TBA<br />
+			FLORES, JUAN PAOLO ANGELO MARTIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11666</td>
+		<td rowspan = "1">Archi 211 TSOPQCDE<br/>History, Theory, and Criticism: Curating Architecture and the City</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA; T 6-9PM lab TBA<br />
+			BULAONG, CARMEN BETTINA; DE VIANA, LORELEI<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11763</td>
+		<td rowspan = "1">Archi 211 TWOPQWX<br/>Environmental Landscapes: Environmental landscapes' white space</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			W 1-4PM lab TBA; T 6-9PM lec TBA<br />
+			NAVARRA, NAPPY<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11794</td>
+		<td rowspan = "1">Archi 211 WSOPQCDE<br/>Urban Design: Safe and Resilient Communities</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lab TBA; T 6-9PM lec TBA<br />
+			TOMELDAN, MICHAEL<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11677</td>
+		<td rowspan = "1">Archi 232 WOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			KARAAN, ANNA KATRINA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11796</td>
+		<td rowspan = "1">Archi 233 FOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			VARONA, MARIA FAITH<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11785</td>
+		<td rowspan = "1">Archi 241 TOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-9PM lec TBA<br />
+			SANTOS, MICHAELA ROSETTE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11758</td>
+		<td rowspan = "1">Archi 242 FOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 6-9PM lec TBA<br />
+			LUNA, MARKEL CESAR<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11679</td>
+		<td rowspan = "1">Archi 243 SYZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 4-7PM lec TBA<br />
+			LIWANAG, MICHAEL ANGELO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11753</td>
+		<td rowspan = "1">Archi 244 HOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec TBA<br />
+			LICO, GERARD REY<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11713</td>
+		<td rowspan = "1">Archi 252 MOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			BARIA, RICHELLE RHEA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11710</td>
+		<td rowspan = "1">Archi 253 MOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			BALANE, RONALD<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11721</td>
+		<td rowspan = "1">Archi 262 WOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			CHUA, JOHANNES VINCENT<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11707</td>
+		<td rowspan = "1">Archi 299 MOPQ</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			M 6-8PM seminar TBA<br />
+			ARANETA, MAUREEN ANNE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62255</td>
+		<td rowspan = "1">Arkiyoloji 1 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec Classroom A<br />
+			REYES, JOAN TARA<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62256</td>
+		<td rowspan = "1">Arkiyoloji 1 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec Classroom A<br />
+			REYES, JOAN TARA<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62257</td>
+		<td rowspan = "1">Arkiyoloji 1 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec Classroom A<br />
+			COSALAN, ANDREA DOMINIQUE<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62258</td>
+		<td rowspan = "1">Arkiyoloji 1 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec Classroom A<br />
+			COSALAN, ANDREA DOMINIQUE<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62259</td>
+		<td rowspan = "1">Arkiyoloji 1 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec Classroom A<br />
+			MANIPON, DANTE RICARDO<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">35</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">62260</td>
+		<td rowspan = "1">Arkiyoloji 1 WFZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 5:30-7PM lec Classroom A<br />
+			MANIPON, DANTE RICARDO<br/>
+					</td>
+		 
+		<td>ASP<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">24</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13851</td>
+		<td rowspan = "1">ARTS 1 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			BANASIHAN, NIKOLAI ANDREI<br/>
+			<em style="font-weight: bold">For: BS FLCD (5 slots). Approved request for stipulated number of slots. The Dept of Family Life and Child Development is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for FLCD become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">55</td>
+														
+		<td>For: BS FLCD(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13852</td>
+		<td rowspan = "1">ARTS 1 THR-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			ARAGO, GIANPAOLO<br/>
+			<em style="font-weight: bold">For: BS MetE (5 slots). Approved request for stipulated number of slots. The Department of Mining, Metallurgical, and Materials Engineering is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS MetE become available to other units.	</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">72</td>
+														
+		<td>For: BS MetE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13853</td>
+		<td rowspan = "1">ARTS 1 THR-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			DATUIN, FLAUDETTE MAY<br/>
+			<em style="font-weight: bold">For: BA Film (3 slots). Approved request for stipulated number of slots. The UP Film Institute is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Film become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">52</td>
+														
+		<td>For: BA Film(3 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13854</td>
+		<td rowspan = "1">ARTS 1 THR-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			LUCENA, GERARDO<br/>
+			<em style="font-weight: bold">For: BA Journalism (5 slots). Approved request for stipulated number of slots. The Department of Journalism  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Journalism become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">237</td>
+														
+		<td>For: BA J(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13855</td>
+		<td rowspan = "1">ARTS 1 THR-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			ESPEJO, LANCE ISAAC<br/>
+			<em style="font-weight: bold">For: BA Sociology (5 slots). Approved request for stipulated number of slots. The Department of Sociology is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Sociology become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">81</td>
+														
+		<td>For: BA (Socio)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13856</td>
+		<td rowspan = "1">ARTS 1 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			BANASIHAN, NIKOLAI ANDREI<br/>
+			<em style="font-weight: bold">For: BS BE (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS BE become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">48</td>
+														
+		<td>For: BS BE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13857</td>
+		<td rowspan = "1">ARTS 1 THU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			ARAGO, GIANPAOLO<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">146</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13858</td>
+		<td rowspan = "1">ARTS 1 THU-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			RIVERA, ROBIN DANIEL<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">224</td>
+														
+		<td>For: CD(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13859</td>
+		<td rowspan = "1">ARTS 1 THU-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			PAULINO, ROBERTO ELISEO<br/>
+			<em style="font-weight: bold">For: BS Econ (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS Econ become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">51</td>
+														
+		<td>For: BS Econ(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13860</td>
+		<td rowspan = "1">ARTS 1 THU-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			GIRON, MANUEL KRISTOFFERSON<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">58</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13861</td>
+		<td rowspan = "1">ARTS 1 THU-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			LUCENA, GERARDO<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">180</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13862</td>
+		<td rowspan = "1">ARTS 1 THU-6</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			LOPEZ, PATRICIA MARION<br/>
+			<em style="font-weight: bold">For: BS MetE (5 slots). Approved request for stipulated number of slots. The Department of Mining, Metallurgical, and Materials Engineering is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS MetE become available to other units.	</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">60</td>
+														
+		<td>For: BS MetE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13863</td>
+		<td rowspan = "1">ARTS 1 THU-7</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			GO, NELISSA<br/>
+			<em style="font-weight: bold">For: BA Speech Communication (5 slots). Approved request for stipulated number of slots. The Department of Speech Communication and Theatre Arts is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Speech Communication become available to other units.	</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: BA (SC)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13864</td>
+		<td rowspan = "1">ARTS 1 THU-8</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CABRERA, MARIA CONSUELO<br/>
+			<em style="font-weight: bold">For: BA Communication Research (5 slots). Approved request for stipulated number of slots. The Department of Communication Research is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Communication Research become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: BA CommRes(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13865</td>
+		<td rowspan = "1">ARTS 1 THU-9</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			ESPEJO, LANCE ISAAC<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">34</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13866</td>
+		<td rowspan = "1">ARTS 1 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">For: BS BE (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS BE become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">34</td>
+														
+		<td>For: BS BE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13867</td>
+		<td rowspan = "1">ARTS 1 THV-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			GIRON, MANUEL KRISTOFFERSON<br/>
+			<em style="font-weight: bold">For: AA (Music) (5 slots) & CHK (5 slots). Approved request for stipulated number of slots. The College of Music and College of Human Kinetics are also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for AA (Music) and CHK become available to other units.	</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">65</td>
+														
+		<td>For: CHK(5 slots), AA (M)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13868</td>
+		<td rowspan = "1">ARTS 1 THV-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			QUIRONG, JC<br/>
+			<em style="font-weight: bold"> Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">25</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13869</td>
+		<td rowspan = "1">ARTS 1 THV-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			ABRERA, PATRICIA MARION<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">42</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13870</td>
+		<td rowspan = "1">ARTS 1 THV-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			CABRERA, MARIA CONSUELO<br/>
+			<em style="font-weight: bold">For: BS FLCD (1 slot) & BS HRIM (1 slot). Approved request for stipulated number of slot. The Dept of Family Life and Child Development and Department of Hotel, Restaurant and Institution Management are also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for FLCD ad HRIM become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: BS HRIM(1 slots), BS FLCD(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13952</td>
+		<td rowspan = "1">ARTS 1 THV-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			YAMBAO, CLOD MARLAN KRISTER<br/>
+			<em style="font-weight: bold">For: BA Sociology (5 slots). Approved request for stipulated number of slots. The Department of Sociology is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Sociology become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">102</td>
+														
+		<td>For: BA (Socio)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13871</td>
+		<td rowspan = "1">ARTS 1 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			RIVERA, ROBIN DANIEL<br/>
+			<em style="font-weight: bold">For: BS FLCD (5 slots). Approved request for stipulated number of slots. The Dept of Family Life and Child Development is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for FLCD become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">64</td>
+														
+		<td>For: BS FLCD(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13872</td>
+		<td rowspan = "1">ARTS 1 THW-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			HERNANDEZ, ELOISA MAY<br/>
+			<em style="font-weight: bold">For: BS Econ (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS Econ become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">105</td>
+														
+		<td>For: BS Econ(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13873</td>
+		<td rowspan = "1">ARTS 1 THW-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			HIRANO, MAYUMI<br/>
+			<em style="font-weight: bold">For: BM (Voice/Dance) (1 slot). Approved request for stipulated number of slots. The College of Music is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BM (Voice/Dance) become available to other units.	</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">19</td>
+														
+		<td>For: B M(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13874</td>
+		<td rowspan = "1">ARTS 1 THW-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			LUCENA, GERARDO<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">256</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13875</td>
+		<td rowspan = "1">ARTS 1 THW-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			QUIRONG, JC<br/>
+			<em style="font-weight: bold">For: BS EM (5 slots). Approved request for stipulated number of slots. The Department of Mining, Metallurgical, and Materials Engineering is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS EM become available to other units.	</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">18</td>
+														
+		<td>For: BS EM(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13876</td>
+		<td rowspan = "1">ARTS 1 THW-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			GO, NELISSA<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">42</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13877</td>
+		<td rowspan = "1">ARTS 1 THW-6</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			ESPEJO, LANCE ISAAC<br/>
+			<em style="font-weight: bold">For: BS MetE (5 slots). Approved request for stipulated number of slots. The Department of Mining, Metallurgical, and Materials Engineering is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS MetE become available to other units.	</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">19</td>
+														
+		<td>For: BS MetE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13953</td>
+		<td rowspan = "1">ARTS 1 THW-7</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			YAMBAO, CLOD MARLAN KRISTER<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">109</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13878</td>
+		<td rowspan = "1">ARTS 1 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			ARAGO, GIANPAOLO<br/>
+			<em style="font-weight: bold"> For: BA Speech Communication (5 slots). Approved request for stipulated number of slots. The Department of Speech Communication and Theatre Arts is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Speech Communication become available to other units.	</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">44</td>
+														
+		<td>For: BA (SC)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13879</td>
+		<td rowspan = "1">ARTS 1 THX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			HERNANDEZ, ELOISA MAY<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">155</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13880</td>
+		<td rowspan = "1">ARTS 1 THX-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			GIRON, MANUEL KRISTOFFERSON<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">54</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13881</td>
+		<td rowspan = "1">ARTS 1 THX-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			LUCENA, GERARDO<br/>
+			<em style="font-weight: bold">For: BS BE (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS BE become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">128</td>
+														
+		<td>For: BS BE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13882</td>
+		<td rowspan = "1">ARTS 1 THX-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			GO, NELISSA<br/>
+			<em style="font-weight: bold">For: BA Sociology (5 slots). Approved request for stipulated number of slots. The Department of Sociology is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Sociology become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: BA (Socio)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13883</td>
+		<td rowspan = "1">ARTS 1 THX-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			CABRERA, MARIA CONSUELO<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">27</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13884</td>
+		<td rowspan = "1">ARTS 1 THX-6</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			ESPEJO, LANCE ISAAC<br/>
+			<em style="font-weight: bold">For: BA Broadcast Communication (5 slots). Approved request for stipulated number of slots. The Department of Broadcast Communication is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Broadcast Communication become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">28</td>
+														
+		<td>For: BA BC(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13885</td>
+		<td rowspan = "1">ARTS 1 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			ARAGO, GIANPAOLO<br/>
+			<em style="font-weight: bold">For: BA Journalism (5 slots). Approved request for stipulated number of slots. The Department of Journalism  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Journalism become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">52</td>
+														
+		<td>For: BA J(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13886</td>
+		<td rowspan = "1">ARTS 1 THY-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			GUILLERMO, SOFIA<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">62</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13887</td>
+		<td rowspan = "1">ARTS 1 THY-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			GO, NELISSA<br/>
+			<em style="font-weight: bold">For: BS Econ (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS Econ become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">26</td>
+														
+		<td>For: BS Econ(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13888</td>
+		<td rowspan = "1">ARTS 1 THY-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			CABRERA, MARIA CONSUELO<br/>
+			<em style="font-weight: bold">For: AA (Music) (5 slots). Approved request for stipulated number of slots. The College of Music is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for AA (Music) become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">26</td>
+														
+		<td>For: AA (M)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13958</td>
+		<td rowspan = "1">ARTS 1 THZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 5:30-7PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">Faculty: Ms. Rose Angelie M. Hernandez</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13889</td>
+		<td rowspan = "1">ARTS 1 WFQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 7-8:30AM lec TBA<br />
+			ROSETTE, JUDITH CAMILLE<br/>
+			<em style="font-weight: bold">For: BS Econ (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS Econ become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">47</td>
+														
+		<td>For: BS Econ(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13890</td>
+		<td rowspan = "1">ARTS 1 WFQ-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 7-8:30AM lec TBA<br />
+			LUGUE, MARK LOUIE<br/>
+			<em style="font-weight: bold">For: AA (Music) (5 slots). Approved request for stipulated number of slots. The College of Music is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for AA (Music) become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">100</td>
+														
+		<td>For: AA (M)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13891</td>
+		<td rowspan = "1">ARTS 1 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			ROSETTE, JUDITH CAMILLE<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">86</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13892</td>
+		<td rowspan = "1">ARTS 1 WFR-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			LUGUE, MARK LOUIE<br/>
+			<em style="font-weight: bold">For: BA Speech Communication (5 slots). Approved request for stipulated number of slots. The Department of Speech Communication and Theatre Arts is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Speech Communication become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">85</td>
+														
+		<td>For: BA (SC)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13893</td>
+		<td rowspan = "1">ARTS 1 WFR-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			BANASIHAN, NIKOLAI ANDREI<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">81</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13894</td>
+		<td rowspan = "1">ARTS 1 WFR-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			SALAZAR, JAIME OSCAR<br/>
+			<em style="font-weight: bold">For: BS EM (5 slots). Approved request for stipulated number of slots. The Department of Mining, Metallurgical, and Materials Engineering is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS EM become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: BS EM(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13895</td>
+		<td rowspan = "1">ARTS 1 WFR-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			SAKILI, ABRAHAM<br/>
+			<em style="font-weight: bold">For: BS BE (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS BE become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: BS BE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13954</td>
+		<td rowspan = "1">ARTS 1 WFR-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			QUIRONG, JC<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">54</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13896</td>
+		<td rowspan = "1">ARTS 1 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			ROSETTE, JUDITH CAMILLE<br/>
+			<em style="font-weight: bold">For: BS HRIM (5 slots) & BM (Musicology) (1 slot). Approved request for stipulated number of slots. The Dept of Hotel, Restaurant and Institution Management and College of Music are also delegated to enlist their majors into the allotted slots during the first three days of registration.  After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS HRIM and BM (Musicology) become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: B M(1 slots), BS HRIM(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13897</td>
+		<td rowspan = "1">ARTS 1 WFU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			HERNANDEZ, FREDYL<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13898</td>
+		<td rowspan = "1">ARTS 1 WFU-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			BANASIHAN, NIKOLAI ANDREI<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">33</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13899</td>
+		<td rowspan = "1">ARTS 1 WFU-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			SAKILI, ABRAHAM<br/>
+			<em style="font-weight: bold">For: BA Sociology (5 slots). Approved request for stipulated number of slots. The Department of Sociology is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Sociology become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">19</td>
+														
+		<td>For: BA (Socio)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13900</td>
+		<td rowspan = "1">ARTS 1 WFU-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			RIVERA, ROBIN DANIEL<br/>
+			<em style="font-weight: bold">For: BS Econ (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS Econ become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">107</td>
+														
+		<td>For: BS Econ(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13955</td>
+		<td rowspan = "1">ARTS 1 WFU-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			QUIRONG, JC<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">55</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13901</td>
+		<td rowspan = "1">ARTS 1 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			ROSETTE, JUDITH CAMILLE<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">30</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13902</td>
+		<td rowspan = "1">ARTS 1 WFV-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			HERNANDEZ, FREDYL<br/>
+			<em style="font-weight: bold">For: BA Broadcast Communication (4 slots). Approved request for stipulated number of slots. The Department of Broadcast Communication is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Broadcast Communication become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: BA BC(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13903</td>
+		<td rowspan = "1">ARTS 1 WFV-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			ABRERA, PATRICIA MARION<br/>
+			<em style="font-weight: bold">For: BA Communication Research (5 slots). Approved request for stipulated number of slots. The Department of Communication Research is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Communication Research become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">85</td>
+														
+		<td>For: BA CommRes(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13904</td>
+		<td rowspan = "1">ARTS 1 WFV-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			LAUZON, ALDEN<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">14</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13905</td>
+		<td rowspan = "1">ARTS 1 WFV-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			YAMBAO, CLOD MARLAN KRISTER<br/>
+			<em style="font-weight: bold">Approved request for stipulated number of slots. The College of Human Kinetics is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for CHK become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">83</td>
+														
+		<td>For: CHK(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13906</td>
+		<td rowspan = "1">ARTS 1 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			HERNANDEZ, ELOISA MAY<br/>
+			<em style="font-weight: bold">For: BS CN (5 slots). Approved request for stipulated number of slots. The Department of Food Science and Nutrition  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS CN become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">88</td>
+														
+		<td>For: SW(5 slots), BS CN(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13907</td>
+		<td rowspan = "1">ARTS 1 WFW-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			SALAZAR, JAIME OSCAR<br/>
+			<em style="font-weight: bold">For: BS CN (5 slots). Approved request for stipulated number of slots. The Department of Food Science and Nutrition  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS CN become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">32</td>
+														
+		<td>For: SW(5 slots), BS CN(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13908</td>
+		<td rowspan = "1">ARTS 1 WFW-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			SAKILI, ABRAHAM<br/>
+			<em style="font-weight: bold">For: BS BE (5 slots) & BS CN (5 slots)  Approved request for stipulated number of slots. The School of Economics  and Dept. of Food Science and Nutrition are also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS BE & BS CN become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">14</td>
+														
+		<td>For: BS BE(5 slots), BS CN(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13909</td>
+		<td rowspan = "1">ARTS 1 WFW-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CANTA, MARILYN<br/>
+			<em style="font-weight: bold">For: BS CN (5 slots). Approved request for stipulated number of slots. The Department of Food Science and Nutrition  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS CN become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: SW(5 slots), BS CN(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13910</td>
+		<td rowspan = "1">ARTS 1 WFW-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			RIVERA, ROBIN DANIEL<br/>
+			<em style="font-weight: bold">For: BS FT (3 slots) & BA Journalism (2 slots). Approved request for stipulated number of slots. The Department of Food Science and Nutrition and Department of Journalism are also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS FT and BA J become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">80</td>
+														
+		<td>For: BA J(2 slots), BS FT(3 slots), SW(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13911</td>
+		<td rowspan = "1">ARTS 1 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			HERNANDEZ, FREDYL<br/>
+			<em style="font-weight: bold">For: BS MetE (5 slots). Approved request for stipulated number of slots. The Department of Mining, Metallurgical, and Materials Engineering is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS MetE become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">15</td>
+														
+		<td>For: BS MetE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13912</td>
+		<td rowspan = "1">ARTS 1 WFX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			SALAZAR, JAIME OSCAR<br/>
+			<em style="font-weight: bold">For: BA Journalism (5 slots). Approved request for stipulated number of slots. The Department of Journalism  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Journalism become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">28</td>
+														
+		<td>For: BA J(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13913</td>
+		<td rowspan = "1">ARTS 1 WFX-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">For: BS Econ (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS Econ become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">13</td>
+														
+		<td>For: BS Econ(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13914</td>
+		<td rowspan = "1">ARTS 1 WFX-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			SAKILI, ABRAHAM<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">22</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13915</td>
+		<td rowspan = "1">ARTS 1 WFX-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold"> For: BS EM (5 slots). Approved request for stipulated number of slots. The Department of Mining, Metallurgical, and Materials Engineering is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS EM become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">19</td>
+														
+		<td>For: BS EM(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13916</td>
+		<td rowspan = "1">ARTS 1 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			HERNANDEZ, FREDYL<br/>
+			<em style="font-weight: bold">For: BA Sociology (5 slots). Approved request for stipulated number of slots. The Department of Sociology is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Sociology become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">36</td>
+														
+		<td>For: BA (Socio)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13917</td>
+		<td rowspan = "1">ARTS 1 WFY-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">Faculty: TBA</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">49</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13918</td>
+		<td rowspan = "1">ARTS 1 WFY-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			CANTA, MARILYN<br/>
+			<em style="font-weight: bold">For: BS MetE (5 slots). Approved request for stipulated number of slots. The Department of Mining, Metallurgical, and Materials Engineering is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS MetE become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: BS MetE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13919</td>
+		<td rowspan = "1">ARTS 1 WFY-3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">For: BA Communication Research (6 slots). Approved request for stipulated number of slots. The Department of Communication Research is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BA Communication Research become available to other units.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">49</td>
+														
+		<td>For: BA CommRes(6 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13920</td>
+		<td rowspan = "1">ARTS 1 WFY-4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">For: BS BE (5 slots). Approved request for stipulated number of slots. The School of Economics  is also delegated to enlist their majors into the allotted slots during the first three days of registration. After this period, full enlistment rights revert exclusively to DAS. Further, unused slots reserved for BS BE become available to other units. </em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">29</td>
+														
+		<td>For: BS BE(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13956</td>
+		<td rowspan = "1">ARTS 1 WFY-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			PAZ, LISA<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">28</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13959</td>
+		<td rowspan = "1">ARTS 1 WFZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 5:30-7PM lec TBA<br />
+			TBA<br/>
+			<em style="font-weight: bold">Faculty: Ms. Rose Angelie M. Hernandez</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13923</td>
+		<td rowspan = "1">Art Stud 106 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			DAGTA, JIMUEL DAVE<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 105/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13924</td>
+		<td rowspan = "1">Art Stud 112 THZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 5:30-7PM lec TBA<br />
+			BENITEZ-JOHANNOT, PURISSIMA<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">28</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13925</td>
+		<td rowspan = "1">Art Stud 113 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			GUILLERMO, SOFIA<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13926</td>
+		<td rowspan = "1">Art Stud 125 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			PAULINO, ROBERTO ELISEO<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13927</td>
+		<td rowspan = "1">Art Stud 140 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			SALAZAR, JAIME OSCAR<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13928</td>
+		<td rowspan = "1">Art Stud 143 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			DATUIN, FLAUDETTE MAY<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">17</td>
+														
+		<td>For: MA (ArtStud)(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13929</td>
+		<td rowspan = "1">Art Stud 154 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			CANTA, MARILYN<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13930</td>
+		<td rowspan = "1">Art Stud 177 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			HERNANDEZ, ELOISA MAY<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI; Requires watching films online. Stable and fast internet recommended.</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13931</td>
+		<td rowspan = "1">Art Stud 178 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			LOPEZ, AUREA<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13932</td>
+		<td rowspan = "1">Art Stud 179 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			LOPEZ, PATRICIA MARION<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">10</td>
+														
+		<td>For: MA (ArtStud)(3 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13933</td>
+		<td rowspan = "1">Art Stud 191 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			LAUZON, ALDEN<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13957</td>
+		<td rowspan = "1">Art Stud 192 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM prac TBA<br />
+			GUAZON, TESSA MARIA<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13934</td>
+		<td rowspan = "1">Art Stud 193 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			GUILLERMO, SOFIA<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 50/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13935</td>
+		<td rowspan = "1">Art Stud 195 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			RESPICIO, NORMA<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: MA (ArtStud)(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13936</td>
+		<td rowspan = "1">Art Stud 196 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			YAMBAO, CLOD MARLAN KRISTER<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 194/COI</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">5</td>
+														
+		<td>For: MA (ArtStud)(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13937</td>
+		<td rowspan = "1">Art Stud 199 HUV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 10AM-1PM lec TBA<br />
+			TAN, PEARL<br/>
+			<em style="font-weight: bold">Prereq: Senior Standing</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13938</td>
+		<td rowspan = "1">Art Stud 201 MIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM lec TBA<br />
+			FAJARDO, BRENDA<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13939</td>
+		<td rowspan = "1">Art Stud 212 TLMN</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 4-7PM lec TBA<br />
+			GIRON, MANUEL KRISTOFFERSON<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13940</td>
+		<td rowspan = "1">Art Stud 213 MLMN</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 4-7PM lec TBA<br />
+			DATUIN, FLAUDETTE MAY<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 212</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13941</td>
+		<td rowspan = "1">Art Stud 250 WKLM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 3-6PM lec TBA<br />
+			FLORES, PATRICK<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 240</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13942</td>
+		<td rowspan = "1">Art Stud 252 TDEF</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 10AM-1PM lec TBA<br />
+			TAN, PEARL<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 213/245</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13943</td>
+		<td rowspan = "1">Art Stud 255 WDEF</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 10AM-1PM lec TBA<br />
+			TAN, PEARL<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13944</td>
+		<td rowspan = "1">Art Stud 274 FKLM</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 3-6PM lec TBA<br />
+			FLORES, PATRICK<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13945</td>
+		<td rowspan = "1">Art Stud 284 TXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 2:30-5:30PM lec TBA<br />
+			HIRANO, MAYUMI<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 281</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13946</td>
+		<td rowspan = "1">Art Stud 285 FLMN</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 4-7PM lec TBA<br />
+			ABAYA, EUFRACIO<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 281</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13947</td>
+		<td rowspan = "1">Art Stud 286 WVW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 11:30AM-2:30PM lec TBA<br />
+			GUAZON, TESSA MARIA<br/>
+			<em style="font-weight: bold">Prereq: Art Stud 281</em>		</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13948</td>
+		<td rowspan = "1">Art Stud 299 HLMN</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 4-7PM lec TBA<br />
+			TAN, PEARL<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13949</td>
+		<td rowspan = "1">Art Stud 300 TMNO</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 5-8PM thesis TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">13950</td>
+		<td rowspan = "1">Art Stud 300 WMNO</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			W 5-8PM thesis TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>DAS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10201</td>
+		<td rowspan = "1">AS 201-A MZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 5-8PM disc TBA<br />
+			MEDINA, MARIA CECILIA<br/>
+			<em style="font-weight: bold">Modern Asia (For slot assignments, priority will be given to the AC students.)</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10228</td>
+		<td rowspan = "1">AS 203 SAT</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 8-11AM disc TBA<br />
+			RAQUIZA, ANTOINETTE<br/>
+			<em style="font-weight: bold">Nationalism and National Development</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10216</td>
+		<td rowspan = "1">AS 206 ThZ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5-8PM lec TBA<br />
+			LOPEZ, ARIEL<br/>
+			<em style="font-weight: bold">Philosophies and Religions of Asia</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10205</td>
+		<td rowspan = "1">AS 206 WZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM lec TBA<br />
+			MEDINA, MARIA CECILIA<br/>
+			<em style="font-weight: bold">Philosophies and Religions of Asia</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10210</td>
+		<td rowspan = "1">AS 207 WZ5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM disc TBA<br />
+			RESPICIO, NORMA<br/>
+			<em style="font-weight: bold">Arts of Asia</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10235</td>
+		<td rowspan = "1">AS 210 SAT7</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM disc TBA<br />
+			TALAMPAS, ROLANDO<br/>
+			<em style="font-weight: bold">(Prereq: AS 201, AS 201A) Theories and Perspectives on Area Studies (Priority AC students)</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10207</td>
+		<td rowspan = "1">AS 211 WZ2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM disc TBA<br />
+			SANTARITA, JOEFE<br/>
+			<em style="font-weight: bold">Security Issues in the Asia Pacific</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10204</td>
+		<td rowspan = "1">AS 230 TZ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 5-8PM disc TBA<br />
+			CLEMENTE, TINA<br/>
+			<em style="font-weight: bold">Seminar on Northeast Asia</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10227</td>
+		<td rowspan = "1">AS 234 FZ5<br/>Migration, Identity and Citizenship in East Asia</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 5-8PM disc TBA<br />
+			CELERO, JOCELYN<br/>
+			<em style="font-weight: bold">(Prereq: AS 230) Special Problems: Northeast Asia (Migration, Identity and Citizenship in East Asia)</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10225</td>
+		<td rowspan = "1">AS 235.1 FZ3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 5-8PM res TBA<br />
+			CLEMENTE, TINA<br/>
+			<em style="font-weight: bold">Social and Economic Development in China</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10209</td>
+		<td rowspan = "1">AS 235.2 WZ4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM disc TBA<br />
+			CLEMENTE, TINA<br/>
+			<em style="font-weight: bold">Politics and Governance in China</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10219</td>
+		<td rowspan = "1">AS 235.3 ThZ4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5-8PM disc TBA<br />
+			CLEMENTE, TINA<br/>
+			<em style="font-weight: bold">Culture and Society in China</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10249</td>
+		<td rowspan = "1">AS 236.1 WZ15</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM disc TBA<br />
+			QUIMBO, VICTORIA<br/>
+					</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10234</td>
+		<td rowspan = "1">AS 236.2 SAT6</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1:30-4:30PM disc TBA<br />
+			CELERO, JOCELYN<br/>
+			<em style="font-weight: bold">Politics and Governance in Japan</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10236</td>
+		<td rowspan = "1">AS 236.3 SAT8</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM res TBA<br />
+			CELERO, JOCELYN<br/>
+			<em style="font-weight: bold">Culture and Society in Japan</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10202</td>
+		<td rowspan = "1">AS 237.1 MZ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 5-8PM disc TBA<br />
+			PALUMBARIT, MICHELLE<br/>
+			<em style="font-weight: bold">Social and Economic Development in Korea </em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10230</td>
+		<td rowspan = "1">AS 237.2 SAT2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM res TBA<br />
+			PALUMBARIT, MICHELLE<br/>
+			<em style="font-weight: bold">Politics and Governance in Korea</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10211</td>
+		<td rowspan = "1">AS 237.3 WZ6</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM disc TBA<br />
+			PALUMBARIT, MICHELLE<br/>
+			<em style="font-weight: bold">Culture and Society in Korea</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10206</td>
+		<td rowspan = "1">AS 250 WZ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM disc TBA<br />
+			LOPEZ, ARIEL<br/>
+			<em style="font-weight: bold">Seminar on Southeast Asia</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10233</td>
+		<td rowspan = "1">AS 254 SAT5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			PALUMBARIT, MICHELLE<br/>
+			<em style="font-weight: bold">Special Problems: Southeast Asia</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10212</td>
+		<td rowspan = "1">AS 255.1 WZ7</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM disc TBA<br />
+			RAQUIZA, ANTOINETTE<br/>
+			<em style="font-weight: bold">Social and Economic Development in Southeast Asia</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10232</td>
+		<td rowspan = "1">AS 255.2 SAT4</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM res TBA<br />
+			LOPEZ, ARIEL<br/>
+			<em style="font-weight: bold">Politics and Governance in Southeast Asia</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10238</td>
+		<td rowspan = "1">AS 282 WZ8</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5-8PM lec TBA<br />
+			SEVILLA, HENELITO<br/>
+			<em style="font-weight: bold">Readings on West Asia I (West Asia Politics and Identities)</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10226</td>
+		<td rowspan = "1">AS 298 FZ4<br/>Gender & Sexuality in Asia</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 5-8PM lec TBA<br />
+			NATIVIDAD, MARIA DULCE<br/>
+			<em style="font-weight: bold">(Prereq: AS 201, 201A) Special Problems in Asian Studies (Gender  & Sexuality in Asia)</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10229</td>
+		<td rowspan = "1">AS 299 SAT1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 3-6PM disc TBA<br />
+			SANTARITA, JOEFE; TALAMPAS, ROLANDO; MORATILLA, NOEL CHRISTIAN<br/>
+			<em style="font-weight: bold">Research Methods (Team Teach: Prof. Santarita, Prof. Talampas, Prof. Moratilla)</em>		</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">10243</td>
+		<td rowspan = "1">AS 300 The</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			TBA<br />
+			AC-ASP, AC-ASP<br/>
+					</td>
+		 
+		<td>AC<br/><em></em></td>
+					<td>
+				<strong>1</strong> /
+				1			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+	</table>
+
+</div><!-- #content -->
+
+﻿
+<script type="text/javascript">
+			
+		$(document).ready(function() {
+			
+			//set the width per footer_expander element
+			var expander_count = $('.footerlink').length;
+			var expander_width = (83/expander_count);
+			
+			var i = 0;
+			$.each($(".footerlink"), function(index, value){
+				$(this).css('width', expander_width+'%');
+				$(this).css('left', (((expander_width)*i)+10)+'%');
+				i++;
+			});
+			
+			$(".footerlink,.footer_expander").hover(
+				function(){
+					$(this).animate({ height: "30"}, 50);
+				},
+				function(){
+					$(this).animate({ height: "16"}, 50);
+				
+				}
+			);
+			
+			//set the width per footer_expander element
+			var division_count = $('.footer_division').length;
+			var division_width = (88/division_count);
+			division_width = division_width+'%';
+			
+			$.each($(".footer_division"), function(index, value){
+				$(this).css('width', division_width);
+			});
+			
+		function change_acadtermtype() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_acadtermtype/' + $(this).val();
+		}
+
+		function change_role() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_role/' + $(this).val();
+		}
+
+		function show_roles() {
+			$("#span_role").addClass("hidden");
+			$("#span_role-choices").removeClass("hidden");
+		}
+
+		function show_acadtermtypes() {
+			$("#span_acadtermtype").addClass("hidden");
+			$("#span_acadtermtype-choices").removeClass("hidden");
+		}
+
+	 });
+	 
+	
+	function showFooter(){
+		$('#footer').slideDown(150);
+		$('.footermin').hide();
+	}
+	function hideFooter(){
+		$('#footer').slideUp(150);
+		$('.footermin').show();
+	}
+	</script>
+
+<span style="clear:both;"></span>
+
+	<div class="footer_expander footermin" onclick="showFooter();">
+		More ▲
+	</div>
+
+		<div id="footer" align="center">
+		<div id="footer_linktotop" align="right" onclick="hideFooter();">
+			<a href="Javascript:void(0);" onclick="hideFooter();" style="color:white">Less ▼</a>
+		</div>
+		<div style="padding-top: 30px;">
+						<div class="footer_division">
+				<div class="footer_division_header">Flowcharts</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/OnlineDroppingFlowchart.pdf" >
+								Dropping							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ChangeMatFlowchart_modified.pdf" >
+								Change Mat							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ClearanceMechanics.pdf" >
+								Clearance							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/downloads/LOA_mechanics.pdf" >
+								Leave of Absence							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Class Schedules</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/" >
+								Regular Classes							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/mba" >
+								MBA/MS Finance PT							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/schedule/spring" >
+								Spring Asia							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Information</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/course_catalog" >
+								Course Catalog							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/curriculum.html" >
+								Curriculum Checklist							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="http://our.upd.edu.ph/files/ListofGECourses.pdf" >
+								List of RGEP Courses							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Calendar</div>
+																		<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/acadcal.php" >
+								BOR Approved<br>Academic Calendar<br>							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular" >
+								Regular Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/mba" >
+								MBA/MS Fin PT Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/msfin" >
+								MS Fin FT Calendar							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/spring" >
+								Spring Asia Calendar							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">CRS</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/faq" >
+								CRS FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/faq.html" >
+								OUR FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>History of the CRS<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+													<span>User Guide<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/about/" >
+								The CRS Team<br/>							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/privacy_notice" >
+								Privacy Notice							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Contact Us</div>
+																		<div class="footer_division_item ">
+																				<a href="http://www.facebook.com/groups/134746139953068/" >
+								Facebook Group							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="mailto:support@crs.upd.edu.ph" >
+								E-Mail							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>Phone<br/>(981-8500 local 4560)</span>
+											</div>
+																								<div class="footer_division_item fdt_last">
+													<span>You may visit us at the CRSRS Office at the 3rd floor of the OUR.</span>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">External Links</div>
+																		<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/" >
+								UP Diliman							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://up.edu.ph/" >
+								UP System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/" >
+								OUR Site							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://sts.up.edu.ph/" >
+								Socialized Tuition System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://dormapplication.upd.edu.ph/" >
+								Dorm Application Website							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://uvle.up.edu.ph/" >
+								UvLE							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://ucc.upd.edu.ph/about-us/" >
+								UPCC							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://mail.up.edu.ph/" >
+								UP Webmail							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://www.dzup.org/" >
+								DZUP							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/aup/" >
+								Acceptable Use Policy							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://upd.edu.ph/privacy" >
+								UP Diliman<br/>Data Privacy Portal							</a>
+											</div>
+																	</div>
+					</div>
+	</div>
+
+	<div class="footer_quicklinks footermin">
+		Quick Links:
+	</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/schedule/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/schedule/">
+				Regular Classes			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/course_catalog'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/course_catalog">
+				Course Catalog			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='http://our.upd.edu.ph/curriculum.html'">
+			<a class="a_footerlink" href="http://our.upd.edu.ph/curriculum.html">
+				Curriculum Checklist			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/acadcal_public/index/advanced/regular'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular">
+				Regular Calendar			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/faq'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/faq">
+				CRS FAQ			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/about/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/about/">
+				The CRS Team<br/>			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/privacy_notice'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/privacy_notice">
+				Privacy Notice			</a>
+		</div>
+	</body>
+</html>

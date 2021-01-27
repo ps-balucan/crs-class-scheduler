@@ -1,0 +1,6240 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109224015-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-109224015-1');
+        </script>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<title>UP CRS - Schedule of Classes</title>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.widgets.js"></script>
+
+
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/layout.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/status.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/schedule.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/tablesorter/tablesorter.css" type="text/css" />
+	<link rel="shortcut icon" href="https://crs.upd.edu.ph/images/favicon.ico" type="image/x-icon" />
+
+	<style type="text/css">
+		#tbl_schedule tbody:hover {
+			background-color: #F0F0AF;
+		}
+	</style>
+	
+	<script type="text/javascript" language="JavaScript">
+	$(document).ready(function() {
+		$('#btn_search').click(searchClasses);
+		$('#frm_schedule').submit(function(e) {
+			e.preventDefault();
+			searchClasses();
+		});
+
+//		// table sorter
+//		$.tablesorter.addParser({
+//			// set uniqueid
+//			id: 'availableslots',
+//			is: function(s) {
+//				// return false so that parser is not automatically detected
+//				return false;
+//			},
+//			format: function(s) {
+//				var temp = s.replace('<strong>','').replace('</strong>','').split('/');
+//				return temp[0];
+//			},
+//			// set type to numeric
+//			type: 'numeric'
+//		});
+
+//		$('#tbl_schedule').tablesorter({widgets:['zebra'], headers: {0:{sorter:false},2:{sorter:false},4:{sorter:'availableslots'},5:{sorter:false}}});
+
+	});
+
+	function searchClasses() {
+		var coursenumber = $.trim($('#txt_coursenumber').val());
+		var term = $.trim($('#txt_term').val());
+		var alphanumeric_pattern = /^[a-zA-Z0-9\.\s]+$/;
+
+		if(coursenumber != '') {
+			if( ! alphanumeric_pattern.test(coursenumber)) {
+				alert('Course number must be alphanumeric.');
+			} else {
+				window.location = 'https://crs.upd.edu.ph/schedule' + '/'+ term + '/'+ coursenumber ;
+			}
+		}
+
+	}
+
+	</script>
+
+<style>
+	#frm_schedule {
+		margin: auto;
+		width: 25%;
+		background: #FCFCF0;
+		border: 3px solid #444444;
+		padding: 1em;
+	}
+	#frm_schedule strong, #search input {
+		padding-right: 1em;
+	}
+</style>
+</head>
+
+<body class="schedule">
+
+<div id="header">
+	<a href="https://crs.upd.edu.ph/user" class="header_link"></a>
+</div>
+<div id="subheader">
+</div>
+
+<div id="content" class="align-center">
+
+<h1>
+	Schedule of Classes<br />
+		<select id="txt_term" name="txt_term" style="padding: 2px; border: 1px solid #CECECE; border-radius: 5px; font-size: 100%; text-align: right;" onchange="searchClasses();">
+					<option value="120192" >Second Semester AY 2019-2020</option>
+					<option value="120194" >Midyear Term 2020</option>
+					<option value="120201" >First Semester AY 2020-2021</option>
+					<option value="120202" selected="selected">Second Semester AY 2020-2021</option>
+					<option value="120204" >Midyear Term 2021</option>
+		</select>
+	</h1>
+
+<br />
+<form id="frm_schedule" action="" method="post">
+Course Number: 
+<input type="text" id="txt_coursenumber" name="txt_coursenumber" placeholder="(e.g., Math 11, Eng 1)"/>
+<br/> 
+<input type="button" id="btn_search" name="btn_search" value="Search" />
+</form>
+
+<br/>
+<p>
+	<a href="https://crs.upd.edu.ph/schedule/120202/A">A</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/B">B</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/C">C</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/D">D</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/E">E</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/F">F</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/G">G</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/H">H</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/I">I</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/J">J</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/K">K</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/L">L</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/M">M</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/N">N</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/O">O</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/P">P</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Q">Q</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/R">R</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/S">S</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/T">T</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/U">U</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/V">V</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/W">W</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/X">X</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Y">Y</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Z">Z</a>&nbsp;
+<a href="https://crs.upd.edu.ph/">Back to main page</a>
+</p>
+<br />
+<div style="text-align: left; padding: 0; margin: 0;"><strong>Results for: <em>G</em></strong></div>
+<table id="tbl_schedule" style="table-layout: fixed	">
+<thead>
+<tr>
+	<th width="5%">Class Code</th>
+	<th width="15%">Class</th>
+	<th width="5%">Credits</th>
+	<th width="30%">
+		Schedule<br />
+		Instructor(s)<br/>
+		Remarks
+	</th>
+	<th width="15%">Enlisting Unit : Block<br/><b>Block Remarks</b></th>
+	<th width="10%">
+		Available Slots /<br />
+		Total Slots
+	</th>
+	<th width="5%">Demand</th>
+	<th width="15%">Restrictions</th>
+</tr>
+</thead>
+
+	<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55101</td>
+		<td rowspan = "1">GE 1 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			GONZALEZ, RHODORA; GALEON, FLORENCE<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55102</td>
+		<td rowspan = "1">GE 1 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			GALEON, FLORENCE<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55113</td>
+		<td rowspan = "1">GE 10 MB</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-3PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">69</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55111</td>
+		<td rowspan = "1">GE 10 SB</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-3PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">71</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55107</td>
+		<td rowspan = "1">GE 10 WFB</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 1-3PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">65</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55109</td>
+		<td rowspan = "1">GE 10 WFB1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 1-3PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">66</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55114</td>
+		<td rowspan = "1">GE 10 MB-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			M 3-6PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">69</td>
+														
+		<td>For: BS CE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55112</td>
+		<td rowspan = "1">GE 10 SB-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			S 3-6PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">71</td>
+														
+		<td>For: BS CE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55108</td>
+		<td rowspan = "1">GE 10 WFB-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			F 1-4PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">65</td>
+														
+		<td>For: BS CE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55110</td>
+		<td rowspan = "1">GE 10 WFB1-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			F 1-4PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">66</td>
+														
+		<td>For: BS CE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55103</td>
+		<td rowspan = "1">GE 11 SA</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			S 8-9AM lec TBA<br />
+			GALEON, FLORENCE<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">74</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55105</td>
+		<td rowspan = "1">GE 11 SB</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			S 1-2PM lec TBA<br />
+			GALEON, FLORENCE<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">61</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55104</td>
+		<td rowspan = "1">GE 11 SA-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lab TBA<br />
+			GALEON, FLORENCE<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">74</td>
+														
+		<td>For: B LArch, BS Arch, BS EM(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55106</td>
+		<td rowspan = "1">GE 11 SB-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			S 2-5PM lab TBA<br />
+			GALEON, FLORENCE<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">61</td>
+														
+		<td>For: BS Arch, B LArch, BS EM(4 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55115</td>
+		<td rowspan = "1">GE 12 WFB</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			WF 1-2PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10</em>		</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">27</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55116</td>
+		<td rowspan = "1">GE 12 WFB-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			WF 2-5PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10</em>		</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: BS CE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55125</td>
+		<td rowspan = "2">GE 30 1A</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			S 7-9AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 2, GE 10</em>		</td>
+		 
+		<td>DGE: 1A<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>29</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55127</td>
+		<td rowspan = "2">GE 30 1B</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			S 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 2, GE 10</em>		</td>
+		 
+		<td>DGE: 1B<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55129</td>
+		<td rowspan = "2">GE 30 1C</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			S 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 2, GE 10</em>		</td>
+		 
+		<td>DGE: 1C<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>39</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55131</td>
+		<td rowspan = "2">GE 30 1D</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 9-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 2, GE 10</em>		</td>
+		 
+		<td>DGE: 1D<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>34</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55126</td>
+		<td rowspan = "2">GE 30 1A-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			S 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 2, GE 10</em>		</td>
+		 
+		<td>DGE: 1A<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>29</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55128</td>
+		<td rowspan = "2">GE 30 1B-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			S 3-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 2, GE 10</em>		</td>
+		 
+		<td>DGE: 1B<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55130</td>
+		<td rowspan = "2">GE 30 1C-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			S 3-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 2, GE 10</em>		</td>
+		 
+		<td>DGE: 1C<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>39</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55132</td>
+		<td rowspan = "2">GE 30 1D-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 2, GE 10</em>		</td>
+		 
+		<td>DGE: 1D<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>34</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55163</td>
+		<td rowspan = "3">GE 117 2AB</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			M 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2AB<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>41</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2A<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>47</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">55167</td>
+		<td rowspan = "4">GE 117 2BCE</td>
+		<td rowspan = "4">3.0</td>
+		<td rowspan = "4">
+			S 8-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2BE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>12</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-C<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>26</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-B<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">55165</td>
+		<td rowspan = "4">GE 117 2CDE</td>
+		<td rowspan = "4">3.0</td>
+		<td rowspan = "4">
+			S 8-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2CE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2D<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>22</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2CD<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>23</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55174</td>
+		<td rowspan = "2">GE 117 3A-4</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 9-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55164</td>
+		<td rowspan = "3">GE 117 2AB-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			M 3-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2AB<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>41</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2A<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>47</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">55168</td>
+		<td rowspan = "4">GE 117 2BCE-1</td>
+		<td rowspan = "4">0.0</td>
+		<td rowspan = "4">
+			S 10AM-1PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2BE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>12</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-C<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>26</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-B<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">55166</td>
+		<td rowspan = "4">GE 117 2CDE-1</td>
+		<td rowspan = "4">0.0</td>
+		<td rowspan = "4">
+			S 10AM-1PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2CE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2D<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>22</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2CD<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>23</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55175</td>
+		<td rowspan = "2">GE 117 3A-4-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			F 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">55147</td>
+		<td rowspan = "4">GE 118 2AB</td>
+		<td rowspan = "4">3.0</td>
+		<td rowspan = "4">
+			F 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2BC-B<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2AB<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>41</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2A<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>47</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55149</td>
+		<td rowspan = "3">GE 118 2C</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			T 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2CD<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>23</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-C<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>26</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">55151</td>
+		<td rowspan = "4">GE 118 2DE</td>
+		<td rowspan = "4">3.0</td>
+		<td rowspan = "4">
+			Th 4-6PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2CE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>12</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2D<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>22</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55172</td>
+		<td rowspan = "2">GE 118 3A-4</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 9-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55195</td>
+		<td rowspan = "3">GE 118 3AB-5</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			F 4-6PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55202</td>
+		<td rowspan = "2">GE 118 4A</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">55148</td>
+		<td rowspan = "4">GE 118 2AB-1</td>
+		<td rowspan = "4">0.0</td>
+		<td rowspan = "4">
+			W 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2BC-B<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2AB<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>41</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2A<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>47</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55150</td>
+		<td rowspan = "3">GE 118 2C-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			Th 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2CD<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>23</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-C<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>26</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "4">55152</td>
+		<td rowspan = "4">GE 118 2DE-1</td>
+		<td rowspan = "4">0.0</td>
+		<td rowspan = "4">
+			T 3-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 2CE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>12</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2D<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>22</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55173</td>
+		<td rowspan = "2">GE 118 3A-4-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55196</td>
+		<td rowspan = "3">GE 118 3AB-5-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			W 3-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55203</td>
+		<td rowspan = "2">GE 118 4A-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			F 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55179</td>
+		<td rowspan = "2">GE 119 3A-4</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			WF 1-2PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12; student must be at least 3rd year standing</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55200</td>
+		<td rowspan = "2">GE 119 4A</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			TTh 1-2PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12; student must be at least 4th year standing</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55180</td>
+		<td rowspan = "2">GE 119 3A-4-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			WF 2-5PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12; student must be at least 3rd year standing</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55201</td>
+		<td rowspan = "2">GE 119 4A-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			TTh 2-5PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 12; student must be at least 4th year standing</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55117</td>
+		<td rowspan = "2">GE 120 1A</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 4-5PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10; Corequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 1A<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>29</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55119</td>
+		<td rowspan = "2">GE 120 1B</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 2:30-3:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10; Corequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 1B<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55121</td>
+		<td rowspan = "2">GE 120 1C</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 9-10AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10; Corequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 1C<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>39</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55123</td>
+		<td rowspan = "2">GE 120 1D</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			S 10-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10; Corequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 1D<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>34</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55118</td>
+		<td rowspan = "2">GE 120 1A-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			WThF 4-5:30PM lab TBA; T 5-6:30PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10; Corequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 1A<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>29</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55120</td>
+		<td rowspan = "2">GE 120 1B-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			TTh 3:30-6:30PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10; Corequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 1B<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55122</td>
+		<td rowspan = "2">GE 120 1C-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 9AM-12PM lab TBA; T 10AM-1PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10; Corequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 1C<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>39</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55124</td>
+		<td rowspan = "2">GE 120 1D-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			S 11AM-12PM lab TBA; S 1-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 10; Corequisite: GE 12</em>		</td>
+		 
+		<td>DGE: 1D<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>34</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55206</td>
+		<td rowspan = "1">GE 122 GTH</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-8PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">For MS GmE students only.</em>		</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55207</td>
+		<td rowspan = "1">GE 122 GTH-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">For MS GmE students only.</em>		</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">5</td>
+														
+		<td>Barred: BS GE</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55153</td>
+		<td rowspan = "2">GE 127 2A</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			TTh 10-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2A<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>47</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55155</td>
+		<td rowspan = "3">GE 127 2B</td>
+		<td rowspan = "3">4.0</td>
+		<td rowspan = "3">
+			TTh 1-2PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2BC-B<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2AB<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>41</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55157</td>
+		<td rowspan = "3">GE 127 2C</td>
+		<td rowspan = "3">4.0</td>
+		<td rowspan = "3">
+			WF 1-2PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2CD<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>23</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-C<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>26</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55159</td>
+		<td rowspan = "2">GE 127 2D</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			TTh 8-9AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2D<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>22</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55161</td>
+		<td rowspan = "3">GE 127 2E</td>
+		<td rowspan = "3">4.0</td>
+		<td rowspan = "3">
+			TTh 7-8AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2CE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>12</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55154</td>
+		<td rowspan = "2">GE 127 2A-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			WF 10AM-12PM lab TBA; TTh 11AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2A<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>47</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55156</td>
+		<td rowspan = "3">GE 127 2B-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			TTh 2-5PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2BC-B<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2AB<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>41</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55158</td>
+		<td rowspan = "3">GE 127 2C-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			WF 2-5PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2CD<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>23</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-C<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>26</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55160</td>
+		<td rowspan = "2">GE 127 2D-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			WF 8-10AM lab TBA; TTh 9-10AM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2D<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>22</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55162</td>
+		<td rowspan = "3">GE 127 2E-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			WF 7-9AM lab TBA; TTh 8-9AM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122, Math 23</em>		</td>
+		 
+		<td>DGE: 2CE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>12</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55178</td>
+		<td rowspan = "2">GE 128 3A-4</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			M 8-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55197</td>
+		<td rowspan = "2">GE 128 3A-5</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			TTh 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122</em>		</td>
+		 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55198</td>
+		<td rowspan = "2">GE 128 3B-5</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 122</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55133</td>
+		<td rowspan = "2">GE 142 1A</td>
+		<td rowspan = "2">1.0</td>
+		<td rowspan = "2">
+			S 1-2PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE: 1A<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>29</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55134</td>
+		<td rowspan = "2">GE 142 1B</td>
+		<td rowspan = "2">1.0</td>
+		<td rowspan = "2">
+			M 9-10AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE: 1B<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55135</td>
+		<td rowspan = "2">GE 142 1C</td>
+		<td rowspan = "2">1.0</td>
+		<td rowspan = "2">
+			M 9-10AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE: 1C<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>39</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55136</td>
+		<td rowspan = "2">GE 142 1D</td>
+		<td rowspan = "2">1.0</td>
+		<td rowspan = "2">
+			M 11AM-12PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE: 1D<br/><em>For 1st Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>34</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55181</td>
+		<td rowspan = "1">GE 143 3A-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td><br/><em></em></td>
+					<td colspan="2"><strong>DISSOLVED</strong></td>
+		
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55182</td>
+		<td rowspan = "1">GE 143 3B-5</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td><br/><em></em></td>
+					<td colspan="2"><strong>DISSOLVED</strong></td>
+		
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55219</td>
+		<td rowspan = "2">GE 148 5A</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			Th 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE: 5A<br/><em>For 5th Year BS GE students only</em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55220</td>
+		<td rowspan = "2">GE 148 5B</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			Th 2-5PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE: 5B<br/><em>For 5th Year BS GE students only</em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+							<td>7</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55221</td>
+		<td rowspan = "3">GE 148 5C</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			S 8-11AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE: 5BC<br/><em>For 5th Year BS GE students only</em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 5AC<br/><em>For 5th Year BS GE students only</em></td>
+					<td>
+				<strong>8</strong> /
+				8			</td>
+							<td>13</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55187</td>
+		<td rowspan = "2">GE 152 3A-5</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			T 9AM-12PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 151</em>		</td>
+		 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55189</td>
+		<td rowspan = "2">GE 152 3B-5</td>
+		<td rowspan = "2">4.0</td>
+		<td rowspan = "2">
+			T 1-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 151</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55188</td>
+		<td rowspan = "2">GE 152 3A-5-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 151</em>		</td>
+		 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55190</td>
+		<td rowspan = "2">GE 152 3B-5-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 151</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55170</td>
+		<td rowspan = "2">GE 153 3A-4</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			M 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 151; Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55191</td>
+		<td rowspan = "2">GE 153 3A-5</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 9-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55193</td>
+		<td rowspan = "2">GE 153 3B-5</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 9-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55171</td>
+		<td rowspan = "2">GE 153 3A-4-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			M 3-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 151; Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55192</td>
+		<td rowspan = "2">GE 153 3A-5-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			F 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55194</td>
+		<td rowspan = "2">GE 153 3B-5-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55176</td>
+		<td rowspan = "2">GE 154 3A-4</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55183</td>
+		<td rowspan = "2">GE 154 3A-5</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55185</td>
+		<td rowspan = "2">GE 154 3B-5</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 9-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55177</td>
+		<td rowspan = "2">GE 154 3A-4-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55184</td>
+		<td rowspan = "2">GE 154 3A-5-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			F 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3A-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55186</td>
+		<td rowspan = "2">GE 154 3B-5-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			F 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 152</em>		</td>
+		 
+		<td>DGE: 3B-5<br/><em>For 3rd Year (5 years) BS GE students only</em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+							<td>35</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55204</td>
+		<td rowspan = "2">GE 155.1 4A-1</td>
+		<td rowspan = "2">1.0</td>
+		<td rowspan = "2">
+			T 8-11AM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Corequisite: GE 155</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55205</td>
+		<td rowspan = "2">GE 155.2 4A-1</td>
+		<td rowspan = "2">1.0</td>
+		<td rowspan = "2">
+			Th 8-11AM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 155</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55137</td>
+		<td rowspan = "2">GE 168 2A</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			T 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2A<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>47</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55139</td>
+		<td rowspan = "3">GE 168 2B</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			W 10AM-12PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2BC-B<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2AB<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>41</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55141</td>
+		<td rowspan = "3">GE 168 2C</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			M 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2CD<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>23</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-C<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>26</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55143</td>
+		<td rowspan = "2">GE 168 2D</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			M 1-3PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2D<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>22</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55145</td>
+		<td rowspan = "3">GE 168 2E</td>
+		<td rowspan = "3">3.0</td>
+		<td rowspan = "3">
+			W 2:30-4:30PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2CE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>12</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55138</td>
+		<td rowspan = "2">GE 168 2A-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			Th 1-4PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2A<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>47</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55140</td>
+		<td rowspan = "3">GE 168 2B-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			F 10AM-1PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2BC-B<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>18</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2AB<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>41</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55142</td>
+		<td rowspan = "3">GE 168 2C-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			M 3-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2CD<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>23</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BC-C<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>26</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55144</td>
+		<td rowspan = "2">GE 168 2D-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			M 3-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2D<br/><em>For 2nd Year BS GE students only</em></td>
+					<td>
+				<strong>22</strong> /
+				22			</td>
+							<td>22</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55146</td>
+		<td rowspan = "3">GE 168 2E-1</td>
+		<td rowspan = "3">0.0</td>
+		<td rowspan = "3">
+			F 2:30-5:30PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 161, GE 162</em>		</td>
+		 
+		<td>DGE: 2CE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+							<td>6</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 2BE<br/><em>For 2nd Year BS GE students only (with Math 23)</em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+							<td>12</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55169</td>
+		<td rowspan = "2">GE 191 3A-4</td>
+		<td rowspan = "2">1.0</td>
+		<td rowspan = "2">
+			T 4-5PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Must be taken in 3rd year 2nd Semester</em>		</td>
+		 
+		<td>DGE: 3A-4<br/><em>For 3rd Year (4 years) BS GE students only</em></td>
+					<td>
+				<strong>23</strong> /
+				23			</td>
+							<td>14</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55199</td>
+		<td rowspan = "2">GE 191 4A</td>
+		<td rowspan = "2">1.0</td>
+		<td rowspan = "2">
+			Th 5-6PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Must be taken in 4th year 2nd Semester</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55216</td>
+		<td rowspan = "1">GE 199 5AC</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			WF 12-6PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td><br/><em></em></td>
+					<td colspan="2"><strong>DISSOLVED</strong></td>
+		
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55222</td>
+		<td rowspan = "3">GE 199 5AC-1</td>
+		<td rowspan = "3">4.0</td>
+		<td rowspan = "3">
+			WF 12-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Please follow the section assignment given in the UP GE Students group</em>		</td>
+		 
+		<td>DGE: 5AC<br/><em>For 5th Year BS GE students only</em></td>
+					<td>
+				<strong>8</strong> /
+				8			</td>
+							<td>13</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 5A<br/><em>For 5th Year BS GE students only</em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+							<td>5</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "3">55223</td>
+		<td rowspan = "3">GE 199 5BC</td>
+		<td rowspan = "3">4.0</td>
+		<td rowspan = "3">
+			MS 12-6PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Please follow the section assignment given in the UP GE Students group</em>		</td>
+		 
+		<td>DGE: 5BC<br/><em>For 5th Year BS GE students only</em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+							<td>8</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE: 5B<br/><em>For 5th Year BS GE students only</em></td>
+					<td>
+				<strong>14</strong> /
+				14			</td>
+							<td>7</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46307</td>
+		<td rowspan = "1">Geog 1 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			LAGMAN, MARCO STEFAN<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">29</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46303</td>
+		<td rowspan = "1">Geog 1 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			GARCIA, EMMANUEL<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46343</td>
+		<td rowspan = "1">Geog 1 THU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			QUIRAY, ANDRE<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46344</td>
+		<td rowspan = "1">Geog 1 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			QUIRAY, ANDRE<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46304</td>
+		<td rowspan = "1">Geog 1 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			GARCIA, EMMANUEL<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46301</td>
+		<td rowspan = "1">Geog 1 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			DE GUZMAN, MYLENE<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46302</td>
+		<td rowspan = "1">Geog 1 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			DE GUZMAN, MYLENE<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46306</td>
+		<td rowspan = "1">Geog 1 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			LAGMAN, MARCO STEFAN<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">25</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46305</td>
+		<td rowspan = "1">Geog 1 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			HERMIDA, MARIA CELESTE<br/>
+			<em style="font-weight: bold">Lec: asynchronous; Disc: synchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46308</td>
+		<td rowspan = "1">Geog 1 WFU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			MABAZZA, DANIEL<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">2</td>
+														
+		<td>For: CHE(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46311</td>
+		<td rowspan = "1">Geog 1 WFU-2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			QUIRAY, ANDRE<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">6</td>
+														
+		<td>For: SE(2 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46309</td>
+		<td rowspan = "1">Geog 1 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			MABAZZA, DANIEL<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">2</td>
+														
+		<td>For: DJourn(1 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46310</td>
+		<td rowspan = "1">Geog 1 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			MABAZZA, DANIEL<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46314</td>
+		<td rowspan = "1">Geog 101 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			GUTIERREZ, DARLENE<br/>
+			<em style="font-weight: bold">lec/discussion:selected synchronous meeting; asynchronous </em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>21</strong> /
+				21			</td>
+												<td rowspan="1">38</td>
+														
+		<td>For: DGeog</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46315</td>
+		<td rowspan = "1">Geog 101 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			GUTIERREZ, DARLENE<br/>
+			<em style="font-weight: bold">lec/discussion:selected synchronous meeting; asynchronous </em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">31</td>
+														
+		<td>For: DGeog</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46316</td>
+		<td rowspan = "1">Geog 105 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			SAGUIN, KRISTIAN KARLO<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">34</td>
+														
+		<td>For: DGeog(8 slots), SE(10 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46317</td>
+		<td rowspan = "1">Geog 105 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			SAGUIN, KRISTIAN KARLO<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">45</td>
+														
+		<td>For: SE(5 slots), DGeog(13 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46318</td>
+		<td rowspan = "1">Geog 109 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			HERMIDA, MARIA CELESTE<br/>
+			<em style="font-weight: bold">Lec-asynchronous; Disc - synchronous (may require a computer); Prereq: Stat101/SocSci103</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">16</td>
+														
+		<td>For: DGeog(8 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46319</td>
+		<td rowspan = "1">Geog 109 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			HERMIDA, MARIA CELESTE<br/>
+			<em style="font-weight: bold">Lec-asynchronous; Disc - synchronous (may require a computer); Prereq: Stat101/SocSci103</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td>For: DGeog</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46320</td>
+		<td rowspan = "1">Geog 111 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			OCAMPO, LOU ANGELI<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">31</td>
+														
+		<td>For: DGeog</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46321</td>
+		<td rowspan = "1">Geog 111 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			QUIRAY, ANDRE<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">32</td>
+														
+		<td>For: SE(2 slots), DGeog(17 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46322</td>
+		<td rowspan = "1">Geog 119 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			GARCIA, EMMANUEL<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46324</td>
+		<td rowspan = "1">Geog 121 THWX</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TTh 1-4PM lec TBA<br />
+			AMORSOLO, DOMINIQUE SASHA<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous (must have a computer for lab class); Prereq: Geol 11 and Geol 11.1 (can take 11.1 along with 121)</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td>For: DGeog(9 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46323</td>
+		<td rowspan = "1">Geog 121 WFWX</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			WF 1-4PM lec TBA<br />
+			AMORSOLO, DOMINIQUE SASHA<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous (must have a computer for lab class); Prereq: Geol 11 and Geol 11.1 (can take 11.1 along with 121)</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td>For: DGeog</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46325</td>
+		<td rowspan = "1">Geog 124 THXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 2:30-4:30PM lec TBA; T 2:30-5:30PM lec TBA<br />
+			MARTINEZ, MA SIMEONA<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">4</td>
+														
+		<td>For: DGeog(3 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46326</td>
+		<td rowspan = "1">Geog 131 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			DE GUZMAN, MYLENE<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: DGeog(6 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46327</td>
+		<td rowspan = "1">Geog 135 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			LAGMAN, MARCO STEFAN<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">11</td>
+														
+		<td>For: DGeog(2 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46334</td>
+		<td rowspan = "1">Geog 145 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			AMORSOLO, DOMINIQUE SASHA<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: DGeog(2 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46335</td>
+		<td rowspan = "1">Geog 151 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			ANACTA, VANESSA JOY<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">5</td>
+														
+		<td>For: DGeog(2 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46328</td>
+		<td rowspan = "1">Geog 161 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			GARCIA, EMMANUEL<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: DGeog(7 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46329</td>
+		<td rowspan = "1">Geog 171 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			QUIRAY, ANDRE<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46330</td>
+		<td rowspan = "1">Geog 173 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			PALIS, JOSEPH SANTOS<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">33</td>
+														
+		<td>For: SE(4 slots), DGeog(6 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46331</td>
+		<td rowspan = "1">Geog 190 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			MARTINEZ, MA SIMEONA<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>12</strong> /
+				12			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46332</td>
+		<td rowspan = "1">Geog 197 SQY</td>
+		<td rowspan = "1">5.0</td>
+		<td rowspan = "1">
+			S 7AM-6PM lec TBA<br />
+			MARTINEZ, MA SIMEONA<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: DGeog</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46333</td>
+		<td rowspan = "1">Geog 199 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			ANACTA, VANESSA JOY<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td>For: DGeog</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46336</td>
+		<td rowspan = "1">Geog 211 WZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5:30-8:30PM lec TBA<br />
+			LOPEZ, YANY<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">6</td>
+														
+		<td>For: MS (Geog)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46337</td>
+		<td rowspan = "1">Geog 213 SRV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			BERJA, JUANITO<br/>
+					</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46338</td>
+		<td rowspan = "1">Geog 242 TZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 5:30-8:30PM lec TBA<br />
+			PALIS, JOSEPH SANTOS<br/>
+			<em style="font-weight: bold">Rethinking Islandness: Island and Archipelagic Studies</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46339</td>
+		<td rowspan = "1">Geog 243 WZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5:30-8:30PM lab TBA<br />
+			ANACTA, VANESSA JOY<br/>
+			<em style="font-weight: bold">mode of instruction: synchronous; asynchronous (Laptop/Computer capable of running a GIS Software)</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46340</td>
+		<td rowspan = "1">Geog 255 MOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-9PM lec TBA<br />
+			CADAG, JAKE ROM<br/>
+					</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46341</td>
+		<td rowspan = "1">Geog 292 HZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5:30-8:30PM lec TBA<br />
+			PALIS, JOSEPH SANTOS<br/>
+			<em style="font-weight: bold">Cultures of Mapping and Countercartographies</em>		</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">46342</td>
+		<td rowspan = "1">Geog 321 HZQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5:30-8:30PM lec TBA<br />
+			SAGUIN, KRISTIAN KARLO<br/>
+					</td>
+		 
+		<td>DGeog<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40806</td>
+		<td rowspan = "1">Geol 1 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40807</td>
+		<td rowspan = "1">Geol 1 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40808</td>
+		<td rowspan = "1">Geol 1 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40809</td>
+		<td rowspan = "1">Geol 1 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40810</td>
+		<td rowspan = "1">Geol 1 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40811</td>
+		<td rowspan = "1">Geol 1 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40812</td>
+		<td rowspan = "1">Geol 1 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40813</td>
+		<td rowspan = "1">Geol 1 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40814</td>
+		<td rowspan = "1">Geol 1 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40815</td>
+		<td rowspan = "1">Geol 1 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40816</td>
+		<td rowspan = "1">Geol 11 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40817</td>
+		<td rowspan = "1">Geol 11 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40818</td>
+		<td rowspan = "1">Geol 11 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40819</td>
+		<td rowspan = "1">Geol 11 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40820</td>
+		<td rowspan = "1">Geol 11 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40821</td>
+		<td rowspan = "1">Geol 11 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40825</td>
+		<td rowspan = "1">Geol 11.1 FRU</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			F 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40822</td>
+		<td rowspan = "1">Geol 11.1 THR</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40824</td>
+		<td rowspan = "1">Geol 11.1 THR-1</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40823</td>
+		<td rowspan = "1">Geol 11.1 WFR</td>
+		<td rowspan = "1">1.0</td>
+		<td rowspan = "1">
+			W 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40826</td>
+		<td rowspan = "1">Geol 12 THU</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 10AM-1PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40827</td>
+		<td rowspan = "1">Geol 12 THU-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 10AM-1PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40828</td>
+		<td rowspan = "1">Geol 12 THU-2</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			TTh 10AM-1PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40829</td>
+		<td rowspan = "1">Geol 12 WFR</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40830</td>
+		<td rowspan = "1">Geol 12 WFR-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40831</td>
+		<td rowspan = "1">Geol 12 WFV</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40832</td>
+		<td rowspan = "1">Geol 12 WFV-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">40833</td>
+		<td rowspan = "2">Geol 51 MHU</td>
+		<td rowspan = "2">5.0</td>
+		<td rowspan = "2">
+			M 3-6PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>61</strong> /
+				61			</td>
+												<td rowspan="2">77</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DMMM<br/><em></em></td>
+					<td>
+				<strong>19</strong> /
+				19			</td>
+												
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">40834</td>
+		<td rowspan = "2">Geol 51 THR</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			TTh 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>4</strong> /
+				4			</td>
+												<td rowspan="2">6</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DMMM<br/><em></em></td>
+					<td>
+				<strong>6</strong> /
+				6			</td>
+												
+		<td>For: DMMM</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40835</td>
+		<td rowspan = "1">Geol 51 THR-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			TTh 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">40836</td>
+		<td rowspan = "2">Geol 51 THV</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			TTh 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+												<td rowspan="2">6</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DMMM<br/><em></em></td>
+					<td>
+				<strong>3</strong> /
+				3			</td>
+												
+		<td>For: DMMM</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40837</td>
+		<td rowspan = "1">Geol 51 THX</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			TTh 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40838</td>
+		<td rowspan = "1">Geol 51 THX-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			TTh 2:30-5:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40839</td>
+		<td rowspan = "1">Geol 51 WFR</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40840</td>
+		<td rowspan = "1">Geol 51 WFR-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			WF 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">40841</td>
+		<td rowspan = "2">Geol 51 WFV</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			WF 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="2">1</td>
+														
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DMMM<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												
+		<td>For: DMMM</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40842</td>
+		<td rowspan = "1">Geol 105 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>50</strong> /
+				50			</td>
+												<td rowspan="1">30</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40843</td>
+		<td rowspan = "1">Geol 122 WFK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 3-5PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>60</strong> /
+				60			</td>
+												<td rowspan="1">61</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40844</td>
+		<td rowspan = "1">Geol 122 THR</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			T 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40847</td>
+		<td rowspan = "1">Geol 122 THR-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			Th 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40845</td>
+		<td rowspan = "1">Geol 122 THV</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			T 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40848</td>
+		<td rowspan = "1">Geol 122 THV-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			Th 11:30AM-2:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40846</td>
+		<td rowspan = "1">Geol 122 WFR</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			W 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40849</td>
+		<td rowspan = "1">Geol 122 WFR-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			F 8:30-11:30AM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40850</td>
+		<td rowspan = "1">Geol 131 MHV</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			M 9AM-12PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40851</td>
+		<td rowspan = "1">Geol 131 MHV-1</td>
+		<td rowspan = "1">0.0</td>
+		<td rowspan = "1">
+			S 1-4PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40852</td>
+		<td rowspan = "1">Geol 170 MHR</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			MTWThFS 7-8:30AM field TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40853</td>
+		<td rowspan = "1">Geol 170 MHR-1</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			MTWThFS 7-8:30AM field TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40854</td>
+		<td rowspan = "1">Geol 190 SWU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">40855</td>
+		<td rowspan = "1">Geol 250 THZ</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			Th 5:30-7:30PM lec TBA; T 5:30-8:30PM lab TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>NIGS<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14953</td>
+		<td rowspan = "1">German 10 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14962</td>
+		<td rowspan = "1">German 10 THU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14968</td>
+		<td rowspan = "1">German 10 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14958</td>
+		<td rowspan = "1">German 10 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14967</td>
+		<td rowspan = "1">German 10 THW-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14971</td>
+		<td rowspan = "1">German 10 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14954</td>
+		<td rowspan = "1">German 10 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14963</td>
+		<td rowspan = "1">German 10 WFU-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14964</td>
+		<td rowspan = "1">German 10 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14965</td>
+		<td rowspan = "1">German 11 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Student must have finished German 10 beforehand.</em>		</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">31</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14969</td>
+		<td rowspan = "1">German 11 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Student must have finished German 10 beforehand.</em>		</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">41</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14960</td>
+		<td rowspan = "1">German 12 TWHFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14961</td>
+		<td rowspan = "1">German 13 TWHFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TWThF 8:30-10AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14957</td>
+		<td rowspan = "1">German 16 TWHFV</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			TWThF 11:30AM-1PM lec TBA<br />
+			CACULITAN, MIGUEL<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">15055</td>
+		<td rowspan = "1">German 30 WFY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			MANARPAAC, DANILO VICTORINO<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14955</td>
+		<td rowspan = "1">German 51 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			BECKER-SLIWA, KATJA<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14952</td>
+		<td rowspan = "1">German 61 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			AGCAOILI, NINA RACHEL<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14956</td>
+		<td rowspan = "1">German 101 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			BECKER-SLIWA, KATJA<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14951</td>
+		<td rowspan = "1">German 130 THX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			AGCAOILI, NINA RACHEL<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14966</td>
+		<td rowspan = "1">German 140 THY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			MANARPAAC, DANILO VICTORINO<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55217</td>
+		<td rowspan = "2">GIM 175 4A</td>
+		<td rowspan = "2">3.0</td>
+		<td rowspan = "2">
+			W 9-11AM lec TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 173</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">-1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "2">55218</td>
+		<td rowspan = "2">GIM 175 4A-1</td>
+		<td rowspan = "2">0.0</td>
+		<td rowspan = "2">
+			F 9AM-12PM lab TBA<br />
+			CONCEALED<br/>
+			<em style="font-weight: bold">Prerequisite: GE 173</em>		</td>
+		 
+		<td>DGE: 4A<br/><em>For 4th Year BS GE students only</em></td>
+					<td>
+				<strong>28</strong> /
+				28			</td>
+							<td>11</td>
+					
+		<td></td>
+		</tr>
+				<tr>
+				 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">-1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55209</td>
+		<td rowspan = "1">GmE 202 GMS</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-3PM lec TBA; M 6-9PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55208</td>
+		<td rowspan = "1">GmE 203 GWF</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-8PM lec TBA; F 6-9PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">15</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55210</td>
+		<td rowspan = "1">GmE 205 GTH</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-8PM lec TBA; Th 6-9PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55211</td>
+		<td rowspan = "1">GmE 216 GWF</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-8PM lec TBA; F 6-9PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55212</td>
+		<td rowspan = "1">GmE 222 GTH</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-8PM lec TBA; Th 6-9PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">55213</td>
+		<td rowspan = "1">GmE 243 GTH</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-8PM lec TBA; Th 6-9PM lab TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DGE<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">26505</td>
+		<td rowspan = "1">GS 197 WFX<br/>Cultures of Disaster: Perspectives on the Global Pandemic</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM disc TBA<br />
+			RAYMUNDO, SARAH JANE; ZAYAS, CYNTHIA; ONG, RODRIGO ANGELO<br/>
+					</td>
+		 
+		<td>CIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+	</table>
+
+</div><!-- #content -->
+
+﻿
+<script type="text/javascript">
+			
+		$(document).ready(function() {
+			
+			//set the width per footer_expander element
+			var expander_count = $('.footerlink').length;
+			var expander_width = (83/expander_count);
+			
+			var i = 0;
+			$.each($(".footerlink"), function(index, value){
+				$(this).css('width', expander_width+'%');
+				$(this).css('left', (((expander_width)*i)+10)+'%');
+				i++;
+			});
+			
+			$(".footerlink,.footer_expander").hover(
+				function(){
+					$(this).animate({ height: "30"}, 50);
+				},
+				function(){
+					$(this).animate({ height: "16"}, 50);
+				
+				}
+			);
+			
+			//set the width per footer_expander element
+			var division_count = $('.footer_division').length;
+			var division_width = (88/division_count);
+			division_width = division_width+'%';
+			
+			$.each($(".footer_division"), function(index, value){
+				$(this).css('width', division_width);
+			});
+			
+		function change_acadtermtype() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_acadtermtype/' + $(this).val();
+		}
+
+		function change_role() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_role/' + $(this).val();
+		}
+
+		function show_roles() {
+			$("#span_role").addClass("hidden");
+			$("#span_role-choices").removeClass("hidden");
+		}
+
+		function show_acadtermtypes() {
+			$("#span_acadtermtype").addClass("hidden");
+			$("#span_acadtermtype-choices").removeClass("hidden");
+		}
+
+	 });
+	 
+	
+	function showFooter(){
+		$('#footer').slideDown(150);
+		$('.footermin').hide();
+	}
+	function hideFooter(){
+		$('#footer').slideUp(150);
+		$('.footermin').show();
+	}
+	</script>
+
+<span style="clear:both;"></span>
+
+	<div class="footer_expander footermin" onclick="showFooter();">
+		More ▲
+	</div>
+
+		<div id="footer" align="center">
+		<div id="footer_linktotop" align="right" onclick="hideFooter();">
+			<a href="Javascript:void(0);" onclick="hideFooter();" style="color:white">Less ▼</a>
+		</div>
+		<div style="padding-top: 30px;">
+						<div class="footer_division">
+				<div class="footer_division_header">Flowcharts</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/OnlineDroppingFlowchart.pdf" >
+								Dropping							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ChangeMatFlowchart_modified.pdf" >
+								Change Mat							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ClearanceMechanics.pdf" >
+								Clearance							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/downloads/LOA_mechanics.pdf" >
+								Leave of Absence							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Class Schedules</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/" >
+								Regular Classes							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/mba" >
+								MBA/MS Finance PT							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/schedule/spring" >
+								Spring Asia							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Information</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/course_catalog" >
+								Course Catalog							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/curriculum.html" >
+								Curriculum Checklist							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="http://our.upd.edu.ph/files/ListofGECourses.pdf" >
+								List of RGEP Courses							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Calendar</div>
+																		<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/acadcal.php" >
+								BOR Approved<br>Academic Calendar<br>							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular" >
+								Regular Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/mba" >
+								MBA/MS Fin PT Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/msfin" >
+								MS Fin FT Calendar							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/spring" >
+								Spring Asia Calendar							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">CRS</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/faq" >
+								CRS FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/faq.html" >
+								OUR FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>History of the CRS<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+													<span>User Guide<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/about/" >
+								The CRS Team<br/>							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/privacy_notice" >
+								Privacy Notice							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Contact Us</div>
+																		<div class="footer_division_item ">
+																				<a href="http://www.facebook.com/groups/134746139953068/" >
+								Facebook Group							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="mailto:support@crs.upd.edu.ph" >
+								E-Mail							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>Phone<br/>(981-8500 local 4560)</span>
+											</div>
+																								<div class="footer_division_item fdt_last">
+													<span>You may visit us at the CRSRS Office at the 3rd floor of the OUR.</span>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">External Links</div>
+																		<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/" >
+								UP Diliman							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://up.edu.ph/" >
+								UP System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/" >
+								OUR Site							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://sts.up.edu.ph/" >
+								Socialized Tuition System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://dormapplication.upd.edu.ph/" >
+								Dorm Application Website							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://uvle.up.edu.ph/" >
+								UvLE							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://ucc.upd.edu.ph/about-us/" >
+								UPCC							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://mail.up.edu.ph/" >
+								UP Webmail							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://www.dzup.org/" >
+								DZUP							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/aup/" >
+								Acceptable Use Policy							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://upd.edu.ph/privacy" >
+								UP Diliman<br/>Data Privacy Portal							</a>
+											</div>
+																	</div>
+					</div>
+	</div>
+
+	<div class="footer_quicklinks footermin">
+		Quick Links:
+	</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/schedule/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/schedule/">
+				Regular Classes			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/course_catalog'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/course_catalog">
+				Course Catalog			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='http://our.upd.edu.ph/curriculum.html'">
+			<a class="a_footerlink" href="http://our.upd.edu.ph/curriculum.html">
+				Curriculum Checklist			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/acadcal_public/index/advanced/regular'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular">
+				Regular Calendar			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/faq'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/faq">
+				CRS FAQ			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/about/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/about/">
+				The CRS Team<br/>			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/privacy_notice'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/privacy_notice">
+				Privacy Notice			</a>
+		</div>
+	</body>
+</html>

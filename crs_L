@@ -1,0 +1,3114 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109224015-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-109224015-1');
+        </script>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<title>UP CRS - Schedule of Classes</title>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="https://crs.upd.edu.ph/javascripts/jquery.tablesorter.widgets.js"></script>
+
+
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/layout.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/status.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/schedule.css" type="text/css" />
+	<link rel="stylesheet" href="https://crs.upd.edu.ph/stylesheets/tablesorter/tablesorter.css" type="text/css" />
+	<link rel="shortcut icon" href="https://crs.upd.edu.ph/images/favicon.ico" type="image/x-icon" />
+
+	<style type="text/css">
+		#tbl_schedule tbody:hover {
+			background-color: #F0F0AF;
+		}
+	</style>
+	
+	<script type="text/javascript" language="JavaScript">
+	$(document).ready(function() {
+		$('#btn_search').click(searchClasses);
+		$('#frm_schedule').submit(function(e) {
+			e.preventDefault();
+			searchClasses();
+		});
+
+//		// table sorter
+//		$.tablesorter.addParser({
+//			// set uniqueid
+//			id: 'availableslots',
+//			is: function(s) {
+//				// return false so that parser is not automatically detected
+//				return false;
+//			},
+//			format: function(s) {
+//				var temp = s.replace('<strong>','').replace('</strong>','').split('/');
+//				return temp[0];
+//			},
+//			// set type to numeric
+//			type: 'numeric'
+//		});
+
+//		$('#tbl_schedule').tablesorter({widgets:['zebra'], headers: {0:{sorter:false},2:{sorter:false},4:{sorter:'availableslots'},5:{sorter:false}}});
+
+	});
+
+	function searchClasses() {
+		var coursenumber = $.trim($('#txt_coursenumber').val());
+		var term = $.trim($('#txt_term').val());
+		var alphanumeric_pattern = /^[a-zA-Z0-9\.\s]+$/;
+
+		if(coursenumber != '') {
+			if( ! alphanumeric_pattern.test(coursenumber)) {
+				alert('Course number must be alphanumeric.');
+			} else {
+				window.location = 'https://crs.upd.edu.ph/schedule' + '/'+ term + '/'+ coursenumber ;
+			}
+		}
+
+	}
+
+	</script>
+
+<style>
+	#frm_schedule {
+		margin: auto;
+		width: 25%;
+		background: #FCFCF0;
+		border: 3px solid #444444;
+		padding: 1em;
+	}
+	#frm_schedule strong, #search input {
+		padding-right: 1em;
+	}
+</style>
+</head>
+
+<body class="schedule">
+
+<div id="header">
+	<a href="https://crs.upd.edu.ph/user" class="header_link"></a>
+</div>
+<div id="subheader">
+</div>
+
+<div id="content" class="align-center">
+
+<h1>
+	Schedule of Classes<br />
+		<select id="txt_term" name="txt_term" style="padding: 2px; border: 1px solid #CECECE; border-radius: 5px; font-size: 100%; text-align: right;" onchange="searchClasses();">
+					<option value="120192" >Second Semester AY 2019-2020</option>
+					<option value="120194" >Midyear Term 2020</option>
+					<option value="120201" >First Semester AY 2020-2021</option>
+					<option value="120202" selected="selected">Second Semester AY 2020-2021</option>
+					<option value="120204" >Midyear Term 2021</option>
+		</select>
+	</h1>
+
+<br />
+<form id="frm_schedule" action="" method="post">
+Course Number: 
+<input type="text" id="txt_coursenumber" name="txt_coursenumber" placeholder="(e.g., Math 11, Eng 1)"/>
+<br/> 
+<input type="button" id="btn_search" name="btn_search" value="Search" />
+</form>
+
+<br/>
+<p>
+	<a href="https://crs.upd.edu.ph/schedule/120202/A">A</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/B">B</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/C">C</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/D">D</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/E">E</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/F">F</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/G">G</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/H">H</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/I">I</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/J">J</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/K">K</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/L">L</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/M">M</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/N">N</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/O">O</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/P">P</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Q">Q</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/R">R</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/S">S</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/T">T</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/U">U</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/V">V</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/W">W</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/X">X</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Y">Y</a>&nbsp;
+	<a href="https://crs.upd.edu.ph/schedule/120202/Z">Z</a>&nbsp;
+<a href="https://crs.upd.edu.ph/">Back to main page</a>
+</p>
+<br />
+<div style="text-align: left; padding: 0; margin: 0;"><strong>Results for: <em>L</em></strong></div>
+<table id="tbl_schedule" style="table-layout: fixed	">
+<thead>
+<tr>
+	<th width="5%">Class Code</th>
+	<th width="15%">Class</th>
+	<th width="5%">Credits</th>
+	<th width="30%">
+		Schedule<br />
+		Instructor(s)<br/>
+		Remarks
+	</th>
+	<th width="15%">Enlisting Unit : Block<br/><b>Block Remarks</b></th>
+	<th width="10%">
+		Available Slots /<br />
+		Total Slots
+	</th>
+	<th width="5%">Demand</th>
+	<th width="15%">Restrictions</th>
+</tr>
+</thead>
+
+	<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11657</td>
+		<td rowspan = "1">L Arch 1 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			DANAO, MADONNA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: HRIM(1 slots), BS Arch(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11688</td>
+		<td rowspan = "1">L Arch 1 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			PALARCA, HONORIO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">34</td>
+														
+		<td>For: BS Arch(5 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11661</td>
+		<td rowspan = "1">L Arch 12 THABCD</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 7:30-11AM lab TBA; T 7:30-11AM lec TBA<br />
+			DARAPISA, CHARL JUSTINE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11797</td>
+		<td rowspan = "1">L Arch 12 THABCD-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 7:30-11AM lab TBA; T 7:30-11AM lec TBA<br />
+			VILLAJUAN, JOSE DAN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">20</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11658</td>
+		<td rowspan = "1">L Arch 13 WFWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 1-3:30PM lab TBA; W 1-3:30PM lec TBA<br />
+			DANAO, MADONNA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">29</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11733</td>
+		<td rowspan = "1">L Arch 13 WFWX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 1-3:30PM lab TBA; W 1-3:30PM lec TBA<br />
+			DUL-LOOG, VIC<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11736</td>
+		<td rowspan = "1">L Arch 22 THABCD</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 7:30-11AM lab TBA; T 7:30-11AM lec TBA<br />
+			FONTANOZA, FRANKLIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>17</strong> /
+				17			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11740</td>
+		<td rowspan = "1">L Arch 22 THABCD-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 7:30-11AM lab TBA; T 7:30-11AM lec TBA<br />
+			GALINGAN, ZENAIDA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">27</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11653</td>
+		<td rowspan = "1">L Arch 27 SNOP</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			S 6-8PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11659</td>
+		<td rowspan = "1">L Arch 27 SNOP-1</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			S 6-8PM lec TBA<br />
+			DANAO, MADONNA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>17</strong> /
+				17			</td>
+												<td rowspan="1">30</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11737</td>
+		<td rowspan = "1">L Arch 29 THWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 1-3:30PM lec TBA; Th 1-3:30PM studio TBA<br />
+			FONTANOZA, FRANKLIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>17</strong> /
+				17			</td>
+												<td rowspan="1">23</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11741</td>
+		<td rowspan = "1">L Arch 29 THWX-1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 1-3:30PM lec TBA; Th 1-3:30PM studio TBA<br />
+			GALINGAN, ZENAIDA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">29</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11662</td>
+		<td rowspan = "1">L Arch 130 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			DARAPISA, CHARL JUSTINE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11696</td>
+		<td rowspan = "1">L Arch 132 THABCDE</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			Th 7AM-12PM lab TBA; T 7AM-12PM lec TBA<br />
+			DUL-LOOG, VIC; ROSELL, AURIGA JOY<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11652</td>
+		<td rowspan = "1">L Arch 134 SIJKLN</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-6PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11769</td>
+		<td rowspan = "1">L Arch 137 HNOP</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5-8PM lec TBA<br />
+			PERION, SHARON<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>16</strong> /
+				16			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11651</td>
+		<td rowspan = "1">L Arch 146 MSABCD</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 7-10:30AM lab TBA; M 7-10:30AM lec TBA<br />
+			VILLAJUAN, JOSE DAN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">10</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11689</td>
+		<td rowspan = "1">L Arch 147 HABCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 7AM-12PM lec TBA<br />
+			PALARCA, HONORIO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11695</td>
+		<td rowspan = "1">L Arch 199.2 WFABCDE</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			F 7AM-12PM lab TBA; W 7AM-12PM lec TBA<br />
+			NAVARRA, NAPPY; ROSELL, AURIGA JOY<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>13</strong> /
+				13			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11742</td>
+		<td rowspan = "1">L Arch 202 TOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 6-9PM lec TBA<br />
+			GALINGAN, ZENAIDA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11690</td>
+		<td rowspan = "1">L Arch 221 SCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec/work TBA<br />
+			PALARCA, HONORIO<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11743</td>
+		<td rowspan = "1">L Arch 222 SWX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec/sem-work TBA<br />
+			GALINGAN, ZENAIDA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11739</td>
+		<td rowspan = "1">L Arch 223 HOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 6-9PM lec/sem TBA<br />
+			FONTANOZA, FRANKLIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11770</td>
+		<td rowspan = "1">L Arch 250 WOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 6-9PM lec TBA<br />
+			PERION, SHARON<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11799</td>
+		<td rowspan = "1">L Arch 265 THOPQ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 6-9:30PM lec TBA<br />
+			VILLAJUAN, JOSE DAN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14979</td>
+		<td rowspan = "1">Latin 10 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">16</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">14959</td>
+		<td rowspan = "1">Latin 10 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			CONCEALED<br/>
+					</td>
+		 
+		<td>DEL<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58401</td>
+		<td rowspan = "1">Law 130 A</td>
+		<td rowspan = "1">5.0</td>
+		<td rowspan = "1">
+			TTh 6:30-9PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">24</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58402</td>
+		<td rowspan = "1">Law 130 BGC</td>
+		<td rowspan = "1">5.0</td>
+		<td rowspan = "1">
+			TTh 7-9:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">19</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58403</td>
+		<td rowspan = "1">Law 133 A</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			S 9-11AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">23</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58404</td>
+		<td rowspan = "1">Law 133 BGC</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			W 6-8PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">37</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58405</td>
+		<td rowspan = "1">Law 134 A</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			W 8-10AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">16</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58406</td>
+		<td rowspan = "1">Law 134 B</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			T 6-8PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">34</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58407</td>
+		<td rowspan = "1">Law 134 BGC</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			M 10AM-12PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">37</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58408</td>
+		<td rowspan = "1">Law 136 A</td>
+		<td rowspan = "1">5.0</td>
+		<td rowspan = "1">
+			S 8-10:30AM lec TBA; W 6-8:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">65</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58409</td>
+		<td rowspan = "1">Law 136 B</td>
+		<td rowspan = "1">5.0</td>
+		<td rowspan = "1">
+			S 11AM-1:30PM lec TBA; W 6-8:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">98</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58410</td>
+		<td rowspan = "1">Law 136 BGC</td>
+		<td rowspan = "1">5.0</td>
+		<td rowspan = "1">
+			MW 1:30-4PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">48</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58411</td>
+		<td rowspan = "1">Law 159 A</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TTh 9:30-11:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">74</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58412</td>
+		<td rowspan = "1">Law 159 B</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			WF 6-8PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">73</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58413</td>
+		<td rowspan = "1">Law 159 BGC</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			TF 3-5PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">41</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58414</td>
+		<td rowspan = "1">Law 163 A</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			MTh 6-7:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">76</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58415</td>
+		<td rowspan = "1">Law 163 B</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			MW 7:30-9PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">57</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58416</td>
+		<td rowspan = "1">Law 163 BGC</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 8:30-10AM lec TBA; W 6-7:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">35</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58417</td>
+		<td rowspan = "1">Law 169 A</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			F 6-8PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">29</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58418</td>
+		<td rowspan = "1">Law 169 B</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			M 2-4PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">35</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58419</td>
+		<td rowspan = "1">Law 169 BGC</td>
+		<td rowspan = "1">2.0</td>
+		<td rowspan = "1">
+			W 2-4PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58420</td>
+		<td rowspan = "1">Law 171 A</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			MW 4:30-6PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">74</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58421</td>
+		<td rowspan = "1">Law 171 B</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 6-7PM lec TBA; W 6-8PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">48</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58422</td>
+		<td rowspan = "1">Law 171 BGC</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 7-9PM lec TBA; Th 8-9PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">37</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58423</td>
+		<td rowspan = "1">Law 172 A</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TF 3:30-5PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">91</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58424</td>
+		<td rowspan = "1">Law 172 B</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 6-7:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>35</strong> /
+				35			</td>
+												<td rowspan="1">49</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58425</td>
+		<td rowspan = "1">Law 172 BGC</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 10-11:30AM lec TBA; Th 4-5:30PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">54</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58426</td>
+		<td rowspan = "1">Law 181 A</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			ThS 8-9:30AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">68</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58427</td>
+		<td rowspan = "1">Law 181 B</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 7:30-9PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">31</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">58428</td>
+		<td rowspan = "1">Law 181 BGC</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 5:30-7PM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Law<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">36</td>
+														
+		<td>For: JD, Graduating</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43002</td>
+		<td rowspan = "1">Lingg 1 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			SANTIAGO, VINCENT CHRISTOPHER<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">20</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43001</td>
+		<td rowspan = "1">Lingg 1 WFX</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			ALVAREZ, ROELIA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">19</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43003</td>
+		<td rowspan = "1">Lingg 110 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			CRUZ, NOAH<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: BA (Anthro)(12 slots)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43079</td>
+		<td rowspan = "1">Lingg 115 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			MANAHAN, MICHAEL<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: BA (Ling)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43058</td>
+		<td rowspan = "1">Lingg 115 WFV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 11:30AM-1PM lec TBA<br />
+			MANAHAN, MICHAEL<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">24</td>
+														
+		<td>For: BA (Ling)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43059</td>
+		<td rowspan = "1">Lingg 115 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			MANAHAN, MICHAEL<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">24</td>
+														
+		<td>For: BA (Ling)</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43030</td>
+		<td rowspan = "1">Lingg 121 MJKL</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 2-5PM lec TBA<br />
+			RAFAEL, RIA<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">28</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43028</td>
+		<td rowspan = "1">Lingg 121 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			CRUZ, NOAH<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43029</td>
+		<td rowspan = "1">Lingg 121 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			CRUZ, NOAH<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43031</td>
+		<td rowspan = "1">Lingg 136 MDEG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 10AM-1PM lec TBA<br />
+			CUNANAN, FARAH<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 130</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43061</td>
+		<td rowspan = "1">Lingg 137 MDEG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 10AM-1PM lec TBA<br />
+			DE CHAVEZ, MARK RAE<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 130</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43032</td>
+		<td rowspan = "1">Lingg 140 THR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			ENDRIGA, DIVINE ANGELI<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 130</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">14</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43033</td>
+		<td rowspan = "1">Lingg 140 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			ENDRIGA, DIVINE ANGELI<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 130</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">20</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43034</td>
+		<td rowspan = "1">Lingg 140 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			ENDRIGA, DIVINE ANGELI<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 130</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">17</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43035</td>
+		<td rowspan = "1">Lingg 166 THU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			SANTIAGO, VINCENT CHRISTOPHER<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43036</td>
+		<td rowspan = "1">Lingg 166 THV</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 11:30AM-1PM lec TBA<br />
+			SANTIAGO, VINCENT CHRISTOPHER<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43060</td>
+		<td rowspan = "1">Lingg 170 WFU</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			MANAHAN, MICHAEL<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110 & Anthro 100/Consent of Instructor</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">12</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43067</td>
+		<td rowspan = "1">Lingg 180 THW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			IGNO, JAY-AR<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">22</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43037</td>
+		<td rowspan = "1">Lingg 180 WFR</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			ROSARIO, FRANCISCO<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43077</td>
+		<td rowspan = "1">Lingg 197 TLNO</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 4-7PM lec TBA<br />
+			CUNANAN, FARAH<br/>
+			<em style="font-weight: bold">Language and Media. Prerequisite: Lingg 110/Consent of Instructor</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43069</td>
+		<td rowspan = "1">Lingg 197 WFW</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			IGNO, JAY-AR<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 110/Consent of Instructor</em>		</td>
+		 
+		<td><br/><em></em></td>
+					<td colspan="2"><strong>DISSOLVED</strong></td>
+		
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43038</td>
+		<td rowspan = "1">Lingg 199 MIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM lec TBA<br />
+			OR, ELSIE MARIE<br/>
+			<em style="font-weight: bold">Prerequisite: 12u of Lingg</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>10</strong> /
+				10			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43039</td>
+		<td rowspan = "1">Lingg 204 MNOP</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 5-8PM lec TBA<br />
+			CANILAO, KRITSANA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43070</td>
+		<td rowspan = "1">Lingg 206 FNOP</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 5-8PM lec TBA<br />
+			JAVIER, JEM<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43041</td>
+		<td rowspan = "1">Lingg 245 HIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM disc TBA<br />
+			BACOLOD, MARY ANN<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 240/Consent of Instructor</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43040</td>
+		<td rowspan = "1">Lingg 245 MIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM disc TBA<br />
+			BACOLOD, MARY ANN<br/>
+			<em style="font-weight: bold">Prerequisite: Lingg 240/Consent of Instructor</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43042</td>
+		<td rowspan = "1">Lingg 270 FLNO</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 4-7PM disc TBA<br />
+			HERNANDEZ, JESUS FEDERICO<br/>
+			<em style="font-weight: bold">Ethnolinguistics. Prerequisite: Lingg 170/Anthro 170/Consent of Instructor</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43043</td>
+		<td rowspan = "1">Lingg 299 MIJK</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM seminar TBA<br />
+			HERNANDEZ, JESUS FEDERICO<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43082</td>
+		<td rowspan = "1">Lingg 300 SCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM thesis TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43083</td>
+		<td rowspan = "1">Lingg 300 WSCDE</td>
+		<td rowspan = "1">6.0</td>
+		<td rowspan = "1">
+			WS 9AM-12PM thesis TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43072</td>
+		<td rowspan = "1">LinggPil 280 SGIJ</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 12-3PM disc TBA<br />
+			JAVIER, JEM<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43071</td>
+		<td rowspan = "1">LinggPil 280 WLNO</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 4-7PM disc TBA<br />
+			JAVIER, JEM<br/>
+					</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">7</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43044</td>
+		<td rowspan = "1">LinggPil 365 SDEG</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 10AM-1PM lec TBA<br />
+			PENEYRA, IRMA<br/>
+			<em style="font-weight: bold">Prerequisite: Consent of Instructor. Email linguistics.upd@up.edu.ph to enlist in this class.</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>0</strong> /
+				0			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">43081</td>
+		<td rowspan = "1">LinggPil 375 HCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 9-10AM disc TBA<br />
+			BACOLOD, MARY ANN<br/>
+			<em style="font-weight: bold">Etnolinggwistiks sa Pilipinas. Prerequisite: Consent of Instructor</em>		</td>
+		 
+		<td>Lingg<br/><em></em></td>
+					<td>
+				<strong>5</strong> /
+				5			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65551</td>
+		<td rowspan = "1">LIS 10 THW1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			DAR JUAN, ELIJAH JOHN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">11</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65552</td>
+		<td rowspan = "1">LIS 10 WFW1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			DAR JUAN, ELIJAH JOHN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">13</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65590</td>
+		<td rowspan = "1">LIS 50 WFY1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			SANTOS, YHNA THERESE<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65553</td>
+		<td rowspan = "1">LIS 51 THX1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lec TBA<br />
+			DAR JUAN, ELIJAH JOHN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65579</td>
+		<td rowspan = "1">LIS 55 THR1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			APOLINARIO, RHEA ROWENA<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">22</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65566</td>
+		<td rowspan = "1">LIS 60 WFR1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 8:30-10AM lec TBA<br />
+			SANTOS, MARK ANTHONY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">14</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65567</td>
+		<td rowspan = "1">LIS 60 WFU1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			SANTOS, MARK ANTHONY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">21</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65568</td>
+		<td rowspan = "1">LIS 61 THU1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			SANTOS, MARK ANTHONY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">13</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65586</td>
+		<td rowspan = "1">LIS 62 THW2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lec TBA<br />
+			TARLIT, RODOLFO<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">25</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65570</td>
+		<td rowspan = "1">LIS 64 WFY3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM lec TBA<br />
+			SURMIEDA, JANNY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65589</td>
+		<td rowspan = "1">LIS 71 THY2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM lec TBA<br />
+			SANTOS, YHNA THERESE<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65585</td>
+		<td rowspan = "1">LIS 114 MCDE1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 9AM-12PM lec TBA<br />
+			SILVERIO, ROCHELLE<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">9</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65594</td>
+		<td rowspan = "1">LIS 120 FXQ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 1-4PM lec TBA<br />
+			PEORO, ROLLY FRANCIS<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65580</td>
+		<td rowspan = "1">LIS 151 THR2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 8:30-10AM lec TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65572</td>
+		<td rowspan = "1">LIS 152 THY1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 4-5:30PM disc TBA<br />
+			SURMIEDA, JANNY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65581</td>
+		<td rowspan = "1">LIS 158 THX3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM disc TBA<br />
+			TBA<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65562</td>
+		<td rowspan = "1">LIS 160 WFW2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 1-2:30PM lec TBA<br />
+			PEREZ, PAUL JASON<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65563</td>
+		<td rowspan = "1">LIS 161 THW3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 1-2:30PM lab TBA<br />
+			PEREZ, PAUL JASON<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">27</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65564</td>
+		<td rowspan = "1">LIS 161 THX2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 2:30-4PM lab TBA<br />
+			PEREZ, PAUL JASON<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>25</strong> /
+				25			</td>
+												<td rowspan="1">12</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65571</td>
+		<td rowspan = "1">LIS 162 WFX2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lab TBA<br />
+			SURMIEDA, JANNY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">12</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65559</td>
+		<td rowspan = "1">LIS 170 WFU2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 10-11:30AM lec TBA<br />
+			ISIP, JONATHAN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">14</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65561</td>
+		<td rowspan = "1">LIS 172 WFY2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 4-5:30PM class TBA<br />
+			ISIP, JONATHAN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">4</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65595</td>
+		<td rowspan = "1">LIS 173 WXQ2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 1-4PM lec TBA<br />
+			REY, EMMA<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65558</td>
+		<td rowspan = "1">LIS 174 THU2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			ISIP, JONATHAN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65573</td>
+		<td rowspan = "1">LIS 181 WZQ2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5:30-8:30PM field TBA<br />
+			CABBAB, JOHANN FREDERICK<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">20</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65576</td>
+		<td rowspan = "1">LIS 191 THXQ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 1-4PM lec TBA<br />
+			BUENROSTRO-CABBAB, IYRA<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">7</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65557</td>
+		<td rowspan = "1">LIS 192 THU3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			TTh 10-11:30AM lec TBA<br />
+			DORADO, DAN ANTHONY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">12</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65554</td>
+		<td rowspan = "1">LIS 195 WFX1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			WF 2:30-4PM lec TBA<br />
+			DAR JUAN, ELIJAH JOHN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">7</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65593</td>
+		<td rowspan = "1">LIS 198 WCDE1<br/>Multiculturalism and Indigenous Knowledge</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 9AM-12PM lec TBA<br />
+			GOLFO, MARY GRACE<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">4</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65556</td>
+		<td rowspan = "1">LIS 199 MIJK3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM lec TBA<br />
+			DORADO, DAN ANTHONY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65588</td>
+		<td rowspan = "1">LIS 200 MIJK1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 1-4PM thesis TBA<br />
+			SANTOS, YHNA THERESE<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">6</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65582</td>
+		<td rowspan = "1">LIS 210 SCDE2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA<br />
+			ARLANTE, SALVACION<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">5</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65577</td>
+		<td rowspan = "1">LIS 211 SIJK1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			BUENROSTRO-CABBAB, IYRA<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65560</td>
+		<td rowspan = "1">LIS 218 WZQ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 5:30-8:30PM lec TBA<br />
+			ISIP, JONATHAN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65569</td>
+		<td rowspan = "1">LIS 231 TZQ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			T 5:30-8:30PM lec TBA<br />
+			SANTOS, MARK ANTHONY<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65584</td>
+		<td rowspan = "1">LIS 244 SIJK2</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			ENCANTO, JOENABIE<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">0</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65574</td>
+		<td rowspan = "1">LIS 260 FZQ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 5:30-8:30PM lec TBA<br />
+			CABBAB, JOHANN FREDERICK<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65587</td>
+		<td rowspan = "1">LIS 272 MZQ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 5:30-8:30PM seminar TBA<br />
+			SANTOS, YHNA THERESE<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65575</td>
+		<td rowspan = "1">LIS 277 THQ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			Th 5:30-8:30PM lec TBA<br />
+			CABBAB, JOHANN FREDERICK<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65591</td>
+		<td rowspan = "1">LIS 290 TZQ2</td>
+		<td rowspan = "1">4.0</td>
+		<td rowspan = "1">
+			T 5:30-8:30PM lec TBA<br />
+			ISIP, JONATHAN<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">8</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65578</td>
+		<td rowspan = "1">LIS 299 SCDE1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 1-4PM lec TBA<br />
+			BUENROSTRO-CABBAB, IYRA<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">4</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">65592</td>
+		<td rowspan = "1">LIS 300 WXQ1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			W 1-4PM thesis TBA<br />
+			GOLFO, MARY GRACE<br/>
+					</td>
+		 
+		<td>SLIS<br/><em></em></td>
+					<td>
+				<strong>15</strong> /
+				15			</td>
+												<td rowspan="1">9</td>
+														
+		<td>For: SLIS</td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11738</td>
+		<td rowspan = "1">LStud 204 SCDEWXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 9AM-12PM lec TBA; F 1-5PM studio TBA<br />
+			FONTANOZA, FRANKLIN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>6</strong> /
+				6			</td>
+												<td rowspan="1">1</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11798</td>
+		<td rowspan = "1">LStud 204 THCDEWXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			F 9AM-12PM lec TBA; F 1-5PM studio TBA<br />
+			VILLAJUAN, JOSE DAN<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+												<td rowspan="1">8</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11734</td>
+		<td rowspan = "1">LStud 205 MCDEWXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA; S 1-5PM studio TBA<br />
+			DUL-LOOG, VIC<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11663</td>
+		<td rowspan = "1">LStud 205 SCDEWXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			S 9AM-12PM lec TBA; S 1-5PM lec TBA<br />
+			DARAPISA, CHARL JUSTINE<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>6</strong> /
+				6			</td>
+												<td rowspan="1">2</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11660</td>
+		<td rowspan = "1">LStud 206 MCDEWXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 9AM-12PM lec TBA; M 1-5PM studio TBA<br />
+			DANAO, MADONNA<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>7</strong> /
+				7			</td>
+												<td rowspan="1">3</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">11735</td>
+		<td rowspan = "1">LStud 206 SCDEWXY</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 9AM-12PM lec TBA; M 1-5PM studio TBA<br />
+			DUL-LOOG, VIC<br/>
+					</td>
+		 
+		<td>Arch<br/><em></em></td>
+					<td>
+				<strong>6</strong> /
+				6			</td>
+												<td rowspan="1">6</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">51393</td>
+		<td rowspan = "1">LTS 2 Educ MCDE</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 8:30-11:30AM lec TBA<br />
+			ARZADON, MARIA MERCEDES<br/>
+			<em style="font-weight: bold">Only for students who finished LTS 1 at the College of Education</em>		</td>
+		 
+		<td>DCI<br/><em></em></td>
+					<td>
+				<strong>20</strong> /
+				20			</td>
+												<td rowspan="1">21</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">24642</td>
+		<td rowspan = "1">LTS 2 CSSP MJKL1</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 2-5PM lec TBA<br />
+			ALVAREZ-ABAREJO, CATHLYNE JOY<br/>
+					</td>
+		 
+		<td>Philo<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">18</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+		<tbody style="border-bottom: 1px solid gray">
+	<tr>
+		<td rowspan = "1">24644</td>
+		<td rowspan = "1">LTS 2 CSSP MJKL3</td>
+		<td rowspan = "1">3.0</td>
+		<td rowspan = "1">
+			M 2-5PM lec TBA<br />
+			MARQUEZ, LEANDER<br/>
+					</td>
+		 
+		<td>Philo<br/><em></em></td>
+					<td>
+				<strong>30</strong> /
+				30			</td>
+												<td rowspan="1">40</td>
+														
+		<td></td>
+		</tr>
+					</tbody>
+	</table>
+
+</div><!-- #content -->
+
+﻿
+<script type="text/javascript">
+			
+		$(document).ready(function() {
+			
+			//set the width per footer_expander element
+			var expander_count = $('.footerlink').length;
+			var expander_width = (83/expander_count);
+			
+			var i = 0;
+			$.each($(".footerlink"), function(index, value){
+				$(this).css('width', expander_width+'%');
+				$(this).css('left', (((expander_width)*i)+10)+'%');
+				i++;
+			});
+			
+			$(".footerlink,.footer_expander").hover(
+				function(){
+					$(this).animate({ height: "30"}, 50);
+				},
+				function(){
+					$(this).animate({ height: "16"}, 50);
+				
+				}
+			);
+			
+			//set the width per footer_expander element
+			var division_count = $('.footer_division').length;
+			var division_width = (88/division_count);
+			division_width = division_width+'%';
+			
+			$.each($(".footer_division"), function(index, value){
+				$(this).css('width', division_width);
+			});
+			
+		function change_acadtermtype() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_acadtermtype/' + $(this).val();
+		}
+
+		function change_role() {
+			return document.location = 'https://crs.upd.edu.ph/user/switch_role/' + $(this).val();
+		}
+
+		function show_roles() {
+			$("#span_role").addClass("hidden");
+			$("#span_role-choices").removeClass("hidden");
+		}
+
+		function show_acadtermtypes() {
+			$("#span_acadtermtype").addClass("hidden");
+			$("#span_acadtermtype-choices").removeClass("hidden");
+		}
+
+	 });
+	 
+	
+	function showFooter(){
+		$('#footer').slideDown(150);
+		$('.footermin').hide();
+	}
+	function hideFooter(){
+		$('#footer').slideUp(150);
+		$('.footermin').show();
+	}
+	</script>
+
+<span style="clear:both;"></span>
+
+	<div class="footer_expander footermin" onclick="showFooter();">
+		More ▲
+	</div>
+
+		<div id="footer" align="center">
+		<div id="footer_linktotop" align="right" onclick="hideFooter();">
+			<a href="Javascript:void(0);" onclick="hideFooter();" style="color:white">Less ▼</a>
+		</div>
+		<div style="padding-top: 30px;">
+						<div class="footer_division">
+				<div class="footer_division_header">Flowcharts</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/OnlineDroppingFlowchart.pdf" >
+								Dropping							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ChangeMatFlowchart_modified.pdf" >
+								Change Mat							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/downloads/ClearanceMechanics.pdf" >
+								Clearance							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/downloads/LOA_mechanics.pdf" >
+								Leave of Absence							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Class Schedules</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/" >
+								Regular Classes							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/schedule/mba" >
+								MBA/MS Finance PT							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/schedule/spring" >
+								Spring Asia							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Information</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/course_catalog" >
+								Course Catalog							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/curriculum.html" >
+								Curriculum Checklist							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="http://our.upd.edu.ph/files/ListofGECourses.pdf" >
+								List of RGEP Courses							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Academic Calendar</div>
+																		<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/acadcal.php" >
+								BOR Approved<br>Academic Calendar<br>							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular" >
+								Regular Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/mba" >
+								MBA/MS Fin PT Calendar							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/msfin" >
+								MS Fin FT Calendar							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/acadcal_public/index/advanced/spring" >
+								Spring Asia Calendar							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">CRS</div>
+																		<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/faq" >
+								CRS FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/faq.html" >
+								OUR FAQ							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>History of the CRS<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+													<span>User Guide<br/>(Coming Soon)</span>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://crs.upd.edu.ph/about/" >
+								The CRS Team<br/>							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://crs.upd.edu.ph/privacy_notice" >
+								Privacy Notice							</a>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">Contact Us</div>
+																		<div class="footer_division_item ">
+																				<a href="http://www.facebook.com/groups/134746139953068/" >
+								Facebook Group							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="mailto:support@crs.upd.edu.ph" >
+								E-Mail							</a>
+											</div>
+																								<div class="footer_division_item ">
+													<span>Phone<br/>(981-8500 local 4560)</span>
+											</div>
+																								<div class="footer_division_item fdt_last">
+													<span>You may visit us at the CRSRS Office at the 3rd floor of the OUR.</span>
+											</div>
+																	</div>
+						<div class="footer_division">
+				<div class="footer_division_header">External Links</div>
+																		<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/" >
+								UP Diliman							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://up.edu.ph/" >
+								UP System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://our.upd.edu.ph/" >
+								OUR Site							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="https://sts.up.edu.ph/" >
+								Socialized Tuition System							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://dormapplication.upd.edu.ph/" >
+								Dorm Application Website							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://uvle.up.edu.ph/" >
+								UvLE							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://ucc.upd.edu.ph/about-us/" >
+								UPCC							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://mail.up.edu.ph/" >
+								UP Webmail							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://www.dzup.org/" >
+								DZUP							</a>
+											</div>
+																								<div class="footer_division_item ">
+																				<a href="http://upd.edu.ph/aup/" >
+								Acceptable Use Policy							</a>
+											</div>
+																								<div class="footer_division_item fdt_last">
+																				<a href="https://upd.edu.ph/privacy" >
+								UP Diliman<br/>Data Privacy Portal							</a>
+											</div>
+																	</div>
+					</div>
+	</div>
+
+	<div class="footer_quicklinks footermin">
+		Quick Links:
+	</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/schedule/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/schedule/">
+				Regular Classes			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/course_catalog'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/course_catalog">
+				Course Catalog			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='http://our.upd.edu.ph/curriculum.html'">
+			<a class="a_footerlink" href="http://our.upd.edu.ph/curriculum.html">
+				Curriculum Checklist			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/acadcal_public/index/advanced/regular'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/acadcal_public/index/advanced/regular">
+				Regular Calendar			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/faq'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/faq">
+				CRS FAQ			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/about/'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/about/">
+				The CRS Team<br/>			</a>
+		</div>
+			<div class="footerlink footermin" onclick="window.location='https://crs.upd.edu.ph/privacy_notice'">
+			<a class="a_footerlink" href="https://crs.upd.edu.ph/privacy_notice">
+				Privacy Notice			</a>
+		</div>
+	</body>
+</html>
