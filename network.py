@@ -10,10 +10,13 @@ from bs4 import BeautifulSoup
 import string
 import csv as csv
 import pandas as pd
+import random
+import operator
 
 base = 'https://crs.upd.edu.ph/schedule/'
 year = '120202/'
 letter = 'A'
+
 
 
 
@@ -92,6 +95,10 @@ class Course:
         self._courseName = courseName
         self._teacher = teacher
         self._meetingTime = meetingTime
+        self._meetingDay = []
+    def get_meetingDays(self):
+        return self._meetingDay
+
         
 class Subject:
     def __init__(self, name):
@@ -101,11 +108,20 @@ class Subject:
         return self._courses
     
           
-        
-        
+
+def parse_schedule(schedule):
+    if ((len(schedule) > 1) and schedule[1].isupper()):
+        if (not schedule[1].isupper()):
+            return [schedule[0:2] , schedule[2:len(schedule)]]
+        else:
+            return [schedule[0] , schedule[1:len(schedule)]]
+    else:
+        return [schedule]
+
+
 subjectList = []
 
-sample_input = ["Fil 40", "MS 1" , "CW 10", "CoE 115"]
+sample_input = ["Fil 40", "MS 1" , "CW 10", "CoE 115", "Eng 11", "Math 10"]
 length = len(sample_input)
 mycsv = load_csv()
 
@@ -114,19 +130,130 @@ for input in sample_input:
     newSubject = Subject(input)
     #possible_subjects.append(filter_subject(mycsv, input))
     for index, row in filter_subject(mycsv, input).iterrows():
-        newSubject._courses.append(Course(row['course number'], row['name'], row['professor'], row['schedule']))
-        #print("Name: " + str(row['name']))
+        newCourse = Course(row['course number'], row['name'], row['professor'], row['schedule'].split(' ')[1])
+        newCourse._meetingDay = parse_schedule(row['schedule'].split(' ')[0])
+        newSubject._courses.append(newCourse)
     subjectList.append(newSubject)
-    #mylist = [(Course(id, row.name, row.professor, row.schedule)) for index, row in filter_subject(mycsv, input).items()]
     
 
-for subject in subjectList:
-    print("\n\n\t\t\t\tSubject Name: " + str(subject._name))
-    for courses in subject._courses:
-        print("Course Name: " + courses._courseName)
-        print("Meeting Times: " + courses._meetingTime)
-        print("Professor: " + courses._teacher)
+def print_data(subjectList):
+    for subject in subjectList:
+        print("\n\n\t\t\t\tSubject Name: " + str(subject._name))
+        for courses in subject._courses:
+            print("Course Name: " + courses._courseName)
+            print("Meeting Times: " + courses._meetingTime)
+            print("Meeting Days: " + str(courses._meetingDay))
+            print("Professor: " + courses._teacher)
+
+class Schedule:
+    def __init__(self):
+        self.classes = []
+        self.conflictNum = 0
+        self.fitness = -1
+        self.classNumb = 0
+    def initialize(self, numberOfClasses):
+        for i in range(0, numberOfClasses):
+            self.classes.append(subjectList[i]._courses[random.randrange(0,len(subjectList[i]._courses))])
+    def check_conflict(self):
+        for i in range(0, len(self.classes)):
+            for j in range(0, len(self.classes)):
+                if (i < j):
+                    print("test: " + self.classes[i]._courseName + " vs " + self.classes[j]._courseName)
+                    if (check_class_conflict(self.classes[i], self.classes[j])):
+                        self.conflictNum += 1
+
+def print_schedule_data(schedule):
+    print("\n\n\n\t\t\t\t\tSCHEDULE DATA ")
+    for thing in schedule.classes:
+        print(thing._courseName + "\t\t" + str(thing._meetingTime) + "\t\t" + str(thing._meetingDay))
+    print("Number of Conflicts: " + str(schedule.conflictNum))
+    print("Fitness: " + str(schedule.fitness))
+    
+def check_class_conflict(class1, class2):
+    for day_in_class1 in class1._meetingDay:
+        for day_in_class2 in class2._meetingDay:
+            if day_in_class1 == day_in_class2:
+                print("Comparing: " + class1._meetingTime[-2:] + " and " + class2._meetingTime[-2:])
+                if (getOverlap(convertTodecimal(class1._meetingTime), convertTodecimal(class2._meetingTime))):
+                    return True
+    return False
+
+def getOverlap(a, b):
+     return max(0, min(a[1], b[1]) - max(a[0], b[0]))
+
+def convertTodecimal(time):
+    buffer = time.split('-')
+    start_time = buffer[0]
+    end_time = buffer[1]
+    print("check here: " + str(buffer))
+    if (start_time.find("AM") > 0 and end_time.find("PM")):
+        start_time = start_time.replace("AM", "").replace("PM", "")
+        end_time = end_time.replace("AM", "").replace("PM", "")
+        if (start_time.find(":") > 0):
+            start_time = start_time[:-3] + str(float(start_time[-2:])/60)[1:]
+        if (end_time.find(":") > 0):
+            end_time = end_time[:-3] + str(float(end_time[-2:])/60)[1:]
+        return [float(start_time) , float(end_time)+12]
+    elif (end_time.find("PM") > 0):
+        start_time = start_time.replace("AM", "").replace("PM", "")
+        end_time = end_time.replace("AM", "").replace("PM", "")
+        if (start_time.find(":") > 0):
+            start_time = start_time[:-3] + str(float(start_time[-2:])/60)[1:]
+        if (end_time.find(":") > 0):
+            end_time = end_time[:-3] + str(float(end_time[-2:])/60)[1:]
+        return [float(start_time)+12 , float(end_time)+12 ]        
+    else:
+        start_time = start_time.replace("AM", "").replace("PM", "")
+        end_time = end_time.replace("AM", "").replace("PM", "")
+        if (start_time.find(":") > 0):
+            start_time = start_time[:-3] + str(float(start_time[-2:])/60)[1:]
+        if (end_time.find(":") > 0):
+            end_time = end_time[:-3] + str(float(end_time[-2:])/60)[1:]
+        return [float(start_time) , float(end_time) ]  
+        
+    
+
+def crossover(scheduleA, scheduleB):
+    for course in scheduleA.classes:
+        print('woo')
+    #for i in range(0, num_generations):
+    
+        
+def evolve(pop):
+    new_generation = []
+    
+    #ELITISM
+    for i in range(0, NUM_ELITES):
+        new_generation.append(pop[i])
+        
+    #CROSSOVER
+    
+    
+    
+def generate_population(num_population):
+    population = []
+    for i in range(0, num_population):
+        newSchedule = Schedule()
+        newSchedule.initialize(len(sample_input))
+        newSchedule.check_conflict()
+        population.append(newSchedule)
+        
+    population.sort(key=operator.attrgetter('conflictNum'))
+    return population
+
+NUM_POPULATION = 10
+NUM_ELITES = 3
+
+print("GENERATION#0")
+unogeneracion = generate_population(NUM_POPULATION)
+for schedule in unogeneracion:
+    print_schedule_data(schedule)
+    
+    
+    
 
 
 
 
+
+                
