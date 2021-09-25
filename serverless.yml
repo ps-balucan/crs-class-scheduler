@@ -23,10 +23,10 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: python3.8
-  profile: serverlessUser
+  profile: default
   region: ap-southeast-1
   versionFunctions: false
-  memorySize: 128
+  memorySize: 1024
   lambdaHashingVersion: 20201221
 
 # you can overwrite defaults here
@@ -63,13 +63,20 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  main:
+    handler: handler.main
+    timeout: 45
     events:
       - http:
-          path: echo/hello
+          path: echo/main
           method: get
-          
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+    
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

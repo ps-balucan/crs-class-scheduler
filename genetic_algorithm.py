@@ -44,7 +44,7 @@ class Schedule:
         self.classNumb = 0
         self.longestBreak = 0
         self.lunchBreakconflict = 0
-    def initialize(self, numberOfClasses):
+    def initialize(self, numberOfClasses, subjectList):
         for i in range(0, numberOfClasses):
             self.classes.append(subjectList[i]._courses[random.randrange(0,len(subjectList[i]._courses))])
     def check_conflict(self):
@@ -170,12 +170,12 @@ def convertTodecimal(time):
         
     
 
-def crossover(scheduleA, scheduleB):
+def crossover(scheduleA, scheduleB, subjectList):
     if (not len(scheduleA.classes) == len(scheduleB.classes)):
         raise Exception("scheduleA must be the same length as schedule B")
     
     crossoverSchedule = Schedule()
-    crossoverSchedule.initialize(len(sample_input))
+    crossoverSchedule.initialize(len(subjectList), subjectList)
     for i in range(0, len(scheduleA.classes)):
         if (random.random() > 0.5):
             crossoverSchedule.classes[i] = scheduleA.classes[i]
@@ -200,9 +200,9 @@ def choose_crossover(pop):
     #print("Chosen index #: " + str(trial) + " with conflicts # " + str(lowest_conflict))
     return chosen_schedule
 
-def mutate_schedule(MUTATION_RATE, schedule):
+def mutate_schedule(MUTATION_RATE, schedule, subjectList):
     mutated_schedule = Schedule()
-    mutated_schedule.initialize(len(schedule.classes))
+    mutated_schedule.initialize(len(schedule.classes), subjectList)
     for i in range(0, len(schedule.classes)):
         if (random.random() < MUTATION_RATE):
             schedule.classes[i] = mutated_schedule.classes[i]
@@ -212,7 +212,7 @@ def mutate_schedule(MUTATION_RATE, schedule):
     
     
     
-def evolve(pop, NUM_ELITES, MUTATION_RATE):
+def evolve(pop, NUM_ELITES, MUTATION_RATE, subjectList):
     new_generation = []
     
     #ELITISM
@@ -222,13 +222,13 @@ def evolve(pop, NUM_ELITES, MUTATION_RATE):
     #print("TRYING CROSSOVER")
     #CROSSOVER
     while(i < NUM_POPULATION):
-        new_generation.append(crossover(pop[choose_crossover(pop)] , pop[choose_crossover(pop)]))
+        new_generation.append(crossover(pop[choose_crossover(pop)] , pop[choose_crossover(pop)], subjectList))
         i += 1
     print("EVOLVE DONE")
     
     #MUTATION
     for i in range(NUM_ELITES, len(pop)):
-        mutate_schedule(MUTATION_RATE, new_generation[i])
+        mutate_schedule(MUTATION_RATE, new_generation[i], subjectList)
         
     
     #new_generation.sort(key=operator.attrgetter('conflictNum'))
@@ -238,11 +238,11 @@ def evolve(pop, NUM_ELITES, MUTATION_RATE):
         
     
     
-def generate_population(num_population):
+def generate_population(num_population, subjectList):
     population = []
     for i in range(0, num_population):
         newSchedule = Schedule()
-        newSchedule.initialize(len(sample_input))
+        newSchedule.initialize(len(subjectList), subjectList)
         newSchedule.check_conflict()
         newSchedule.check_lunch_break()
         newSchedule.check_fitness()
@@ -252,16 +252,16 @@ def generate_population(num_population):
     population.sort(key=operator.attrgetter('fitness'), reverse=True)
     return population
 
-def genetic_algorithm():
+def genetic_algorithm(subjectList):
     #number of generations is = i
     i = 0
-    population = generate_population(NUM_POPULATION)
+    population = generate_population(NUM_POPULATION, subjectList)
     starting_fitness = population[0].fitness
     while (i < 1000):
     #while (population[1].conflictNum > 0):
     #while (population[0].fitness < 1.5):
         print("GENERATION# " + str(i))
-        population = evolve(population, NUM_ELITES, MUTATION_RATE)
+        population = evolve(population, NUM_ELITES, MUTATION_RATE, subjectList)
         i += 1
         for popi in population:
             print("fitness: " + str(popi.fitness) + " lunchbreakconflict: " + str(popi.lunchBreakconflict) + " numConflict: " + str(popi.conflictNum) + " breakhours: " + str(popi.longestBreak))
@@ -278,6 +278,22 @@ def genetic_algorithm():
       #  if (pop.conflictNum == 0):
         #    print_schedule_data(pop)
            # print("lunchconflicts: " + str(population[0].lunchBreakconflict))
+
+    final_list = []
+    for thing in population[0].classes:
+        date_parse = []
+        for time in convertTodecimal(thing._meetingTime):
+            if (not time.is_integer()):
+                date_parse.append(str(int(time)) + ":" + str(int(60 * (time - int(time)))))
+            else:
+                date_parse.append(str(int(time)) + ":00")
+        
+        print("-".join(date_parse))
+        print(" ".join(thing._meetingDay))
+        final_list.append(thing._courseName.strip() + " " + str("-".join(thing._meetingDay)) + " " + str("-".join(date_parse)))
+        #print(thing._courseName + "\t\t" + str(thing._meetingTime) + "\t\t" + str(thing._meetingDay) + " rating: " + str(thing._rating))
+
+    return final_list
     
 def update_rating(teacher):
     DEFAULT_RATING = 3
@@ -303,28 +319,28 @@ def load_csv():
     data.head()
     return data
 
-subjectList = []
+# subjectList = []
 
-sample_input = ["Fil 40 ", "CW 10 ", "CoE 115 TJK", "CoE 115 HWX", "CWTS 2 Engg DCS", "Math 10 ", "Archaeo 2 "]
-length = len(sample_input)
-mycsv = load_csv()
+# sample_input = ["Fil 40 ", "CW 10 ", "CoE 115 TJK", "CoE 115 HWX", "CWTS 2 Engg DCS", "Math 10 ", "Archaeo 2 "]
+# length = len(sample_input)
+# mycsv = load_csv()
 
-possible_subjects = []
-for input in sample_input:
-    newSubject = Subject(input)
-    possible_subjects.append(filter_subject(mycsv, input))
-    for index, row in filter_subject(mycsv, input).iterrows():
-        if (row['professor'] == "TBA" or row['professor'] == "CONCEALED"):
-            row['professor'] = "TBA, TBA2"
-        print(row['professor'])
-        newCourse = Course(row['course number'], row['name'], row['professor'], row['schedule'].split(' ')[1])
-        newCourse._meetingDay = parse_schedule(row['schedule'].split(' ')[0])
-        newSubject._courses.append(newCourse)
-    subjectList.append(newSubject)
+# possible_subjects = []
+# for input in sample_input:
+#     newSubject = Subject(input)
+#     possible_subjects.append(filter_subject(mycsv, input))
+#     for index, row in filter_subject(mycsv, input).iterrows():
+#         if (row['professor'] == "TBA" or row['professor'] == "CONCEALED"):
+#             row['professor'] = "TBA, TBA2"
+#         print(row['professor'])
+#         newCourse = Course(row['course number'], row['name'], row['professor'], row['schedule'].split(' ')[1])
+#         newCourse._meetingDay = parse_schedule(row['schedule'].split(' ')[0])
+#         newSubject._courses.append(newCourse)
+#     subjectList.append(newSubject)
     
     
     
-genetic_algorithm()
+# genetic_algorithm()
         
 
 
